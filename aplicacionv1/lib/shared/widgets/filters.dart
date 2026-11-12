@@ -130,6 +130,32 @@ class _FilterBarState extends ConsumerState<FilterBar> {
                 if (widget.mode != 'budget')
                   select('Rubro', 'rubro', 'rubro', filters.rubro),
                 select('Cuenta', 'account', 'cuenta', filters.account),
+                SizedBox(
+                  width: 245,
+                  child: DropdownButtonFormField<String>(
+                    key: ValueKey(filters.validationStatus),
+                    initialValue: filters.validationStatus ?? '',
+                    decoration: const InputDecoration(
+                      labelText: 'Validación de datos',
+                    ),
+                    items: const [
+                      DropdownMenuItem(
+                        value: '',
+                        child: Text('Todos los registros'),
+                      ),
+                      DropdownMenuItem(
+                        value: 'validated',
+                        child: Text('Validados y consolidados'),
+                      ),
+                      DropdownMenuItem(
+                        value: 'unreviewed',
+                        child: Text('Sin validación vigente'),
+                      ),
+                    ],
+                    onChanged: (v) =>
+                        change('validationStatus', v == '' ? null : v),
+                  ),
+                ),
                 if (widget.mode != 'reports')
                   select('Mes', 'month', 'months', filters.month),
               ],

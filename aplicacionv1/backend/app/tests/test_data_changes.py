@@ -10,7 +10,7 @@ from typing import Any
 
 import httpx
 import pytest
-from sqlalchemy import select
+from sqlalchemy import select, text
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import get_settings
@@ -29,6 +29,18 @@ async def change_client(
 ) -> AsyncIterator[httpx.AsyncClient]:
     monkeypatch.setattr(get_settings(), "auth_mode", "demo")
     monkeypatch.setattr(get_settings(), "cookie_secure", False)
+    if db.get_bind().dialect.name == "postgresql":
+        # The shared fixture assigns IDs explicitly; initialize its sequences.
+        await db.execute(
+            text(
+                "SELECT setval(pg_get_serial_sequence('budgets','id'), (SELECT max(id) FROM budgets))"
+            )
+        )
+        await db.execute(
+            text(
+                "SELECT setval(pg_get_serial_sequence('movements','id'), (SELECT max(id) FROM movements))"
+            )
+        )
     sample.role = "admin"
     sample.password_hash = hash_password("Demo2026!")
 

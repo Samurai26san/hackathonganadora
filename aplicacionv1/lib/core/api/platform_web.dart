@@ -39,7 +39,11 @@ Stream<List<int>> chatBytes(
   }
 }
 
-void downloadBytes(Uint8List bytes, String filename, String mime) {
+Future<void> downloadBytes(
+  Uint8List bytes,
+  String filename,
+  String mime,
+) async {
   final blob = web.Blob([bytes.toJS].toJS, web.BlobPropertyBag(type: mime));
   final url = web.URL.createObjectURL(blob);
   final anchor = web.HTMLAnchorElement()

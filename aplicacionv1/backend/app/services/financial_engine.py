@@ -10,7 +10,7 @@ from collections import defaultdict
 from decimal import Decimal
 from typing import Any
 
-from sqlalchemy import Select, func, or_, select
+from sqlalchemy import Select, func, or_, select, text
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.database import Money, money
@@ -27,6 +27,7 @@ from app.models import (
     Rubro,
     User,
 )
+from app.models.accounting import CurationRow
 from app.schemas.budget import (
     BudgetFilterParams,
     DataRow,
@@ -74,6 +75,12 @@ class FinancialEngine:
     def __init__(self, db: AsyncSession, current_user: User) -> None:
         self.db, self.user = db, current_user
 
+    async def _read_lock(self) -> None:
+        # Readers share the lock; administrative writers hold it exclusively.
+        # Keep one consistent financial state across all aggregates/sections.
+        if self.db.get_bind().dialect.name == "postgresql":
+            await self.db.execute(text("SELECT pg_advisory_xact_lock_shared(20261112)"))
+
     @staticmethod
     def _calculate_kpis(
         initial: Decimal, modifications: Decimal, executed: Decimal
@@ -112,6 +119,21 @@ class FinancialEngine:
             query = query.where(Cuenta.rubro_id.in_(params.rubro_ids))
         if params.months is not None:
             query = query.where(model.month.in_(params.months))
+        if params.validation_status:
+            reviewed = (
+                select(CurationRow.id)
+                .where(
+                    CurationRow.target_kind
+                    == ("movement" if model is Movement else "budget"),
+                    CurationRow.target_id == model.id,
+                    CurationRow.status == "consolidated",
+                    CurationRow.validated_by.is_not(None),
+                )
+                .exists()
+            )
+            query = query.where(
+                reviewed if params.validation_status == "validated" else ~reviewed
+            )
         if model is Movement:
             if params.date_from:
                 query = query.where(Movement.date >= params.date_from)
@@ -173,6 +195,7 @@ class FinancialEngine:
     async def report(
         self, report_type: str, params: BudgetFilterParams, *, all_rows: bool = False
     ) -> FinancialReportResult:
+        await self._read_lock()
         if report_type not in REPORTS:
             raise AppException("Informe no permitido.")
         title, levels = REPORTS[report_type]
@@ -372,6 +395,7 @@ class FinancialEngine:
     async def compare_budget_periods(
         self, params: BudgetFilterParams
     ) -> FinancialReportResult:
+        await self._read_lock()
         years = sorted(set(params.years))
         if len(years) < 2:
             raise AppException("Selecciona dos gestiones diferentes para comparar.")

@@ -231,14 +231,28 @@ class _DataChangesPanelState extends ConsumerState<DataChangesPanel> {
                       const SizedBox(height: 12),
                       DropdownButtonFormField<int>(
                         initialValue: month,
-                        decoration: const InputDecoration(
-                          labelText: 'Mes BD (0 = PTTO)',
-                        ),
+                        decoration: const InputDecoration(labelText: 'Mes'),
                         items: List.generate(
                           13,
                           (i) => DropdownMenuItem(
                             value: i,
-                            child: Text(i == 0 ? 'PTTO' : '$i'),
+                            child: Text(
+                              const [
+                                'PTTO',
+                                'Enero',
+                                'Febrero',
+                                'Marzo',
+                                'Abril',
+                                'Mayo',
+                                'Junio',
+                                'Julio',
+                                'Agosto',
+                                'Septiembre',
+                                'Octubre',
+                                'Noviembre',
+                                'Diciembre',
+                              ][i],
+                            ),
                           ),
                         ),
                         onChanged: (value) => update(() => month = value!),
@@ -272,8 +286,10 @@ class _DataChangesPanelState extends ConsumerState<DataChangesPanel> {
                           decimal: true,
                           signed: true,
                         ),
-                        decoration: const InputDecoration(
-                          labelText: 'Importe en Bs',
+                        decoration: InputDecoration(
+                          labelText: kind == 'budget'
+                              ? 'Presupuesto inicial (Bs)'
+                              : 'Ejecución (Bs)',
                           helperText:
                               'Ejemplo: 1250,50. Sin separador de miles.',
                         ),
@@ -516,10 +532,10 @@ class _DataChangesPanelState extends ConsumerState<DataChangesPanel> {
                     if (widget.history)
                       ExpansionTile(
                         title: Text(
-                          '${{'create': 'Creación', 'edit': 'Edición', 'delete': 'Eliminación', 'restore': 'Restauración'}[row['action']] ?? row['action']} · ${row['kind']} ${row['record_id'] ?? ''}',
+                          '${{'create': 'Creación', 'edit': 'Edición', 'delete': 'Eliminación', 'restore': 'Restauración'}[row['action']] ?? row['action']} · ${const {'budget': 'Presupuesto', 'movement': 'Movimiento', 'financial': 'Datos financieros'}[row['kind']] ?? row['kind']} ${row['record_id'] ?? ''}',
                         ),
                         subtitle: Text(
-                          '${row['administrator']} · ${DateTime.parse(row['timestamp'] as String).toLocal().toString().split('.').first}\nMotivo: ${row['reason']}',
+                          '${row['administrator']} (${row['email']}) · ${DateTime.parse(row['timestamp'] as String).toLocal().toString().split('.').first}\nMotivo: ${row['reason']}',
                         ),
                         children: [
                           Padding(

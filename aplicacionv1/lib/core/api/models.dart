@@ -47,6 +47,7 @@ class BudgetFilters {
     this.account,
     this.month,
     this.search = '',
+    this.validationStatus,
     this.dateFrom,
     this.dateTo,
     this.page = 1,
@@ -55,7 +56,7 @@ class BudgetFilters {
   final int year;
   final int? financier, region, area, rubro, account, month;
   final String search;
-  final String? dateFrom, dateTo;
+  final String? dateFrom, dateTo, validationStatus;
   final int page;
   final String metric;
 
@@ -68,6 +69,7 @@ class BudgetFilters {
     if (account != null) 'cuenta_ids': [account],
     if (month != null) 'months': [month],
     'search': search,
+    if (validationStatus != null) 'validation_status': validationStatus,
     'page': page,
     'metric': metric,
     if (dateFrom != null) 'date_from': dateFrom,
@@ -89,6 +91,7 @@ class BudgetFilters {
       'account': account,
       'month': month,
       'search': search,
+      'validationStatus': validationStatus,
       'dateFrom': dateFrom,
       'dateTo': dateTo,
       'page': 1,
@@ -105,6 +108,7 @@ class BudgetFilters {
       account: next['account'] as int?,
       month: next['month'] as int?,
       search: next['search'] as String,
+      validationStatus: next['validationStatus'] as String?,
       dateFrom: next['dateFrom'] as String?,
       dateTo: next['dateTo'] as String?,
       page: next['page'] as int,
@@ -121,6 +125,7 @@ class BudgetFilters {
     account: (json['cuenta_ids'] as List<dynamic>?)?.firstOrNull as int?,
     month: (json['months'] as List<dynamic>?)?.firstOrNull as int?,
     search: json['search'] as String? ?? '',
+    validationStatus: json['validation_status'] as String?,
     metric: json['metric'] as String? ?? 'executed',
     dateFrom: json['date_from'] as String?,
     dateTo: json['date_to'] as String?,

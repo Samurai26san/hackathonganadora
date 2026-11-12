@@ -52,3 +52,16 @@ solo la geometría del gráfico se convierte a double.
 OIDC necesita proveedor y credenciales. Llama.cpp necesita el GGUF y TEI debe
 descargar BGE-m3. No se afirman validaciones reales de esos servicios sin
 ejecutarlas. Se documenta cada comprobación realizada y sus límites.
+
+## Extensión autorizada: correcciones financieras
+
+El usuario autorizó la creación, edición, eliminación y restauración de datos
+financieros por administradores. Eligió expresamente persistencia en backend
+compartida entre PC y celular, sustituyendo la propuesta inicial de almacenamiento
+solo en navegador. Se conservan el Excel y el historial; cada escritura exige
+motivo, permisos y control de versión. Juku sigue siendo de lectura. Detalles
+operativos y límites de restauración en `docs/CORRECCIONES_MVP.md`.
+
+## Extensión: curaduría técnica y contabilidad institucional
+
+Fuente: `docs/contabilidad/REQUISITOS.md`. Se añaden preparación de filas con validación humana y predicción supervisada, libro de partida doble independiente y generador mensual/anual de informes. Se mantiene Flutter y el diseño institucional. Los técnicos pueden preparar, validar y consolidar sus filas dentro de su alcance; esto amplía expresamente su permiso anterior de solo consulta, sin concederles edición/eliminación de hechos existentes. Solo administración de alcance completo configura y contabiliza asientos. Los estados regulatorios son borradores técnicos, sujetos a datos contables completos, plan oficial y revisión de aplicabilidad. Ver `docs/contabilidad/IMPLEMENTACION.md` y migración `0002`.

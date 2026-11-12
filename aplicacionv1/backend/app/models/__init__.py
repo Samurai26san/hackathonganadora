@@ -41,3 +41,12 @@ __all__ = [
     "OIDCTransaction",
     "User",
 ]
+
+from app.models.accounting import (  # noqa: F401,E402
+    CurationBatch,
+    CurationRow,
+    FinancialDisclosure,
+    JournalEntry,
+    JournalLine,
+    LedgerAccount,
+)

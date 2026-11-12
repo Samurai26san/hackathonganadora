@@ -10,7 +10,7 @@ from typing import Any, Literal, cast
 
 from fastapi import APIRouter, Response
 from pydantic import BaseModel, ConfigDict, Field, model_validator
-from sqlalchemy import delete, func, inspect, select, text
+from sqlalchemy import delete, func, inspect, select, text, update
 
 from app.api.v1.budget import Params
 from app.core.exceptions import AppException
@@ -28,6 +28,7 @@ from app.models import (
     Rubro,
 )
 from app.services.financial_engine import FinancialEngine
+from app.models.accounting import CurationRow
 
 router = APIRouter(prefix="/data", tags=["Control de cambios"])
 Kind = Literal["budget", "movement"]
@@ -121,9 +122,9 @@ async def captured(db: Any, row: Any) -> dict[str, Any]:
             snapshot(m)
             for m in (
                 await db.scalars(
-                    select(BudgetModification).where(
-                        BudgetModification.budget_id == row.id
-                    )
+                    select(BudgetModification)
+                    .where(BudgetModification.budget_id == row.id)
+                    .order_by(BudgetModification.id)
                 )
             ).all()
         ]
@@ -216,11 +217,23 @@ async def validated(
 
 @router.get("/revision", summary="Versión de datos financieros")
 async def get_revision(db: DB, user: CurrentUser) -> dict[str, int]:
-    return {"revision": await revision(db)}
+    """Devuelve la revisión financiera para actualizar los paneles entre dispositivos autenticados."""
+    accounting_revision = int(
+        await db.scalar(
+            select(func.max(AuditLog.id)).where(
+                AuditLog.action.in_(
+                    ["accounting.post", "accounting.account", "accounting.disclosure"]
+                )
+            )
+        )
+        or 0
+    )
+    return {"revision": max(await revision(db), accounting_revision)}
 
 
 @router.get("/catalogs", summary="Categorías para cambios administrativos")
 async def get_catalogs(db: DB, user: AdminUser) -> dict[str, Any]:
+    """Solo administradores; devuelve categorías del Excel y restringe regiones, áreas y financiadores al alcance autorizado."""
     result: dict[str, Any] = {
         "years": list(
             (await db.scalars(select(Gestion.year).order_by(Gestion.year.desc()))).all()
@@ -257,6 +270,7 @@ async def get_catalogs(db: DB, user: AdminUser) -> dict[str, Any]:
 async def records(
     params: Params, db: DB, user: AdminUser, kind: Kind = "budget"
 ) -> dict[str, Any]:
+    """Solo administradores; requiere years y admite los filtros financieros habituales. Incluye versión por registro para evitar sobrescrituras."""
     model = MODELS[kind]
     engine = FinancialEngine(db, user)
     query = select(model).join(Cuenta, Cuenta.id == model.cuenta_id)
@@ -303,6 +317,7 @@ async def records(
 async def create(
     kind: Kind, body: RecordInput, db: DB, user: AdminUser
 ) -> dict[str, Any]:
+    """Valida categorías, importe exacto y motivo. Confirma el registro y su historial en la misma transacción."""
     await lock(db)
     values = await validated(db, user, kind, body)
     model = MODELS[kind]
@@ -323,6 +338,7 @@ async def create(
 async def edit(
     kind: Kind, id_: int, body: RecordInput, db: DB, user: AdminUser
 ) -> dict[str, Any]:
+    """Rechaza versiones desactualizadas con 409 y guarda los valores anteriores y nuevos junto al motivo."""
     await lock(db)
     row = await existing(db, user, kind, id_)
     before = await captured(db, row)
@@ -334,6 +350,11 @@ async def edit(
         setattr(row, key, value)
     await db.flush()
     after = await captured(db, row)
+    await db.execute(
+        update(CurationRow)
+        .where(CurationRow.target_kind == kind, CurationRow.target_id == id_)
+        .values(status="superseded")
+    )
     audit(db, user, kind, id_, "edit", body.reason, before, after)
     await db.commit()
     return {"id": row.id, "version": version(after)}
@@ -346,6 +367,7 @@ async def edit(
 async def remove(
     kind: Kind, id_: int, body: ConfirmInput, db: DB, user: AdminUser
 ) -> dict[str, bool]:
+    """Requiere confirm=true, motivo y versión vigente. Conserva en el historial el registro eliminado y sus ajustes asociados."""
     if len(body.reason.strip()) < 5:
         raise AppException("Escribe un motivo válido.", 422)
     await lock(db)
@@ -358,6 +380,11 @@ async def remove(
             delete(BudgetModification).where(BudgetModification.budget_id == id_)
         )
     await db.delete(row)
+    await db.execute(
+        update(CurationRow)
+        .where(CurationRow.target_kind == kind, CurationRow.target_id == id_)
+        .values(status="superseded")
+    )
     audit(db, user, kind, id_, "delete", body.reason, before, None)
     await db.commit()
     return {"ok": True}
@@ -401,6 +428,7 @@ async def history_rows(db: Any, user: Any) -> list[dict[str, Any]]:
 
 @router.get("/history", summary="Historial de datos con valores anteriores y nuevos")
 async def history(db: DB, user: AdminUser, page: int = 1) -> dict[str, Any]:
+    """Historial autorizado paginado de creación, edición, eliminación y restauración; conserva identidad, motivo y valores."""
     if page < 1:
         raise AppException("Página inválida.", 422)
     items = await history_rows(db, user)
@@ -413,6 +441,7 @@ async def history(db: DB, user: AdminUser, page: int = 1) -> dict[str, Any]:
 
 @router.get("/history/export", summary="Descargar historial completo en JSON")
 async def history_export(db: DB, user: AdminUser) -> Response:
+    """Descarga todo el historial autorizado en JSON, sin limitarlo a la página visible."""
     return Response(
         json.dumps(await history_rows(db, user), ensure_ascii=False, indent=2).encode(),
         media_type="application/json",
@@ -450,6 +479,7 @@ async def restore_snapshot(db: Any, model: Any, data: dict[str, Any]) -> None:
     "/restore", summary="Restaurar estado original conservando todo el historial"
 )
 async def restore(body: RestoreInput, db: DB, user: AdminUser) -> dict[str, int]:
+    """Administrador global: deshace los cambios registrados desde la última restauración. Requiere confirmación, motivo y revisión vigente; conserva la auditoría."""
     if any(
         getattr(user, k + "_ids") is not None for k in ("region", "area", "financier")
     ):
@@ -466,6 +496,11 @@ async def restore(body: RestoreInput, db: DB, user: AdminUser) -> dict[str, int]
             select(func.max(AuditLog.id)).where(AuditLog.action == "data.restore")
         )
         or 0
+    )
+    await db.execute(
+        update(CurationRow)
+        .where(CurationRow.target_id.is_not(None))
+        .values(status="superseded")
     )
     events = (
         await db.scalars(

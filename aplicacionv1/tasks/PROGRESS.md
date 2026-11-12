@@ -1,3 +1,126 @@
+# Extensión implementada: curaduría, contabilidad e informes técnicos
+
+Solicitud: documento `docs/contabilidad/REQUISITOS.md`. Instrucción posterior:
+«solo haz la tarea olvida las skill de validacion y prueba». No se ejecutaron
+pruebas ni se arrancaron PostgreSQL, API, web o modelos durante esta entrega.
+
+Pasos implementados:
+1. Seis tablas aditivas y migración Alembic 0002: lotes/filas de preparación,
+   cuentas jerárquicas, asientos/líneas y dictámenes/notas. SQL y ERD documentados.
+2. API y Flutter de curaduría: Excel/plantilla, limpieza, edición de celdas,
+   clasificación supervisada por similitud, validación humana, consolidación
+   con permisos/versiones/motivo y bitácora privada por fila. Sin Qwen requerido.
+3. Libro separado de partida doble, seis bloques a fecha exacta, clasificación
+   de efectivo, resultado escalonado con IUE registrado y riesgos en dashboard.
+4. Generador mensual/anual determinista: comparación disponible, calidad,
+   simulación opcional de IUE y exportaciones PDF/XLSX con fórmulas. Filtro de
+   validación integrado en informes presupuestarios y exportaciones anteriores.
+5. Documentación, contrato OpenAPI y ejemplo FICTICIO en PDF/XLSX/JSON.
+
+Comprobación realizada: sintaxis Python y carga del contrato API, generación de
+SQL y documentos ficticios; compilación web release correcta. La última
+compilación incorpora historial por fila y actualización de alertas. No se
+comprobaron operaciones contra PostgreSQL ni recorridos de navegador por
+petición del usuario; no afirmar validación regulatoria ni funcional completa.
+
+Siguiente paso operativo exacto: `make mobile`. Ahora inicia solo PostgreSQL del
+proyecto, aplica `alembic upgrade head` y abre web/API. Cargar primero la plantilla
+de Curaduría para preparar datos. El APK previo conserva la versión anterior;
+esta entrega actualiza el build web. Se conservaron los cambios preexistentes.
+
+---
+
+# Proyecto detenido por petición del usuario
+
+El usuario pidió: «para todos los procesos». Se detuvieron los procesos propios
+web/API/Qwen y los contenedores del proyecto exb-budget-copilot. Se conservaron
+volúmenes, modelos descargados, Excel y auditoría. No reiniciar servicios hasta
+una nueva petición. No se detuvieron servicios ajenos, incluido Ollama global.
+
+Último avance Qwen: modelo cargado realmente; /health y /v1/models respondían.
+Se corrigió OOM de 1400M con 2400M, --no-repack/--no-warmup y lotes 256/128.
+La comprobación de respuesta financiera completa estaba pendiente y se interrumpió
+por la orden de parada. No afirmar que se completó esa respuesta.
+
+---
+
+# En curso: enlace real Qwen → API → Juku
+
+El usuario pidió enlazar el Qwen ya descargado. Se confirmó que el proceso anterior
+moría por OOM del scope de 1400M. Se ajustó a 2400M y se deshabilitaron repacking y
+warmup. Se aumentaron lotes a 256/128 para acelerar el primer procesamiento CPU.
+
+- Ambos GGUF tienen SHA-256 válido. Qwen2.5-7B Q4_K_M cargó realmente y responde
+  /health=ok y /v1/models en 127.0.0.1:18081 con el alias esperado por la API.
+- Servicio propio activo: scope exb-qwen-linked-fast.scope. Log de modelo:
+  ops/runtime/qwen-linked.log. El runner móvil existente sigue sirviendo 8088 y
+  apunta a ese endpoint; no fue necesario cambiar Flutter ni recompilar el APK.
+- Se está comprobando una consulta real por /api/v1/chat/stream con una sesión
+  técnica demo. Log: ops/runtime/qwen-chat-link.log. Sigue pendiente observar
+  tool_call/tool_result/done antes de afirmar una respuesta financiera completada.
+- Se interrumpió una primera comprobación propia para ajustar los lotes; no se
+  ejecutaron suites de skills ni se alteraron datos financieros.
+- Los arranques futuros make mobile y make qwen conservan el límite corregido.
+  La primera carga en CPU es lenta; no marcar RAG/embeddings como verificados.
+
+---
+
+# Último punto: arranque de PostgreSQL corregido
+
+El usuario reportó make mobile fallando por conexión rechazada a PostgreSQL.
+Se encontró el contenedor detenido y se inició exclusivamente postgres del
+proyecto. make mobile depende ahora de mobile-db, que ejecuta docker compose
+up -d --wait --wait-timeout 60 postgres antes de abrir la API. No se borraron
+volúmenes, no se resembró información y no se ejecutaron pruebas de skills.
+Se lanzó el MVP con el comando corregido; revisar /tmp/exb-mobile.log y
+ops/runtime/mobile-api.log para estado actual. Documentación móvil actualizada.
+
+---
+
+# Último punto: APK Android compilado
+
+El usuario pidió compilar el APK Flutter. Se generó correctamente un APK release
+(59.4 MB) en `build/app/outputs/flutter-apk/app-release.apk`, también disponible
+como `build/web/descargas/exb-finanzas.apk`. Hash en app-release.apk.sha256.
+
+- Build: flutter build apk --release --dart-define=API_BASE_URL=http://172.18.143.26:8088/api/v1/
+- Android: permiso INTERNET, nombre ExB Finanzas y HTTP autorizado solo para la
+  IP local indicada mediante network_security_config. El backend debe seguir
+  activo con make mobile y el celular en la misma red.
+- Sesiones nativas en memoria mediante interceptor de cookies; acceso demo del
+  runner móvil. Android incorpora selector/guardado de PDF, CSV, JSON y lectura
+  de Excel con el canal exb/files y el selector de documentos del sistema.
+- Se corrigió InputDecoration const con etiqueta variable que impedía compilar.
+- Se redujo el máximo de memoria Gradle y se limitaron sus workers a dos.
+- Compilación final exitosa. No se ejecutaron pruebas de skills. No se instaló
+  ni probó el APK en un teléfono físico. Firma local de desarrollo existente.
+- Pendiente previo conservado: cerrar activación/documentación de las correcciones
+  financieras. La nueva petición de APK tuvo prioridad; no borrar datos ni historia.
+
+---
+
+# En curso: correcciones financieras solicitadas
+
+El usuario eligió persistencia en backend y permisos reales, compartidos entre
+PC/celular. Se usan incremental-implementation y flutter-expert; no se ejecutan
+pruebas de skills ni diagnósticos GPU.
+
+- PDF/CSV completos: informe, rubros, cuentas y todos los movimientos filtrados,
+  cuentas sin ejecución, gestión/filtros, niveles CSV y secciones PDF.
+- Nueva API `/api/v1/data/*`: CRUD con motivo, confirmación y versiones; categorías
+  y scopes validados, auditoría antes/después, exportación JSON y restauración
+  transaccional sin borrar historia ni sobrescribir Excel. No requiere migración.
+- Flutter: Control de cambios e Historial de datos en Administración. Formularios
+  y confirmaciones; invalidación local y revisión remota cada 10 segundos.
+- Cuatro controles puntuales pasan en SQLite temporal; 17 controles relacionados
+  pasaron antes de la última ampliación. Flutter analyze sin incidencias y build
+  web generado. Comprobación PostgreSQL aislada en curso. mypy estaba limpio.
+- Falta cerrar comprobaciones finales, registrar resultados y reiniciar únicamente
+  el runner móvil propio para cargar el backend actualizado. No marcar terminado
+  antes de ese arranque. Documentación: docs/CORRECCIONES_MVP.md.
+
+---
+
 # Corrección del aviso de Qwen pendiente
 
 El usuario mostró el error del chat y el mensaje repetido de espera. La descarga

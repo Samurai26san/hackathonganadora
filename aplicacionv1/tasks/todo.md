@@ -32,3 +32,17 @@ y credenciales externos. No marcar esos servicios como probados sin ejecutarlos.
 
 P13 conserva su alcance original. Las comprobaciones de identidad, documentos y
 end-to-end se detallan en P14/P15; no se considera cerrado hasta verificarlas.
+
+
+## Extensión solicitada: preparación y estados contables
+
+- [x] C1 — Esquema aditivo, migración 0002, SQL y ERD.
+- [x] C2 — API y Flutter de curaduría, clasificador supervisado, validación humana, permisos y bitácora.
+- [x] C3 — Libro de partida doble, subcuentas, seis bloques y alertas.
+- [x] C4 — Informe mensual/anual, PDF/XLSX con fórmulas y ejemplo ficticio.
+- [x] C5 — Documentación, contrato API, sintaxis Python y compilación web.
+
+No se ejecutan pruebas por petición expresa. Arranque operativo pendiente de
+`make mobile` para aplicar 0002 en la base existente; no se reiniciaron servicios.
+El build web incorpora las pantallas; el APK anterior requiere recompilarse si
+se desea esta extensión instalada de forma nativa.

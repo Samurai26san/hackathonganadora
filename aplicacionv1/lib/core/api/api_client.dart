@@ -83,7 +83,7 @@ class ApiClient {
 
   Future<void> downloadJson(String path, String filename) async {
     final data = await get(path);
-    platform.downloadBytes(
+    await platform.downloadBytes(
       Uint8List.fromList(
         utf8.encode(const JsonEncoder.withIndent('  ').convert(data)),
       ),
@@ -128,7 +128,7 @@ class ApiClient {
         options: Options(responseType: ResponseType.bytes),
       );
       final extension = format == 'excel' ? 'xlsx' : format;
-      platform.downloadBytes(
+      await platform.downloadBytes(
         Uint8List.fromList(response.data!),
         'exb-$report.$extension',
         response.headers.value('content-type') ?? 'application/octet-stream',
@@ -136,6 +136,36 @@ class ApiClient {
     } on DioException catch (error) {
       throw mapError(error);
     }
+  }
+
+  Future<void> downloadDocument(String path, Json body, String filename) async {
+    try {
+      final response = await dio.post<List<int>>(
+        path,
+        data: body,
+        options: Options(responseType: ResponseType.bytes),
+      );
+      await platform.downloadBytes(
+        Uint8List.fromList(response.data!),
+        filename,
+        response.headers.value('content-type') ?? 'application/octet-stream',
+      );
+    } on DioException catch (error) {
+      throw mapError(error);
+    }
+  }
+
+  Future<Json?> uploadCurationWorkbook() async {
+    final bytes = await platform.pickWorkbook();
+    if (bytes == null) return null;
+    return await post(
+          'curation/batches',
+          data: {
+            'filename': 'curaduria.xlsx',
+            'xlsx_base64': base64Encode(bytes),
+          },
+        )
+        as Json;
   }
 
   Stream<Json> chat(Json body, CancelToken cancelToken) async* {

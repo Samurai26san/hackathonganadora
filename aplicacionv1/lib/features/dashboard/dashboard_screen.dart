@@ -17,6 +17,29 @@ class DashboardScreen extends ConsumerWidget {
       children: [
         const FilterBar(mode: 'dashboard'),
         const SizedBox(height: 24),
+        ...ref
+            .watch(riskAlertsProvider)
+            .maybeWhen(
+              data: (alerts) => [
+                for (final alert in alerts)
+                  Card(
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.warning_amber_rounded,
+                        color: alert['risk'] == 'high'
+                            ? Colors.red
+                            : Colors.orange,
+                      ),
+                      title: Text('${alert['title']}'),
+                      subtitle: Text(
+                        'Riesgo ${alert['risk'] == 'high' ? 'alto' : 'medio'} · Dictámenes y notas contables',
+                      ),
+                      onTap: () => context.go('/contabilidad'),
+                    ),
+                  ),
+              ],
+              orElse: () => <Widget>[],
+            ),
         result.when(
           loading: () => const Padding(
             padding: EdgeInsets.all(80),

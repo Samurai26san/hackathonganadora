@@ -71,7 +71,7 @@ def main() -> None:
         try:
             qwen = subprocess.Popen([
                 'systemd-run', '--user', '--scope', '--collect', '--quiet',
-                '--unit', qwen_unit, '-p', 'MemoryMax=1400M', '-p', 'MemorySwapMax=0',
+                '--unit', qwen_unit, '-p', 'MemoryMax=2400M', '-p', 'MemorySwapMax=0',
                 'nice', '-n', '10', sys.executable, str(ROOT / 'tools/run_qwen.py'),
             ], cwd=ROOT, stdout=qwen_log, stderr=subprocess.STDOUT)
         except OSError as error:

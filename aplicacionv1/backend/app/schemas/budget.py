@@ -26,6 +26,7 @@ class BudgetFilterParams(BaseModel):
     )
     date_from: date | None = None
     date_to: date | None = None
+    validation_status: Literal["validated", "unreviewed"] | None = None
     search: str = Field(default="", max_length=200)
     page: int = Field(default=1, ge=1)
     page_size: int = Field(default=20, ge=1, le=100)

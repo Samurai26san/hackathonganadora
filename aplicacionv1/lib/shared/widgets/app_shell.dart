@@ -17,8 +17,26 @@ const navigation = [
   ('Reportes', '/reportes', Icons.bar_chart_outlined),
   ('Movimientos', '/movimientos', Icons.receipt_long_outlined),
   ('Gestiones', '/gestiones', Icons.calendar_month_outlined),
+  ('Curaduría técnica', '/curaduria', Icons.fact_check_outlined),
+  ('Contabilidad', '/contabilidad', Icons.account_balance_outlined),
+  ('Informes técnicos', '/informes-tecnicos', Icons.description_outlined),
 ];
 const descriptions = {
+  '/curaduria': (
+    'CALIDAD ANTES DE CONSOLIDAR',
+    'Curaduría técnica',
+    'Limpia, clasifica y valida cada fila con trazabilidad.',
+  ),
+  '/contabilidad': (
+    'PARTIDA DOBLE Y TRAZABILIDAD',
+    'Contabilidad',
+    'Estados financieros a una fecha de corte exacta.',
+  ),
+  '/informes-tecnicos': (
+    'INFORMACIÓN PARA DECIDIR',
+    'Informes técnicos',
+    'Cortes mensuales y cierres anuales comparativos.',
+  ),
   '/dashboard': (
     'TU GESTIÓN, DE UN VISTAZO',
     'Panel financiero',
@@ -76,6 +94,7 @@ class _AppShellState extends ConsumerState<AppShell> {
           previous!.valueOrNull != next.valueOrNull) {
         ref.invalidate(reportProvider);
         ref.invalidate(catalogsProvider);
+        ref.invalidate(riskAlertsProvider);
       }
     });
     ref.listen(catalogsProvider, (_, value) {
@@ -166,7 +185,7 @@ class _AppShellState extends ConsumerState<AppShell> {
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   child: const Text(
-                                    '● DATOS DEL EXCEL',
+                                    '● DATOS FINANCIEROS',
                                     style: TextStyle(
                                       fontSize: 9,
                                       letterSpacing: 1,
@@ -335,7 +354,7 @@ class _AppShellState extends ConsumerState<AppShell> {
                                             const Divider(),
                                             const SizedBox(height: 12),
                                             const Text(
-                                              'Fuente: Excel institucional · Hoja BD. Importes en bolivianos (Bs).\nLas consultas respetan los filtros activos y el alcance de tu cuenta.',
+                                              'Fuente: Excel institucional y cambios registrados. Importes en bolivianos (Bs).\nLas consultas respetan los filtros activos y el alcance de tu cuenta.',
                                               style: TextStyle(
                                                 fontSize: 10,
                                                 height: 1.7,
@@ -469,7 +488,11 @@ class _AppShellState extends ConsumerState<AppShell> {
             ),
           ),
           const SizedBox(height: 42),
-          for (final item in navigation)
+          for (final item in navigation.where(
+            (item) =>
+                item.$2 != '/curaduria' ||
+                ['admin', 'analyst', 'technician'].contains(user?.role),
+          ))
             Padding(
               padding: const EdgeInsets.only(bottom: 6),
               child: ListTile(

@@ -93,10 +93,16 @@ ai-local:
 runtime-check:
 	backend/.venv/bin/python backend/scripts/validate_runtime.py --phase all
 
-.PHONY: mobile
-mobile:
+.PHONY: mobile mobile-db mobile-migrate
+mobile: mobile-migrate
 	python3 tools/run_mobile.py
+
+mobile-migrate: mobile-db
+	cd backend && .venv/bin/alembic upgrade head
+
+mobile-db:
+	docker compose up -d --wait --wait-timeout 60 postgres
 
 .PHONY: qwen
 qwen:
-	systemd-run --user --scope --collect -p MemoryMax=1400M -p MemorySwapMax=0 nice -n 10 python3 tools/run_qwen.py
+	systemd-run --user --scope --collect -p MemoryMax=2400M -p MemorySwapMax=0 nice -n 10 python3 tools/run_qwen.py

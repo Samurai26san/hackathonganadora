@@ -9,6 +9,7 @@ from typing import Any
 from xml.sax.saxutils import escape
 
 from openpyxl import Workbook
+from openpyxl.utils import get_column_letter
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4, landscape
 from reportlab.lib.styles import getSampleStyleSheet
@@ -62,6 +63,21 @@ def export_report(
         sheet.append(headings)
         for row in rows:
             sheet.append(row)
+        # Spreadsheet formulas operate on detail rows, never sum hierarchy levels.
+        for index, data_row in enumerate(result.rows, 4):
+            if all(key in values for key in ("current_budget", "executed", "balance")):
+                col = (
+                    lambda key: f"{get_column_letter(len(labels) + values.index(key) + 1)}{index}"
+                )
+                sheet[col("balance")] = f"={col('current_budget')}-{col('executed')}"
+                if all(key in values for key in ("initial_budget", "modifications")):
+                    sheet[col("current_budget")] = (
+                        f"={col('initial_budget')}+{col('modifications')}"
+                    )
+                if "execution_percentage" in values:
+                    sheet[col("execution_percentage")] = (
+                        f"=IF({col('current_budget')}=0,0,{col('executed')}/{col('current_budget')}*100)"
+                    )
         for cells in sheet.iter_rows(min_row=4, min_col=len(labels) + 1):
             for cell in cells:
                 cell.number_format = "#,##0.00"

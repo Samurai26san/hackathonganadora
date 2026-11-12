@@ -18,14 +18,16 @@ reales del PostgreSQL del proyecto. No modifica `.env` ni la configuración OIDC
 Este arranque de desarrollo usa HTTP y acceso demo para que el celular no dependa
 de un proveedor con direcciones localhost. Ctrl+C detiene estos procesos propios.
 
-PostgreSQL debe estar iniciado. Si se detuvo, usa `docker compose up -d postgres`.
+`make mobile` inicia PostgreSQL y espera a que esté disponible antes de abrir la
+API. Si Docker no está activo o no tiene permisos, el comando muestra ese error
+antes de iniciar la aplicación. Conserva el volumen y los datos existentes.
 Si el celular no abre la dirección, comprueba que ambos dispositivos comparten
 red y que el firewall permite conexiones entrantes al puerto 8088. No hace falta
 abrir puertos del router para esta conexión local.
 
 Presupuesto, Reportes, Movimientos y Gestiones usan los datos ya importados.
 `make mobile` inicia también Qwen2.5-7B en segundo plano, por CPU con memoria
-limitada a 1400 MB. Espera o reanuda las descargas y verifica los hashes oficiales
+limitada a 2400 MB. Espera o reanuda las descargas y verifica los hashes oficiales
 antes de cargar el modelo. La primera carga puede ser lenta. Juku solo podrá
 responder cuando termine esa carga; no se simulan respuestas.
 

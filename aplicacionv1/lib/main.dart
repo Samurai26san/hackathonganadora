@@ -6,6 +6,9 @@ import 'package:go_router/go_router.dart';
 import 'core/auth/auth_controller.dart';
 import 'core/theme/app_theme.dart';
 import 'features/admin/admin_screen.dart';
+import 'features/workspace/curation_screen.dart';
+import 'features/workspace/accounting_screen.dart';
+import 'features/workspace/technical_report_screen.dart';
 import 'features/auth/login_screen.dart';
 import 'features/dashboard/dashboard_screen.dart';
 import 'features/gestiones/gestiones_screen.dart';
@@ -39,6 +42,9 @@ final routerProvider = Provider<GoRouter>((ref) {
       if (state.uri.path == '/login' || state.uri.path == '/loading') {
         return '/dashboard';
       }
+      if (state.uri.path == '/curaduria' &&
+          !['admin', 'analyst', 'technician'].contains(user.role))
+        return '/dashboard';
       if (state.uri.path == '/administracion' && !user.isAdmin) {
         return '/dashboard';
       }
@@ -86,6 +92,23 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: '/administracion',
         builder: (context, state) =>
             AppShell(path: state.uri.path, child: const AdminScreen()),
+      ),
+      GoRoute(
+        path: '/curaduria',
+        builder: (context, state) =>
+            AppShell(path: state.uri.path, child: const CurationScreen()),
+      ),
+      GoRoute(
+        path: '/contabilidad',
+        builder: (context, state) =>
+            AppShell(path: state.uri.path, child: const AccountingScreen()),
+      ),
+      GoRoute(
+        path: '/informes-tecnicos',
+        builder: (context, state) => AppShell(
+          path: state.uri.path,
+          child: const TechnicalReportScreen(),
+        ),
       ),
       GoRoute(path: '/', redirect: (context, state) => '/dashboard'),
     ],

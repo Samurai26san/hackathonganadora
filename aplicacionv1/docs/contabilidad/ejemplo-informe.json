@@ -1,0 +1,127 @@
+{
+  "title": "MUESTRA FICTICIA · Informe técnico 2026 · Enseña por Bolivia",
+  "scope": {
+    "periodicity": "annual",
+    "year": 2026,
+    "cutoff": "2026-12-31",
+    "currency": "BOB",
+    "filters": {
+      "years": [
+        2026
+      ],
+      "validation_status": "validated"
+    }
+  },
+  "executive_summary": "Muestra ficticia, no cargada en la base real. Ejecución Bs 35.000, saldo Bs 165.000, avance 17,50 %. Observación media por documentación incompleta.",
+  "risks": [
+    "Medio: expedientes de gastos incompletos."
+  ],
+  "budget_execution": {
+    "summary": {
+      "current_budget": "200000.00",
+      "executed": "35000.00",
+      "balance": "165000.00",
+      "execution_percentage": "17.50"
+    },
+    "breakdown": {
+      "financier": [
+        {
+          "name": "A",
+          "current_budget": "120000.00",
+          "executed": "20000.00",
+          "balance": "100000.00"
+        },
+        {
+          "name": "B",
+          "current_budget": "80000.00",
+          "executed": "15000.00",
+          "balance": "65000.00"
+        }
+      ]
+    },
+    "previous_year": {
+      "year": 2025,
+      "executed": "30000.00",
+      "execution_delta": "5000.00"
+    }
+  },
+  "financial_statements": {
+    "auditor": [
+      {
+        "title": "Ejemplo: opinión pendiente de firma",
+        "body": "Contenido ficticio. No representa opinión profesional emitida.",
+        "risk": "medium"
+      }
+    ],
+    "balance": {
+      "asset": "115000.00",
+      "liability": "0.00",
+      "equity_booked": "100000.00",
+      "unclosed_result": "15000.00",
+      "equity_total": "115000.00",
+      "difference": "0.00",
+      "balanced": true,
+      "contingent": "0.00",
+      "order": "0.00"
+    },
+    "income_statement": {
+      "gross_result": "50000.00",
+      "operating_result": "20000.00",
+      "before_tax": "20000.00",
+      "iue_recorded": "5000.00",
+      "net_result": "15000.00"
+    },
+    "equity_changes": [
+      {
+        "account": "Capital",
+        "opening": "100000.00",
+        "events": {},
+        "closing": "100000.00"
+      },
+      {
+        "account": "Resultados pendientes de cierre",
+        "opening": "0.00",
+        "events": {
+          "result": "15000.00"
+        },
+        "closing": "15000.00"
+      }
+    ],
+    "cash_flow": {
+      "opening": "100000.00",
+      "operation": "15000.00",
+      "investment": "0.00",
+      "financing": "0.00",
+      "closing": "115000.00",
+      "difference": "0.00",
+      "reconciled": true
+    },
+    "notes": [
+      {
+        "title": "Ejemplo de políticas y riesgos",
+        "body": "BOB. Completar expedientes antes del informe definitivo.",
+        "risk": "medium"
+      }
+    ],
+    "ledger": []
+  },
+  "iue_estimate": {
+    "base": null,
+    "rate_percent": null,
+    "estimate": null,
+    "status": "Sin simulación. IUE registrado ficticio Bs 5.000."
+  },
+  "data_quality": {
+    "rows": 10,
+    "cleaned": 2,
+    "predicted": 3,
+    "manually_validated": 10,
+    "consolidated": 10,
+    "pending": 0,
+    "with_issues": 0
+  },
+  "limitations": [
+    "Muestra ficticia: no son cifras institucionales reales.",
+    "No acredita cumplimiento ASFI ni constituye opinión profesional."
+  ]
+}

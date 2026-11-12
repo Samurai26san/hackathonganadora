@@ -28,3 +28,12 @@ final financialRevisionProvider = StreamProvider.autoDispose<int>((ref) async* {
     await Future<void>.delayed(const Duration(seconds: 10));
   }
 });
+
+final riskAlertsProvider = FutureProvider.autoDispose<List<Json>>((ref) async {
+  final year = ref.watch(filtersProvider).year;
+  return (await ref
+              .watch(apiProvider)
+              .get('accounting/alerts', query: {'year': year})
+          as List)
+      .cast<Json>();
+});

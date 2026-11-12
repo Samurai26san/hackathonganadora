@@ -15,7 +15,7 @@ class Handler(SimpleHTTPRequestHandler):
     backend_port = 8000
 
     def proxy(self) -> None:
-        backend = http.client.HTTPConnection("127.0.0.1", self.backend_port, timeout=180)
+        backend = http.client.HTTPConnection("127.0.0.1", self.backend_port, timeout=900 if self.path.startswith("/api/v1/chat/") else 180)
         size = int(self.headers.get("Content-Length", "0"))
         if size > 20 * 1024 * 1024:
             self.send_error(413)

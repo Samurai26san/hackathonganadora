@@ -96,3 +96,7 @@ runtime-check:
 .PHONY: mobile
 mobile:
 	python3 tools/run_mobile.py
+
+.PHONY: qwen
+qwen:
+	systemd-run --user --scope --collect -p MemoryMax=1400M -p MemorySwapMax=0 nice -n 10 python3 tools/run_qwen.py

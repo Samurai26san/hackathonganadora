@@ -1,3 +1,25 @@
+# Último punto: Qwen integrado en el arranque móvil
+
+El usuario pidió integrar Qwen en el chatbot y mantener omitidas las pruebas.
+
+- `make mobile` inicia ahora un coordinador Qwen local junto con la web/API.
+  Se reinició exclusivamente el servidor móvil propio para aplicar el cambio.
+- `tools/run_qwen.py` reutiliza el modelo si ya está servido o espera la descarga
+  activa; si falta y no hay descargador, la reanuda. Verifica hashes oficiales y
+  el binario antes de ejecutar Qwen2.5-7B Q4_K_M con Jinja y alias estable.
+- Ejecución CPU, sin cambiar controladores: scope de usuario con MemoryMax=1400M,
+  MemorySwapMax=0, un slot, cuatro hilos, contexto 8192 y KV q8.
+- La nueva API móvil apunta explícitamente a http://127.0.0.1:18081/v1, modelo
+  qwen2.5-7b-instruct-q4_k_m, timeout local 900 s. El proxy SSE admite esa espera.
+- Estado observado: coordinador activo esperando la descarga, primer GGUF todavía
+  parcial. No hay inferencia verificada ni se afirma que Qwen ya esté respondiendo.
+- Logs: ops/runtime/qwen.log y ops/runtime/mobile-api.log. La web sigue en 8088.
+  No se ejecutaron pruebas de skills ni suites. Al salir, el runner detiene su
+  scope Qwen propio y su API; no detiene un servidor Qwen previo reutilizado.
+- `make qwen` permite arrancar Qwen solo. `--without-qwen` sirve solo web/API.
+
+---
+
 # Punto actual: MVP para celular (prioridad del usuario)
 
 El usuario pidió omitir pruebas de skills y priorizar abrir el programa desde

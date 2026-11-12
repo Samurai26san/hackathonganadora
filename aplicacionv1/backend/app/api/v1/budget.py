@@ -3,10 +3,13 @@
 from __future__ import annotations
 
 import json
+import re
+from datetime import datetime
 from typing import Annotated, Any
+from zoneinfo import ZoneInfo
 
 from fastapi import APIRouter, Depends, Request, Response
-from pydantic import ValidationError
+from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
 from app.core.exceptions import AppException
 from app.core.security import DB, CurrentUser
@@ -15,6 +18,13 @@ from app.schemas.budget import BudgetFilterParams, ExportRequest, FinancialRepor
 from app.services.catalog_service import catalogs
 from app.services.export_service import export_report
 from app.services.financial_engine import FinancialEngine
+from app.services.juku_assistant import (
+    JukuAssistant,
+    latest_movement,
+    normalize,
+    parse_intent,
+)
+from app.services.report_pdf import render_juku_pdf
 
 router = APIRouter(tags=["Finanzas"])
 
@@ -123,4 +133,52 @@ async def export(body: ExportRequest, db: DB, user: CurrentUser) -> Response:
         headers={
             "Content-Disposition": f'attachment; filename="exb-{body.report}.{extension}"'
         },
+    )
+
+
+class JukuPdfRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    message: str = Field(min_length=1, max_length=500)
+    filters: BudgetFilterParams | None = None
+
+
+@router.post(
+    "/reports/juku-pdf",
+    summary="PDF compartible de un reporte de Juku",
+    description="Recalcula con el motor el reporte pedido a Juku (sin LLM) y lo entrega como PDF resumido.",
+)
+async def juku_pdf(body: JukuPdfRequest, db: DB, user: CurrentUser) -> Response:
+    catalog = await catalogs(db, user)
+    years = list(catalog.get("years", []))
+    if not years:
+        raise AppException("No hay datos presupuestarios autorizados.", 422)
+    cutoff = await latest_movement(db, user)
+    intent = parse_intent(body.message, years, cutoff, catalog)
+    if intent is None or intent.kind not in {"report", "query"}:
+        raise AppException("Esta consulta no genera un reporte en PDF.", 422)
+    filters = (
+        body.filters.model_dump(mode="json")
+        if body.filters
+        else {"years": [intent.year or years[0]]}
+    )
+    answer = await JukuAssistant(db, user).answer(intent, filters, cutoff)
+    if not answer.reports:
+        raise AppException("Esta consulta no genera un reporte en PDF.", 422)
+    content = render_juku_pdf(
+        answer, user.full_name, datetime.now(ZoneInfo("America/La_Paz"))
+    )
+    db.add(
+        AuditLog(
+            user_id=user.id,
+            action="budget.export",
+            resource_type="juku_pdf",
+            payload_json={"message": body.message, "filters": filters},
+        )
+    )
+    title = answer.text.split("\n")[0].replace("*", "")
+    slug = re.sub(r"[^a-z0-9]+", "-", normalize(title)).strip("-")[:60] or "reporte"
+    return Response(
+        content,
+        media_type="application/pdf",
+        headers={"Content-Disposition": f'attachment; filename="exb-{slug}.pdf"'},
     )

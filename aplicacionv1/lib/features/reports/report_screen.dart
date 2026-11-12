@@ -6,6 +6,7 @@ import '../../core/api/models.dart';
 import '../../core/theme/app_theme.dart';
 import '../../shared/widgets/filters.dart';
 import '../../shared/widgets/financial_widgets.dart';
+import '../../shared/widgets/juku_mascot.dart';
 import '../dashboard/providers.dart';
 
 final selectedReportProvider = StateProvider<String>((ref) => 'account');
@@ -63,6 +64,7 @@ class ReportScreen extends ConsumerWidget {
             child: Center(child: CircularProgressIndicator()),
           ),
           error: (error, _) => MessageState(
+            pose: JukuPose.pensando,
             title: 'No pudimos cargar el informe.',
             detail: '$error',
             onRetry: () => ref.invalidate(reportProvider(report)),
@@ -143,6 +145,27 @@ class _ExportButtonState extends ConsumerState<ExportButton> {
               widget.filters ?? ref.read(filtersProvider),
               compareYear: widget.compareYear,
             );
+        if (context.mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Row(
+                children: [
+                  const JukuMascot(
+                    JukuPose.celebrando,
+                    size: 40,
+                    decorative: true,
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Text(
+                      '¡Listo! Tu archivo ${format.toUpperCase()} se descargó.',
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
+        }
       } catch (error) {
         if (context.mounted) {
           ScaffoldMessenger.of(
@@ -154,12 +177,33 @@ class _ExportButtonState extends ConsumerState<ExportButton> {
       }
     },
     itemBuilder: (context) => [
-      const PopupMenuItem(
+      PopupMenuItem(
         value: 'excel',
-        child: Text('Descargar Excel (.xlsx)'),
+        child: Row(
+          children: [
+            SizedBox(
+              width: 34,
+              child: Icon(Icons.grid_on_outlined, color: ExbColors.green),
+            ),
+            const SizedBox(width: 10),
+            const Text('Descargar Excel (.xlsx)'),
+          ],
+        ),
       ),
-      const PopupMenuItem(value: 'pdf', child: Text('Descargar PDF')),
-      const PopupMenuItem(value: 'csv', child: Text('Descargar CSV')),
+      for (final (format, pose, label) in [
+        ('pdf', JukuPose.pdf, 'Descargar PDF'),
+        ('csv', JukuPose.csv, 'Descargar CSV'),
+      ])
+        PopupMenuItem(
+          value: format,
+          child: Row(
+            children: [
+              JukuMascot(pose, size: 34, decorative: true),
+              const SizedBox(width: 10),
+              Text(label),
+            ],
+          ),
+        ),
     ],
     child: Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
@@ -178,7 +222,7 @@ class _ExportButtonState extends ConsumerState<ExportButton> {
           const SizedBox(width: 6),
           Text(
             busy ? 'Generando…' : 'Exportar',
-            style: const TextStyle(fontSize: 12, color: ExbColors.green),
+            style: TextStyle(fontSize: 12, color: ExbColors.green),
           ),
         ],
       ),

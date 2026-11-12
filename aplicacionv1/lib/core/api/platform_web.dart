@@ -72,3 +72,48 @@ Future<Uint8List?> pickWorkbook() async {
   picker.click();
   return completer.future;
 }
+
+/// Per-browser UI preferences; storage may be blocked in private windows.
+String? readSetting(String key) {
+  try {
+    return web.window.localStorage.getItem(key);
+  } catch (_) {
+    return null;
+  }
+}
+
+void writeSetting(String key, String value) {
+  try {
+    web.window.localStorage.setItem(key, value);
+  } catch (_) {
+    // The preference simply lasts for this session.
+  }
+}
+
+/// Opens the system share sheet (WhatsApp, correo…) with a file. Returns false
+/// when the browser cannot share files, so the caller downloads it instead.
+Future<bool> shareBytes(
+  Uint8List bytes,
+  String filename,
+  String mime,
+  String title,
+) async {
+  final file = web.File(
+    [bytes.toJS].toJS,
+    filename,
+    web.FilePropertyBag(type: mime),
+  );
+  final data = web.ShareData(title: title, text: title, files: [file].toJS);
+  try {
+    if (!web.window.navigator.canShare(data)) return false;
+  } catch (_) {
+    return false; // canShare is missing in some desktop browsers.
+  }
+  try {
+    await web.window.navigator.share(data).toDart;
+    return true;
+  } catch (error) {
+    // Closing the share sheet is a choice, not a failure.
+    return error.toString().contains('AbortError');
+  }
+}

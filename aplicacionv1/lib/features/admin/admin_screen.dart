@@ -65,7 +65,7 @@ class _AdminScreenState extends ConsumerState<AdminScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
+                Text(
                   'En esta fase, las cargas financieras se realizan por el comando de ingesta del servidor. La vista previa comprueba encabezados, etiquetas, meses, fechas e importes; no reemplaza ninguna gestión.',
                   style: TextStyle(height: 1.8, color: ExbColors.secondaryText),
                 ),
@@ -99,7 +99,7 @@ class _AdminScreenState extends ConsumerState<AdminScreen> {
                     padding: const EdgeInsets.only(top: 18),
                     child: Text(
                       error!,
-                      style: const TextStyle(color: ExbColors.amber),
+                      style: TextStyle(color: ExbColors.amber),
                     ),
                   ),
                 if (preview != null) ...[
@@ -121,7 +121,7 @@ class _AdminScreenState extends ConsumerState<AdminScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
+                Text(
                   'El servidor puede ingerir PDF, DOCX, TXT y Markdown desde data_docs. También puedes incorporar un fragmento institucional identificado. TEI debe estar disponible para generar embeddings reales.',
                   style: TextStyle(color: ExbColors.secondaryText, height: 1.7),
                 ),
@@ -286,7 +286,7 @@ class _AdminScreenState extends ConsumerState<AdminScreen> {
                     onChanged: (value) => setDialog(() => allRegions = value!),
                   ),
                   if (!allRegions) ...[
-                    const Text(
+                    Text(
                       'Sin regiones seleccionadas: no se permite consultar datos.',
                       style: TextStyle(fontSize: 11, color: ExbColors.amber),
                     ),

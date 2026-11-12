@@ -5,6 +5,7 @@ import '../../core/api/models.dart';
 import '../../shared/widgets/financial_widgets.dart';
 import '../../shared/widgets/filters.dart';
 import '../dashboard/providers.dart';
+import '../../shared/widgets/juku_mascot.dart';
 import '../reports/report_screen.dart';
 
 class GestionesScreen extends ConsumerStatefulWidget {
@@ -115,6 +116,7 @@ class _GestionesScreenState extends ConsumerState<GestionesScreen> {
         const SizedBox(height: 24),
         if (years.length < 2)
           MessageState(
+            pose: JukuPose.senalando,
             icon: Icons.calendar_month_outlined,
             title: 'Por ahora, una gestión. Sin comparaciones inventadas.',
             detail:

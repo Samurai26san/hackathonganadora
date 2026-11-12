@@ -1,7 +1,6 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import '../../core/api/models.dart';
 import '../../core/auth/auth_controller.dart';
@@ -9,6 +8,8 @@ import '../../core/theme/app_theme.dart';
 import '../../features/chat/chat_controller.dart';
 import '../../features/chat/juku_panel.dart';
 import '../../features/dashboard/providers.dart';
+import 'juku_mascot.dart';
+import '../../core/theme/theme_mode.dart';
 import '../../features/reports/report_screen.dart';
 
 const navigation = [
@@ -108,8 +109,8 @@ class _AppShellState extends ConsumerState<AppShell> {
                           padding: EdgeInsets.symmetric(
                             horizontal: desktop ? 30 : 12,
                           ),
-                          decoration: const BoxDecoration(
-                            color: Colors.white,
+                          decoration: BoxDecoration(
+                            color: ExbColors.paper,
                             border: Border(
                               bottom: BorderSide(color: ExbColors.line),
                             ),
@@ -136,7 +137,7 @@ class _AppShellState extends ConsumerState<AppShell> {
                                 const SizedBox(width: 20),
                               ],
                               if (constraints.maxWidth > 600) ...[
-                                const Text(
+                                Text(
                                   '/',
                                   style: TextStyle(
                                     color: ExbColors.line,
@@ -147,7 +148,7 @@ class _AppShellState extends ConsumerState<AppShell> {
                                 Expanded(
                                   child: Text(
                                     desc.$2,
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       fontSize: 12,
                                       color: ExbColors.secondaryText,
                                     ),
@@ -165,7 +166,7 @@ class _AppShellState extends ConsumerState<AppShell> {
                                     color: ExbColors.background,
                                     borderRadius: BorderRadius.circular(20),
                                   ),
-                                  child: const Text(
+                                  child: Text(
                                     '● DATOS DEL EXCEL',
                                     style: TextStyle(
                                       fontSize: 9,
@@ -205,6 +206,7 @@ class _AppShellState extends ConsumerState<AppShell> {
                                 ),
                                 icon: const Icon(Icons.help_outline, size: 20),
                               ),
+                              const ThemeToggle(),
                             ],
                           ),
                         ),
@@ -242,7 +244,7 @@ class _AppShellState extends ConsumerState<AppShell> {
                                                   children: [
                                                     Text(
                                                       desc.$1,
-                                                      style: const TextStyle(
+                                                      style: TextStyle(
                                                         fontSize: 10,
                                                         letterSpacing: 1.8,
                                                         color: ExbColors.green,
@@ -277,7 +279,7 @@ class _AppShellState extends ConsumerState<AppShell> {
                                                   ),
                                                   child: Text(
                                                     'Gestión ${filters.year}',
-                                                    style: const TextStyle(
+                                                    style: TextStyle(
                                                       fontSize: 12,
                                                       color: ExbColors.green,
                                                     ),
@@ -288,7 +290,7 @@ class _AppShellState extends ConsumerState<AppShell> {
                                             const SizedBox(height: 12),
                                             Text(
                                               desc.$3,
-                                              style: const TextStyle(
+                                              style: TextStyle(
                                                 fontSize: 13,
                                                 color: ExbColors.secondaryText,
                                                 height: 1.6,
@@ -304,7 +306,7 @@ class _AppShellState extends ConsumerState<AppShell> {
                                                 ),
                                                 child: Row(
                                                   children: [
-                                                    const Icon(
+                                                    Icon(
                                                       Icons.cloud_off_outlined,
                                                       color: ExbColors.amber,
                                                     ),
@@ -312,7 +314,7 @@ class _AppShellState extends ConsumerState<AppShell> {
                                                     Expanded(
                                                       child: Text(
                                                         '${catalog.error}',
-                                                        style: const TextStyle(
+                                                        style: TextStyle(
                                                           color:
                                                               ExbColors.amber,
                                                         ),
@@ -334,7 +336,7 @@ class _AppShellState extends ConsumerState<AppShell> {
                                             const SizedBox(height: 36),
                                             const Divider(),
                                             const SizedBox(height: 12),
-                                            const Text(
+                                            Text(
                                               'Fuente: Excel institucional · Hoja BD. Importes en bolivianos (Bs).\nLas consultas respetan los filtros activos y el alcance de tu cuenta.',
                                               style: TextStyle(
                                                 fontSize: 10,
@@ -387,7 +389,7 @@ class _AppShellState extends ConsumerState<AppShell> {
                     button: true,
                     label: 'Abrir asistente Juku',
                     child: Material(
-                      color: Colors.white,
+                      color: ExbColors.paper,
                       elevation: 4,
                       shadowColor: ExbColors.green.withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(18),
@@ -400,7 +402,7 @@ class _AppShellState extends ConsumerState<AppShell> {
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              const Column(
+                              Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
@@ -421,9 +423,10 @@ class _AppShellState extends ConsumerState<AppShell> {
                                 ],
                               ),
                               const SizedBox(width: 12),
-                              SvgPicture.asset(
-                                'assets/icons/juku.svg',
-                                height: 66,
+                              const JukuMascot(
+                                JukuPose.senalando,
+                                size: 72,
+                                decorative: true,
                               ),
                             ],
                           ),
@@ -440,9 +443,9 @@ class _AppShellState extends ConsumerState<AppShell> {
   }
 
   Widget _sidebar(AppUser? user) => Material(
-    color: Colors.white,
+    color: ExbColors.paper,
     child: Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         border: Border(right: BorderSide(color: ExbColors.line)),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 28),
@@ -457,7 +460,7 @@ class _AppShellState extends ConsumerState<AppShell> {
             ),
           ),
           const SizedBox(height: 12),
-          const Padding(
+          Padding(
             padding: EdgeInsets.symmetric(horizontal: 12),
             child: Text(
               'FINANZAS',
@@ -501,7 +504,7 @@ class _AppShellState extends ConsumerState<AppShell> {
               color: ExbColors.background,
               borderRadius: BorderRadius.circular(12),
             ),
-            child: const Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Icon(Icons.lock_outline, color: ExbColors.green, size: 18),
@@ -532,7 +535,7 @@ class _AppShellState extends ConsumerState<AppShell> {
                 backgroundColor: ExbColors.story,
                 child: Text(
                   user?.name.substring(0, 1) ?? 'E',
-                  style: const TextStyle(fontSize: 12, color: ExbColors.green),
+                  style: TextStyle(fontSize: 12, color: ExbColors.green),
                 ),
               ),
               const SizedBox(width: 10),
@@ -552,7 +555,7 @@ class _AppShellState extends ConsumerState<AppShell> {
                     const SizedBox(height: 3),
                     Text(
                       user?.roleLabel ?? '',
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 10,
                         color: ExbColors.secondaryText,
                       ),

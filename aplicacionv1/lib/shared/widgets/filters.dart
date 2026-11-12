@@ -210,11 +210,7 @@ class FilterSelect extends StatelessWidget {
       isExpanded: true,
       menuMaxHeight: 360,
       decoration: InputDecoration(labelText: label),
-      icon: const Icon(
-        Icons.keyboard_arrow_down,
-        color: ExbColors.green,
-        size: 20,
-      ),
+      icon: Icon(Icons.keyboard_arrow_down, color: ExbColors.green, size: 20),
       items: [
         if (allowAll)
           const DropdownMenuItem<int>(

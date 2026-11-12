@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import '../../core/api/api_client.dart';
 import '../../core/api/models.dart';
 
@@ -9,8 +10,12 @@ class JukuMessage {
     this.text = '',
     this.report,
     this.citations = const [],
+    this.pdfRequest,
   });
   final String role, text;
+
+  /// Present on report answers: rebuilds them as a shareable PDF.
+  final Json? pdfRequest;
   final FinancialReport? report;
   final List<Json> citations;
 }
@@ -71,6 +76,7 @@ class ChatController extends StateNotifier<JukuState> {
             JukuMessage(
               role: row['role'] as String,
               text: row['content'] as String,
+              pdfRequest: row['pdf_request'] as Json?,
             ),
           );
         }
@@ -144,6 +150,17 @@ class ChatController extends StateNotifier<JukuState> {
           case 'done':
             finished = true;
             status = '';
+            final request = data is Map ? data['pdf_request'] : null;
+            final index = messages.lastIndexWhere(
+              (m) => m.role == 'assistant' && m.text.isNotEmpty,
+            );
+            if (request is Map && index >= 0) {
+              messages[index] = JukuMessage(
+                role: 'assistant',
+                text: messages[index].text,
+                pdfRequest: request.cast<String, dynamic>(),
+              );
+            }
           case 'error':
             finished = true;
             error = '$data';

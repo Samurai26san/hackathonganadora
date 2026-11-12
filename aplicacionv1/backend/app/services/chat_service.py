@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 from collections.abc import AsyncIterator
+from datetime import date
 from typing import Any
 
 import httpx
@@ -20,6 +21,15 @@ from app.schemas.chat import ChatEvent, SearchKnowledgeParams
 from app.services.catalog_service import catalogs
 from app.services.context_manager import ContextManager
 from app.services.financial_engine import FinancialEngine
+from app.services.juku_assistant import (
+    FALLBACK_TEXT,
+    HELP_TEXT,
+    Intent,
+    JukuAssistant,
+    latest_movement,
+    parse_intent,
+    summarize_report,
+)
 from app.services.llm_client import LLMClient
 from app.services.rag_service import RAGService
 
@@ -138,6 +148,118 @@ class ChatService:
             }, None
         raise AppException("El modelo solicitó una herramienta no permitida.")
 
+    async def _cutoff(self, user: User) -> date | None:
+        return await latest_movement(self.db, user)
+
+    async def _deterministic(
+        self,
+        user: User,
+        session_id: str,
+        intent: Intent | None,
+        filters: dict[str, Any],
+        cutoff: date | None,
+    ) -> AsyncIterator[ChatEvent]:
+        """Answer with the financial engine only: reports, help and fallback."""
+        reports: list[tuple[str, Any]] = []
+        citations: list[dict[str, Any]] = []
+        if intent is None:
+            text = FALLBACK_TEXT
+        elif intent.kind == "help":
+            text = HELP_TEXT
+        elif intent.kind == "knowledge":
+            try:
+                citations = await self.rag.search(intent_query(intent), 5, None)
+            except (httpx.HTTPError, AppException, ValueError):
+                citations = []
+            text = (
+                "Encontré estos fragmentos en los documentos institucionales:\n"
+                + "\n".join(
+                    f"[Fuente {i}: {c['source_title']}]"
+                    for i, c in enumerate(citations, 1)
+                )
+                if citations
+                else "La búsqueda en documentos institucionales no está disponible "
+                "en este momento. Mientras tanto puedo darte reportes y cifras del "
+                'presupuesto: escribe "ayuda" para ver las opciones.'
+            )
+        else:
+            answer = await JukuAssistant(self.db, user).answer(intent, filters, cutoff)
+            text, reports = answer.text, answer.reports
+        content: dict[str, Any] = {"content": text}
+        if intent is not None and reports:
+            # Lets the UI rebuild this answer as a shareable PDF later on.
+            content["pdf_request"] = {
+                "message": intent.query_text,
+                "filters": {
+                    k: v
+                    for k, v in filters.items()
+                    if k not in {"date_from", "date_to", "months", "page"}
+                },
+            }
+        await self._append(session_id, "assistant", content)
+        await self.db.commit()
+        yield ChatEvent(event="delta", data=text, session_id=session_id)
+        if citations:
+            payload = {
+                "call_id": "juku-knowledge",
+                "result": {"citations": citations, "results_count": len(citations)},
+                "is_error": False,
+            }
+            await self._append(
+                session_id,
+                "tool",
+                {"name": "search_institutional_knowledge", **payload},
+            )
+            yield ChatEvent(event="tool_result", data=payload, session_id=session_id)
+        for index, (name, result) in enumerate(reports):
+            call_id = f"juku-{index + 1}"
+            payload = {
+                "call_id": call_id,
+                "result": result.model_dump(mode="json"),
+                "is_error": False,
+            }
+            yield ChatEvent(
+                event="tool_call",
+                data={"name": name, "call_id": call_id},
+                session_id=session_id,
+            )
+            await self._append(session_id, "tool", {"name": name, **payload})
+            self.db.add(
+                AuditLog(
+                    user_id=user.id,
+                    action="chat.report",
+                    resource_type=name,
+                    resource_id=session_id,
+                    payload_json={"parameters": result.metadata.get("filters")},
+                )
+            )
+            yield ChatEvent(event="tool_result", data=payload, session_id=session_id)
+        if intent is not None and reports:
+            # Keep years and named entities; report periods stay in each result.
+            active = BudgetFilterParams.model_validate(
+                {
+                    **{
+                        k: v
+                        for k, v in filters.items()
+                        if k not in {"date_from", "date_to", "months"}
+                    },
+                    **intent.entity_filters,
+                },
+                strict=False,
+            )
+            report_type = str(reports[0][1].report_type)
+            await self.contexts.update_context(session_id, active, report_type)
+            yield ChatEvent(
+                event="context_update",
+                data={
+                    "active_filters": active.model_dump(mode="json"),
+                    "current_report": report_type,
+                },
+                session_id=session_id,
+            )
+        await self.db.commit()
+        yield ChatEvent(event="done", data=content, session_id=session_id)
+
     async def process_message(
         self,
         user: User,
@@ -207,6 +329,20 @@ class ChatService:
         )
         await self.db.commit()
         yield ChatEvent(event="delta", data="", session_id=session.id)
+        cutoff = await self._cutoff(user)
+        intent = parse_intent(
+            user_message,
+            list(allowed_catalog.get("years", [])),
+            cutoff,
+            allowed_catalog,
+        )
+        # Periodic reports combine several engine queries; they never need Qwen.
+        if intent is not None and intent.kind in {"report", "help"}:
+            async for event in self._deterministic(
+                user, session.id, intent, filters, cutoff
+            ):
+                yield event
+            return
         evidence: list[dict[str, Any]] = []
         citations: list[dict[str, Any]] = []
         try:
@@ -216,8 +352,11 @@ class ChatService:
                 if not calls:
                     text = str(answer.get("content") or "")
                     if evidence:
-                        summary = evidence[-1]["summary"]
-                        text = f"Consulta verificada en el motor financiero. Presupuesto vigente: Bs {summary['current_budget']}; ejecutado: Bs {summary['executed']}; saldo: Bs {summary['balance']}. Revisa el desglose y los filtros aplicados."
+                        # Figures only come from the engine; model prose without
+                        # digits is kept as a conversational introduction.
+                        verified = summarize_report(evidence[-1])
+                        keep = text.strip() and not any(c.isdigit() for c in text)
+                        text = f"{text.strip()}\n\n{verified}" if keep else verified
                     elif citations:
                         text += "\n\n" + "\n".join(
                             f"[Fuente {i}: {c['source_title']}]"
@@ -347,6 +486,18 @@ class ChatService:
             TypeError,
             ValueError,
         ) as error:
+            unavailable = isinstance(error, httpx.HTTPError) or (
+                isinstance(error, AppException)
+                and error.code in {"llm_not_ready", "llm_loading"}
+            )
+            if unavailable and not evidence and not citations:
+                # Qwen is optional: answer with the engine instead of failing.
+                logger.info("chat_offline_fallback", session_id=session.id)
+                async for event in self._deterministic(
+                    user, session.id, intent, filters, cutoff
+                ):
+                    yield event
+                return
             logger.warning(
                 "chat_failed",
                 user_id=user.id,
@@ -372,3 +523,7 @@ class ChatService:
             )
             await self.db.commit()
             yield ChatEvent(event="error", data=detail, session_id=session.id)
+
+
+def intent_query(intent: Intent) -> str:
+    return intent.query_text or "procedimiento institucional"

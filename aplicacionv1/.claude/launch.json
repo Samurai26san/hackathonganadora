@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "exb-mobile",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["tools/run_mobile.py", "--without-qwen"],
+      "port": 8088
+    }
+  ]
+}

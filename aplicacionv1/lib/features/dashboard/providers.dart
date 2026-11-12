@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/api/api_client.dart';
 import '../../core/api/models.dart';
@@ -14,17 +16,27 @@ final reportProvider = FutureProvider.autoDispose
           ref.watch(apiProvider).report(type, ref.watch(filtersProvider)),
     );
 
-final financialRevisionProvider = StreamProvider.autoDispose<int>((ref) async* {
+final financialRevisionProvider = StreamProvider.autoDispose<int>((ref) {
   final api = ref.read(apiProvider);
-  var active = true;
-  ref.onDispose(() => active = false);
-  while (active) {
+  final controller = StreamController<int>();
+  Timer? timer;
+  Future<void> poll() async {
     try {
       final data = await api.get('data/revision') as Json;
-      if (active) yield data['revision'] as int;
+      if (!controller.isClosed) controller.add(data['revision'] as int);
     } catch (_) {
       // A temporary outage must not discard an already displayed report.
     }
-    await Future<void>.delayed(const Duration(seconds: 10));
+    // A cancellable timer, so disposal never leaves a pending poll behind.
+    if (!controller.isClosed) {
+      timer = Timer(const Duration(seconds: 10), poll);
+    }
   }
+
+  poll();
+  ref.onDispose(() {
+    timer?.cancel();
+    controller.close();
+  });
+  return controller.stream;
 });

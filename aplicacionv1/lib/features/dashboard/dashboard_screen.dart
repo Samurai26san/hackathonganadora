@@ -5,6 +5,7 @@ import '../../core/theme/app_theme.dart';
 import '../../core/utils/money.dart';
 import '../../shared/widgets/financial_widgets.dart';
 import '../../shared/widgets/filters.dart';
+import '../../shared/widgets/juku_mascot.dart';
 import 'providers.dart';
 
 class DashboardScreen extends ConsumerWidget {
@@ -23,6 +24,7 @@ class DashboardScreen extends ConsumerWidget {
             child: Center(child: CircularProgressIndicator()),
           ),
           error: (error, _) => MessageState(
+            pose: JukuPose.pensando,
             title: 'No pudimos consultar la gestión.',
             detail: '$error',
             onRetry: () => ref.invalidate(reportProvider('summary')),
@@ -173,7 +175,7 @@ class DashboardScreen extends ConsumerWidget {
                                         const SizedBox(height: 6),
                                         Text(
                                           item.$2,
-                                          style: const TextStyle(
+                                          style: TextStyle(
                                             fontSize: 12,
                                             color: ExbColors.secondaryText,
                                           ),
@@ -197,12 +199,12 @@ class DashboardScreen extends ConsumerWidget {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Icon(Icons.verified_outlined, color: ExbColors.green),
+                    Icon(Icons.verified_outlined, color: ExbColors.green),
                     const SizedBox(width: 14),
                     Expanded(
                       child: Text(
                         'Excel institucional · Hoja BD · Gestión ${ref.watch(filtersProvider).year}\nÚltimo movimiento: ${report.metadata['cutoff_date'] ?? 'sin movimientos'}\nPresupuesto vigente ${report.summary['current_budget']?.currency ?? Money.zero.currency}. Las consultas y exportaciones usan la misma fuente y los mismos filtros.',
-                        style: const TextStyle(
+                        style: TextStyle(
                           height: 1.7,
                           fontSize: 12,
                           color: ExbColors.secondaryText,

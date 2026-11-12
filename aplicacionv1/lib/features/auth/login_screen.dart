@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import '../../core/api/api_client.dart';
 import '../../core/api/models.dart';
 import '../../core/auth/auth_controller.dart';
+import '../../shared/widgets/juku_mascot.dart';
+import '../../core/theme/theme_mode.dart';
 import '../../core/theme/app_theme.dart';
 
 final serverConfigProvider = FutureProvider<Json>(
@@ -62,7 +63,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
             semanticLabel: 'Enseña por Bolivia',
           ),
           const SizedBox(height: 64),
-          const Text(
+          Text(
             'TU ASISTENTE EN EL SISTEMA',
             style: TextStyle(
               color: ExbColors.green,
@@ -82,7 +83,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
             ),
           ),
           const SizedBox(height: 20),
-          const SizedBox(
+          SizedBox(
             width: 360,
             child: Text(
               'Te acompaño a entender y explorar la información de Enseña por Bolivia.',
@@ -104,7 +105,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Icon(
+                  Icon(
                     Icons.check_circle_outline,
                     size: 18,
                     color: ExbColors.green,
@@ -113,10 +114,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   Expanded(
                     child: Text(
                       label,
-                      style: const TextStyle(
-                        fontSize: 13,
-                        color: ExbColors.green,
-                      ),
+                      style: TextStyle(fontSize: 13, color: ExbColors.green),
                     ),
                   ),
                 ],
@@ -124,13 +122,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
             ),
           Align(
             alignment: Alignment.centerRight,
-            child: SvgPicture.asset(
-              'assets/icons/juku.svg',
-              height: 185,
-              semanticsLabel: 'Juku, tu guía financiera',
-            ),
+            child: const JukuMascot(JukuPose.saludo, size: 230),
           ),
-          const Text(
+          Text(
             'JUKU · Aquí para acompañarte',
             style: TextStyle(fontSize: 12, color: ExbColors.green),
           ),
@@ -161,7 +155,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     demo
                         ? 'DEMO LOCAL · DATOS DEL EXCEL'
                         : 'ACCESO INSTITUCIONAL',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 10,
                       letterSpacing: 1,
                       color: ExbColors.green,
@@ -180,7 +174,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   ),
                 ),
                 const SizedBox(height: 12),
-                const Text(
+                Text(
                   'Sistema de control presupuestario',
                   style: TextStyle(
                     color: ExbColors.secondaryText,
@@ -227,7 +221,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     onFieldSubmitted: (_) => submit(demo),
                   ),
                   const SizedBox(height: 14),
-                  const Text(
+                  Text(
                     'El rol se asigna automáticamente según tu cuenta.',
                     style: TextStyle(
                       fontSize: 11,
@@ -236,7 +230,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   ),
                   const SizedBox(height: 22),
                 ] else
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.only(bottom: 22),
                     child: Text(
                       'Ingresa con tu cuenta institucional mediante el proveedor autorizado. Tus credenciales permanecen en su página de acceso.',
@@ -254,10 +248,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       child: Text(
                         error ??
                             'El servidor no está disponible. Verifica la configuración de la API.',
-                        style: const TextStyle(
-                          color: ExbColors.amber,
-                          height: 1.5,
-                        ),
+                        style: TextStyle(color: ExbColors.amber, height: 1.5),
                       ),
                     ),
                   ),
@@ -297,7 +288,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     style: TextStyle(fontWeight: FontWeight.w700),
                   ),
                   const SizedBox(height: 8),
-                  const Text(
+                  Text(
                     'Completa el formulario con una cuenta local.',
                     style: TextStyle(
                       fontSize: 12,
@@ -338,7 +329,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                         ),
                       ),
                     ),
-                  const Text(
+                  Text(
                     'Contraseña local: Demo2026!\nModo de demostración. No ingreses credenciales reales.',
                     style: TextStyle(
                       fontSize: 10,
@@ -354,6 +345,10 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
       ),
     );
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+      floatingActionButton: MediaQuery.sizeOf(context).width >= 900
+          ? const ThemeToggle()
+          : null,
       body: LayoutBuilder(
         builder: (context, constraints) => SingleChildScrollView(
           child: constraints.maxWidth >= 900
@@ -384,7 +379,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                             width: 160,
                           ),
                           const Spacer(),
-                          SvgPicture.asset('assets/icons/juku.svg', height: 80),
+                          const ThemeToggle(),
+                          const JukuMascot(JukuPose.saludo, size: 84),
                         ],
                       ),
                     ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
+
 import '../../core/api/api_client.dart';
 import '../../core/api/models.dart';
 import '../../core/theme/app_theme.dart';
@@ -9,6 +10,23 @@ import '../../shared/widgets/financial_widgets.dart';
 import '../dashboard/providers.dart';
 import '../reports/report_screen.dart';
 import 'chat_controller.dart';
+import '../../shared/widgets/juku_mascot.dart';
+import 'juku_text.dart';
+
+const _monthNames = [
+  'Enero',
+  'Febrero',
+  'Marzo',
+  'Abril',
+  'Mayo',
+  'Junio',
+  'Julio',
+  'Agosto',
+  'Septiembre',
+  'Octubre',
+  'Noviembre',
+  'Diciembre',
+];
 
 class JukuPanel extends ConsumerStatefulWidget {
   const JukuPanel({super.key, required this.onClose});
@@ -44,7 +62,7 @@ class _JukuPanelState extends ConsumerState<JukuPanel> {
       }),
     );
     return Material(
-      color: Colors.white,
+      color: ExbColors.paper,
       elevation: 4,
       child: Column(
         children: [
@@ -55,7 +73,7 @@ class _JukuPanelState extends ConsumerState<JukuPanel> {
               children: [
                 SvgPicture.asset('assets/icons/juku.svg', height: 56),
                 const SizedBox(width: 10),
-                const Expanded(
+                Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -133,12 +151,7 @@ class _JukuPanelState extends ConsumerState<JukuPanel> {
               children: [
                 if (state.messages.isEmpty) ...[
                   const SizedBox(height: 22),
-                  Center(
-                    child: SvgPicture.asset(
-                      'assets/icons/juku.svg',
-                      height: 100,
-                    ),
-                  ),
+                  const Center(child: JukuMascot(JukuPose.saludo, size: 140)),
                   const SizedBox(height: 12),
                   const Text(
                     '¿Lo vemos juntos?',
@@ -146,8 +159,8 @@ class _JukuPanelState extends ConsumerState<JukuPanel> {
                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
                   ),
                   const SizedBox(height: 12),
-                  const Text(
-                    'Pregúntame sobre el presupuesto o busca evidencia en los documentos de la institución.',
+                  Text(
+                    'Pídeme reportes mensuales, trimestrales o anuales, o pregúntame por saldos, financiadores y regiones.',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: ExbColors.secondaryText,
@@ -157,9 +170,10 @@ class _JukuPanelState extends ConsumerState<JukuPanel> {
                   ),
                   const SizedBox(height: 22),
                   for (final question in [
+                    'Reporte anual de la gestión',
+                    'Reporte del último mes',
                     '¿Cuánto presupuesto queda disponible?',
                     'Muéstrame la ejecución por financiador',
-                    '¿Qué dice el manual institucional?',
                   ])
                     Padding(
                       padding: const EdgeInsets.only(bottom: 10),
@@ -183,26 +197,7 @@ class _JukuPanelState extends ConsumerState<JukuPanel> {
                     ),
                 ],
                 for (final message in state.messages) ...[
-                  if (message.text.isNotEmpty)
-                    Align(
-                      alignment: message.role == 'user'
-                          ? Alignment.centerRight
-                          : Alignment.centerLeft,
-                      child: Container(
-                        margin: const EdgeInsets.only(bottom: 14),
-                        padding: const EdgeInsets.all(14),
-                        decoration: BoxDecoration(
-                          color: message.role == 'user'
-                              ? ExbColors.story
-                              : ExbColors.background,
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: SelectableText(
-                          message.text,
-                          style: const TextStyle(fontSize: 13, height: 1.65),
-                        ),
-                      ),
-                    ),
+                  if (message.text.isNotEmpty) _bubble(message),
                   if (message.report != null)
                     _financialResult(message.report!, state.context),
                   if (message.citations.isNotEmpty)
@@ -233,16 +228,18 @@ class _JukuPanelState extends ConsumerState<JukuPanel> {
                       padding: const EdgeInsets.symmetric(vertical: 10),
                       child: Row(
                         children: [
-                          const SizedBox(
-                            width: 16,
-                            height: 16,
-                            child: CircularProgressIndicator(strokeWidth: 2),
+                          JukuMascot(
+                            state.status.contains('motor')
+                                ? JukuPose.corriendo
+                                : JukuPose.pensando,
+                            size: 52,
+                            decorative: true,
                           ),
                           const SizedBox(width: 10),
                           Expanded(
                             child: Text(
                               state.status,
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontSize: 12,
                                 color: ExbColors.secondaryText,
                               ),
@@ -261,13 +258,25 @@ class _JukuPanelState extends ConsumerState<JukuPanel> {
                         color: ExbColors.background,
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: Text(
-                        state.error!,
-                        style: const TextStyle(
-                          color: ExbColors.amber,
-                          height: 1.6,
-                          fontSize: 12,
-                        ),
+                      child: Row(
+                        children: [
+                          const JukuMascot(
+                            JukuPose.pensando,
+                            size: 48,
+                            decorative: true,
+                          ),
+                          const SizedBox(width: 10),
+                          Expanded(
+                            child: Text(
+                              state.error!,
+                              style: TextStyle(
+                                color: ExbColors.amber,
+                                height: 1.6,
+                                fontSize: 12,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -275,8 +284,9 @@ class _JukuPanelState extends ConsumerState<JukuPanel> {
             ),
           ),
           const Divider(height: 1),
+          _quickActions(state.busy),
           Padding(
-            padding: const EdgeInsets.all(14),
+            padding: const EdgeInsets.fromLTRB(14, 4, 14, 14),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
@@ -305,7 +315,7 @@ class _JukuPanelState extends ConsumerState<JukuPanel> {
               ],
             ),
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(bottom: 12),
             child: Text(
               'Consulta de solo lectura · Cifras verificadas por el motor',
@@ -348,7 +358,7 @@ class _JukuPanelState extends ConsumerState<JukuPanel> {
                 Expanded(
                   child: Text(
                     fieldLabels[key]!,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 11,
                       color: ExbColors.secondaryText,
                     ),
@@ -427,6 +437,140 @@ class _JukuPanelState extends ConsumerState<JukuPanel> {
     ),
   );
 
+  Widget _bubble(JukuMessage message) {
+    final user = message.role == 'user';
+    final bubble = Container(
+      margin: const EdgeInsets.only(bottom: 14),
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+      decoration: BoxDecoration(
+        color: user ? ExbColors.primaryFill : ExbColors.background,
+        border: user ? null : Border.all(color: ExbColors.line),
+        borderRadius: BorderRadius.only(
+          topLeft: const Radius.circular(14),
+          topRight: const Radius.circular(14),
+          bottomLeft: Radius.circular(user ? 14 : 4),
+          bottomRight: Radius.circular(user ? 4 : 14),
+        ),
+      ),
+      child: user
+          ? SelectableText(
+              message.text,
+              style: TextStyle(
+                fontSize: 13,
+                height: 1.5,
+                color: ExbColors.onPrimaryFill,
+              ),
+            )
+          : JukuText(message.text),
+    );
+    if (user) {
+      return Align(
+        alignment: Alignment.centerRight,
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 320),
+          child: bubble,
+        ),
+      );
+    }
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(right: 8, top: 2),
+          child: CircleAvatar(
+            radius: 15,
+            backgroundColor: ExbColors.story,
+            child: SvgPicture.asset('assets/icons/juku.svg', height: 22),
+          ),
+        ),
+        Expanded(
+          child: message.pdfRequest == null
+              ? bubble
+              : Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    bubble,
+                    _PdfActions(request: message.pdfRequest!),
+                  ],
+                ),
+        ),
+      ],
+    );
+  }
+
+  Widget _quickActions(bool busy) {
+    Widget chip(String label, IconData icon, VoidCallback? onTap) => Padding(
+      padding: const EdgeInsets.only(right: 6),
+      child: ActionChip(
+        avatar: Icon(icon, size: 15, color: ExbColors.green),
+        label: Text(label, style: const TextStyle(fontSize: 11)),
+        visualDensity: VisualDensity.compact,
+        onPressed: busy ? null : onTap,
+      ),
+    );
+    Widget menu<T>(
+      String label,
+      IconData icon,
+      List<(T, String)> options,
+      String Function(T) prompt,
+    ) => Padding(
+      padding: const EdgeInsets.only(right: 6),
+      child: PopupMenuButton<T>(
+        enabled: !busy,
+        tooltip: label,
+        onSelected: (value) => send(prompt(value)),
+        itemBuilder: (_) => [
+          for (final (value, text) in options)
+            PopupMenuItem(value: value, height: 38, child: Text(text)),
+        ],
+        // Match the disabled look of the ActionChips while Juku responds.
+        child: Opacity(
+          opacity: busy ? 0.45 : 1,
+          child: Chip(
+            avatar: Icon(icon, size: 15, color: ExbColors.green),
+            label: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(label, style: const TextStyle(fontSize: 11)),
+                const Icon(Icons.arrow_drop_down, size: 16),
+              ],
+            ),
+            visualDensity: VisualDensity.compact,
+          ),
+        ),
+      ),
+    );
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      padding: const EdgeInsets.fromLTRB(14, 10, 14, 0),
+      child: Row(
+        children: [
+          chip(
+            'Reporte anual',
+            Icons.calendar_month_outlined,
+            () => send('Reporte anual de la gestión'),
+          ),
+          menu<int>(
+            'Mensual',
+            Icons.event_note_outlined,
+            [for (var i = 0; i < 12; i++) (i + 1, _monthNames[i])],
+            (month) =>
+                'Reporte mensual de ${_monthNames[month - 1].toLowerCase()}',
+          ),
+          menu<int>('Trimestral', Icons.view_week_outlined, [
+            for (var q = 1; q <= 4; q++) (q, '$q.º trimestre'),
+          ], (quarter) => 'Reporte del trimestre Q$quarter'),
+          chip(
+            'Saldo',
+            Icons.account_balance_wallet_outlined,
+            () => send('¿Cuánto saldo queda disponible?'),
+          ),
+          chip('Ayuda', Icons.help_outline, () => send('ayuda')),
+        ],
+      ),
+    );
+  }
+
   Future<void> _history() async {
     try {
       final rows = await ref.read(apiProvider).get('sessions') as List<dynamic>;
@@ -458,4 +602,76 @@ class _JukuPanelState extends ConsumerState<JukuPanel> {
       }
     }
   }
+}
+
+/// "PDF" downloads; "Compartir" opens WhatsApp, correo… where supported.
+class _PdfActions extends ConsumerStatefulWidget {
+  const _PdfActions({required this.request});
+  final Json request;
+  @override
+  ConsumerState<_PdfActions> createState() => _PdfActionsState();
+}
+
+class _PdfActionsState extends ConsumerState<_PdfActions> {
+  bool busy = false;
+
+  Future<void> _run({required bool share}) async {
+    setState(() => busy = true);
+    final messenger = ScaffoldMessenger.of(context);
+    try {
+      final shared = await ref
+          .read(apiProvider)
+          .shareJukuPdf(widget.request, share: share);
+      if (!shared) {
+        messenger.showSnackBar(
+          SnackBar(
+            content: Row(
+              children: [
+                const JukuMascot(JukuPose.pdf, size: 40, decorative: true),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Text(
+                    share
+                        ? 'Este navegador no permite compartir archivos: se descargó el PDF para que lo adjuntes en WhatsApp o correo.'
+                        : '¡Listo! Se descargó el reporte en PDF.',
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      }
+    } catch (error) {
+      messenger.showSnackBar(SnackBar(content: Text('$error')));
+    } finally {
+      if (mounted) setState(() => busy = false);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) => Padding(
+    padding: const EdgeInsets.only(top: 2, bottom: 14),
+    child: Wrap(
+      spacing: 8,
+      runSpacing: 8,
+      children: [
+        FilledButton.tonalIcon(
+          onPressed: busy ? null : () => _run(share: false),
+          icon: busy
+              ? const SizedBox(
+                  width: 14,
+                  height: 14,
+                  child: CircularProgressIndicator(strokeWidth: 2),
+                )
+              : const Icon(Icons.picture_as_pdf_outlined, size: 17),
+          label: const Text('Descargar PDF', style: TextStyle(fontSize: 12)),
+        ),
+        OutlinedButton.icon(
+          onPressed: busy ? null : () => _run(share: true),
+          icon: const Icon(Icons.share_outlined, size: 17),
+          label: const Text('Compartir', style: TextStyle(fontSize: 12)),
+        ),
+      ],
+    ),
+  );
 }

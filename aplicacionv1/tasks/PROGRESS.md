@@ -1,3 +1,78 @@
+# PDF compartible de reportes de Juku (12 nov 2026, continuación)
+
+- Login: no se eliminó. La API devuelve 401 sin cookie; la vista previa entraba
+  directo por la sesión demo de 8 h (SESSION_HOURS=8) creada en las pruebas.
+- Nuevo `POST /api/v1/reports/juku-pdf` (`budget.py`) + `report_pdf.py`:
+  recalcula con el motor el reporte pedido (sin LLM) y genera PDF A4 con logo,
+  pose de Juku, análisis, KPIs, tablas (máx. 20 filas) y pie con autor/fecha.
+  Assets en `backend/app/assets/` (entran en la imagen Docker). Auditoría
+  `budget.export` / `juku_pdf`.
+- Chat: las respuestas con reportes guardan `pdf_request`; Flutter muestra
+  «Descargar PDF» y «Compartir» (Web Share API con archivo; si no se puede,
+  descarga). También al recuperar conversaciones del historial.
+- Comprobado: backend 29 pruebas (nueva: PDF desde respuesta del chat), ruff/
+  mypy ok; Flutter analyze ok, 6/6; endpoint en la app real 200 application/pdf.
+- Límite: compartir requiere contexto seguro (HTTPS o localhost). Por
+  http://IP:8088 en el celular, «Compartir» descarga el PDF. Para la hoja de
+  compartir nativa en el teléfono hace falta servir la web con HTTPS.
+
+---
+
+# Poses de Juku + modo noche (12 nov 2026, continuación)
+
+- Poses recortadas de `correcciones/` (PNG con transparencia) a `assets/juku/`:
+  saludo, pensando, senalando, celebrando, pdf, csv, corriendo (360 px).
+  Widget `lib/shared/widgets/juku_mascot.dart` (halo verde en modo noche).
+  Uso: login, carga inicial, burbuja flotante, panel Juku (inicio, espera,
+  error), estados vacíos/error, menú Exportar y aviso de descarga.
+- Modo noche: `ExbColors` con paleta día/noche (`app_theme.dart`),
+  `theme_mode.dart` (luna/sol en cabecera y login, preferencia en localStorage,
+  por defecto sigue al sistema). Al cambiar se recrea el router conservando la
+  ruta: un KeyedSubtree no bastaba (el Navigator con GlobalKey se reparentaba).
+- Corregido: el desglose mensual de reportes trimestrales/semestrales listaba
+  meses fuera del período; ahora filtra por meses (prueba nueva).
+- Comprobado: backend 28 pruebas, ruff/mypy ok; Flutter analyze ok, 6/6; web
+  recompilada y revisada en navegador en modo noche y día (cambio en vivo),
+  Q2 = Bs 139.718,84 = abril+mayo+junio.
+- IA: este equipo (AMD A12-9720P, 4 núcleos, 10 GB, sin NVIDIA) no puede servir
+  Qwen 7B con tiempos útiles. Pendiente decisión del usuario: servidor LLM en
+  otra PC/GPU de la red, API externa o modelo pequeño local.
+
+---
+
+# Juku sin dependencia de Qwen + reportes por período (12 nov 2026)
+
+Diagnóstico: Qwen no estaba descargado (`llama.cpp/models/` vacío) y el equipo
+tiene ~3,5 GB libres sin swap; Juku devolvía error en casi todas las consultas.
+Además, con evidencia financiera descartaba la respuesta y mostraba un texto fijo.
+
+- Nuevo `backend/app/services/juku_assistant.py`: intenciones en español y
+  reportes mensual, trimestral, semestral y anual (KPIs, acumulado, variación vs
+  período anterior, top movimientos/rubros, alertas). Cifras solo del motor.
+- `chat_service.py`: reportes/ayuda nunca usan Qwen; si Qwen no responde,
+  contesta con el motor en vez de error. Texto verificado más rico en ruta LLM.
+- Flutter: `juku_text.dart` (negritas/viñetas), burbujas con avatar, accesos
+  rápidos (anual, mensual por mes, trimestral, saldo, ayuda); el gráfico indica
+  desplazamiento. `providers.dart`: sondeo con Timer cancelable (arregla 2
+  pruebas Flutter que ya fallaban por timer pendiente).
+- Comprobado: backend 27 pruebas pasan (1 de RAG omitida: necesita internet
+  para tiktoken), ruff/black/mypy ok; Flutter analyze ok y 6/6 pruebas.
+  Reportes ejecutados contra el Excel real en SQLite temporal: cifras conciliadas.
+- Entorno levantado y verificado en navegador (escritorio y 375 px): login demo,
+  panel con cifras reales, Juku con reporte mensual (agosto) y anual sin Qwen.
+  - `.env` local creado desde `.env.example`: AUTH_MODE=demo, COOKIE_SECURE=false,
+    SECRET_KEY aleatoria (no publicar). docker-compose del equipo es v1 y no lee
+    el compose; PostgreSQL se arrancó con `docker run` equivalente: contenedor
+    `exb-postgres` (pgvector/pgvector:pg16), 127.0.0.1:55432, volumen
+    `exb_postgres_data`, restart unless-stopped. Migrado (0001) y sembrado: 3574
+    presupuestos, 1478 movimientos, Bs 528694.16. No volver a sembrar.
+  - `build/web` compilado. Web/API: `python3 tools/run_mobile.py --without-qwen`
+    (puerto 8088; config en `.claude/launch.json`, nombre exb-mobile).
+- Siguiente paso: revisión del usuario desde su celular; pendiente opcional que
+  los chips Mensual/Trimestral se vean deshabilitados mientras Juku responde.
+
+---
+
 # Corrección del aviso de Qwen pendiente
 
 El usuario mostró el error del chat y el mensaje repetido de espera. La descarga

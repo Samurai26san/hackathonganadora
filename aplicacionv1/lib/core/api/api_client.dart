@@ -138,6 +138,36 @@ class ApiClient {
     }
   }
 
+  /// Shareable PDF of a Juku report. Shares it when the device allows,
+  /// otherwise downloads it. Returns true when the share sheet was used.
+  Future<bool> shareJukuPdf(Json request, {required bool share}) async {
+    try {
+      final response = await dio.post<List<int>>(
+        'reports/juku-pdf',
+        data: request,
+        options: Options(responseType: ResponseType.bytes),
+      );
+      final bytes = Uint8List.fromList(response.data!);
+      final disposition = response.headers.value('content-disposition') ?? '';
+      final filename =
+          RegExp(r'filename="([^"]+)"').firstMatch(disposition)?.group(1) ??
+          'exb-reporte.pdf';
+      if (share &&
+          await platform.shareBytes(
+            bytes,
+            filename,
+            'application/pdf',
+            'Reporte ExB Finanzas',
+          )) {
+        return true;
+      }
+      platform.downloadBytes(bytes, filename, 'application/pdf');
+      return false;
+    } on DioException catch (error) {
+      throw mapError(error);
+    }
+  }
+
   Stream<Json> chat(Json body, CancelToken cancelToken) async* {
     try {
       yield* parseSse(platform.chatBytes(dio, body, cancelToken));

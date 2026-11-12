@@ -1,7 +1,10 @@
 import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
+
 import '../../core/api/models.dart';
 import '../../core/theme/app_theme.dart';
+import 'juku_mascot.dart';
 import '../../core/utils/money.dart';
 
 class Panel extends StatelessWidget {
@@ -22,7 +25,7 @@ class Panel extends StatelessWidget {
     color: ExbColors.paper,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(17),
-      side: const BorderSide(color: ExbColors.line),
+      side: BorderSide(color: ExbColors.line),
     ),
     child: Padding(
       padding: EdgeInsets.all(padding),
@@ -49,7 +52,7 @@ class Panel extends StatelessWidget {
                           padding: const EdgeInsets.only(top: 6),
                           child: Text(
                             subtitle!,
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 12,
                               color: ExbColors.secondaryText,
                             ),
@@ -77,7 +80,9 @@ class MessageState extends StatelessWidget {
     this.detail,
     this.onRetry,
     this.icon = Icons.info_outline,
+    this.pose,
   });
+  final JukuPose? pose;
   final String title;
   final String? detail;
   final VoidCallback? onRetry;
@@ -89,7 +94,10 @@ class MessageState extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(icon, color: ExbColors.green, size: 36),
+          if (pose != null)
+            JukuMascot(pose!, size: 110, decorative: true)
+          else
+            Icon(icon, color: ExbColors.green, size: 36),
           const SizedBox(height: 16),
           Text(
             title,
@@ -102,7 +110,7 @@ class MessageState extends StatelessWidget {
               child: Text(
                 detail!,
                 textAlign: TextAlign.center,
-                style: const TextStyle(color: ExbColors.secondaryText),
+                style: TextStyle(color: ExbColors.secondaryText),
               ),
             ),
           if (onRetry != null)
@@ -167,7 +175,7 @@ class FinancialCards extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: percent ? ExbColors.story : Colors.white,
+                  color: percent ? ExbColors.story : ExbColors.paper,
                   border: Border.all(color: ExbColors.line),
                   borderRadius: BorderRadius.circular(14),
                 ),
@@ -179,7 +187,7 @@ class FinancialCards extends StatelessWidget {
                         Icon(card.$3, color: ExbColors.green, size: 19),
                         const Spacer(),
                         if (percent)
-                          const Icon(
+                          Icon(
                             Icons.north_east,
                             size: 16,
                             color: ExbColors.green,
@@ -189,7 +197,7 @@ class FinancialCards extends StatelessWidget {
                     const SizedBox(height: 18),
                     Text(
                       card.$1,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 12,
                         color: ExbColors.secondaryText,
                       ),
@@ -213,7 +221,7 @@ class FinancialCards extends StatelessWidget {
                     const SizedBox(height: 8),
                     Text(
                       card.$4,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 10,
                         color: ExbColors.secondaryText,
                       ),
@@ -277,7 +285,7 @@ class BookChart extends StatelessWidget {
     );
     return Column(
       children: [
-        const Wrap(
+        Wrap(
           spacing: 20,
           children: [
             Legend(color: ExbColors.books, label: 'Presupuesto'),
@@ -290,10 +298,12 @@ class BookChart extends StatelessWidget {
           child: LayoutBuilder(
             builder: (context, constraints) {
               final width = math.max(
-                108.0,
+                96.0,
                 constraints.maxWidth / grouped.length,
               );
-              return SingleChildScrollView(
+              final overflows =
+                  width * grouped.length > constraints.maxWidth + 1;
+              final scroller = SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -323,7 +333,7 @@ class BookChart extends StatelessWidget {
                                 FittedBox(
                                   child: Text(
                                     executed.currency,
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       fontSize: 10,
                                       color: ExbColors.secondaryText,
                                     ),
@@ -378,11 +388,41 @@ class BookChart extends StatelessWidget {
                   }).toList(),
                 ),
               );
+              if (!overflows) return scroller;
+              // Hint that more columns exist past the right edge.
+              return Stack(
+                children: [
+                  scroller,
+                  Positioned(
+                    right: 0,
+                    top: 0,
+                    bottom: 0,
+                    child: IgnorePointer(
+                      child: Container(
+                        width: 56,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              ExbColors.paper.withValues(alpha: 0),
+                              ExbColors.paper,
+                            ],
+                          ),
+                        ),
+                        alignment: Alignment.centerRight,
+                        child: Icon(
+                          Icons.chevron_right,
+                          color: ExbColors.secondaryText,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              );
             },
           ),
         ),
         const SizedBox(height: 8),
-        const Text(
+        Text(
           'La altura de cada pila es proporcional al importe.',
           style: TextStyle(color: ExbColors.secondaryText, fontSize: 10),
         ),
@@ -451,7 +491,7 @@ class Legend extends StatelessWidget {
       const SizedBox(width: 6),
       Text(
         label,
-        style: const TextStyle(fontSize: 11, color: ExbColors.secondaryText),
+        style: TextStyle(fontSize: 11, color: ExbColors.secondaryText),
       ),
     ],
   );
@@ -508,6 +548,7 @@ class _ReportTableState extends State<ReportTable> {
     final report = widget.report;
     if (report.rows.isEmpty) {
       return const MessageState(
+        pose: JukuPose.pensando,
         title: 'No encontramos registros.',
         detail: 'Prueba otro período o limpia los filtros.',
       );
@@ -556,7 +597,7 @@ class _ReportTableState extends State<ReportTable> {
             headingRowHeight: 46,
             dataRowMinHeight: 54,
             dataRowMaxHeight: 74,
-            headingRowColor: const WidgetStatePropertyAll(ExbColors.background),
+            headingRowColor: WidgetStatePropertyAll(ExbColors.background),
             sortAscending: ascending,
             sortColumnIndex: sortColumn,
             columns: keys
@@ -627,10 +668,7 @@ class _ReportTableState extends State<ReportTable> {
           children: [
             Text(
               '${report.count} registros · Página $currentPage de $pages',
-              style: const TextStyle(
-                fontSize: 12,
-                color: ExbColors.secondaryText,
-              ),
+              style: TextStyle(fontSize: 12, color: ExbColors.secondaryText),
             ),
             Row(
               mainAxisSize: MainAxisSize.min,

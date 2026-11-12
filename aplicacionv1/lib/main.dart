@@ -5,11 +5,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'core/auth/auth_controller.dart';
 import 'core/theme/app_theme.dart';
+import 'core/theme/theme_mode.dart';
 import 'features/admin/admin_screen.dart';
 import 'features/auth/login_screen.dart';
 import 'features/dashboard/dashboard_screen.dart';
 import 'features/gestiones/gestiones_screen.dart';
 import 'features/reports/report_screen.dart';
+import 'shared/widgets/juku_mascot.dart';
 import 'shared/widgets/app_shell.dart';
 
 void main() {
@@ -23,11 +25,16 @@ class RouterRefresh extends ChangeNotifier {
   void refresh() => notifyListeners();
 }
 
+/// Last visited route, restored when a theme change recreates the router.
+String _lastLocation = '/dashboard';
+
 final routerProvider = Provider<GoRouter>((ref) {
+  // A new router remounts every page, so widgets reading ExbColors repaint.
+  ref.watch(themeModeProvider);
   final refresh = RouterRefresh();
   ref.listen(authProvider, (_, next) => refresh.refresh());
   final router = GoRouter(
-    initialLocation: '/dashboard',
+    initialLocation: _lastLocation,
     refreshListenable: refresh,
     redirect: (context, state) {
       final auth = ref.read(authProvider);
@@ -47,8 +54,18 @@ final routerProvider = Provider<GoRouter>((ref) {
     routes: [
       GoRoute(
         path: '/loading',
-        builder: (context, state) =>
-            const Scaffold(body: Center(child: CircularProgressIndicator())),
+        builder: (context, state) => const Scaffold(
+          body: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                JukuMascot(JukuPose.corriendo, size: 150),
+                SizedBox(height: 12),
+                Text('Preparando tus finanzas…'),
+              ],
+            ),
+          ),
+        ),
       ),
       GoRoute(path: '/login', builder: (context, state) => const LoginScreen()),
       GoRoute(
@@ -99,6 +116,10 @@ final routerProvider = Provider<GoRouter>((ref) {
     ),
   );
   ref.onDispose(() {
+    final location = router.routeInformationProvider.value.uri.toString();
+    if (location.startsWith('/') && location != '/loading') {
+      _lastLocation = location;
+    }
     router.dispose();
     refresh.dispose();
   });
@@ -108,13 +129,23 @@ final routerProvider = Provider<GoRouter>((ref) {
 class ExbApp extends ConsumerWidget {
   const ExbApp({super.key});
   @override
-  Widget build(BuildContext context, WidgetRef ref) => MaterialApp.router(
-    title: 'ExB Finanzas · Juku',
-    debugShowCheckedModeBanner: false,
-    theme: appTheme(),
-    locale: const Locale('es', 'BO'),
-    supportedLocales: const [Locale('es', 'BO'), Locale('es'), Locale('en')],
-    localizationsDelegates: GlobalMaterialLocalizations.delegates,
-    routerConfig: ref.watch(routerProvider),
-  );
+  Widget build(BuildContext context, WidgetRef ref) {
+    final mode = ref.watch(themeModeProvider);
+    final dark =
+        mode == ThemeMode.dark ||
+        (mode == ThemeMode.system &&
+            View.of(context).platformDispatcher.platformBrightness ==
+                Brightness.dark);
+    // appTheme also switches the ExbColors tokens read by every widget.
+    final theme = appTheme(dark: dark);
+    return MaterialApp.router(
+      title: 'ExB Finanzas · Juku',
+      debugShowCheckedModeBanner: false,
+      theme: theme,
+      locale: const Locale('es', 'BO'),
+      supportedLocales: const [Locale('es', 'BO'), Locale('es'), Locale('en')],
+      localizationsDelegates: GlobalMaterialLocalizations.delegates,
+      routerConfig: ref.watch(routerProvider),
+    );
+  }
 }

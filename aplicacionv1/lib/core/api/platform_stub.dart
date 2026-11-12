@@ -18,3 +18,11 @@ Stream<List<int>> chatBytes(
 
 void downloadBytes(Uint8List bytes, String filename, String mime) {}
 Future<Uint8List?> pickWorkbook() async => null;
+String? readSetting(String key) => null;
+void writeSetting(String key, String value) {}
+Future<bool> shareBytes(
+  Uint8List bytes,
+  String filename,
+  String mime,
+  String title,
+) async => false;

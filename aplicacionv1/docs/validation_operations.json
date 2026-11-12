@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "scratch_removed": true,
+  "snapshot": {
+    "budgets": 3574,
+    "movements": 1478,
+    "budget": "3163379.01",
+    "executed": "528694.16",
+    "pgvector": 1
+  },
+  "backup_bytes": 194226,
+  "backup_sha256": "ef70b8a181cad7fb7e9742b275fb9b3b206f9baa706562c9def1c69d87b5d5e9",
+  "seconds": 0.925
+}

@@ -1,0 +1,95 @@
+{
+  "date_utc": "2026-11-12T18:06:46.505077+00:00",
+  "phase": "finance",
+  "passed": true,
+  "error_type": null,
+  "checks": [
+    {
+      "check": "OIDC autorización solicitada",
+      "passed": true
+    },
+    {
+      "check": "Proveedor local y PKCE S256",
+      "passed": true
+    },
+    {
+      "check": "Formulario real de Keycloak",
+      "passed": true
+    },
+    {
+      "check": "Formulario limitado al realm local",
+      "passed": true
+    },
+    {
+      "check": "Keycloak emite código de autorización",
+      "passed": true
+    },
+    {
+      "check": "Callback para cuenta admin@exb.demo",
+      "passed": true
+    },
+    {
+      "check": "Cookie HttpOnly SameSite=Lax",
+      "passed": true
+    },
+    {
+      "check": "Solo gestiones reales disponibles",
+      "passed": true
+    },
+    {
+      "check": "Reconciliación con Excel real",
+      "passed": true
+    },
+    {
+      "check": "Exportación real excel",
+      "passed": true
+    },
+    {
+      "check": "Exportación real pdf",
+      "passed": true
+    },
+    {
+      "check": "Exportación real csv",
+      "passed": true
+    },
+    {
+      "check": "Informe autorizado account concilia",
+      "passed": true,
+      "seconds": 0.038
+    },
+    {
+      "check": "Informe autorizado financier concilia",
+      "passed": true,
+      "seconds": 0.041
+    },
+    {
+      "check": "Informe autorizado area concilia",
+      "passed": true,
+      "seconds": 0.033
+    },
+    {
+      "check": "Informe autorizado region concilia",
+      "passed": true,
+      "seconds": 0.034
+    },
+    {
+      "check": "Informe autorizado monthly concilia",
+      "passed": true,
+      "seconds": 0.034
+    },
+    {
+      "check": "Informe autorizado movements concilia",
+      "passed": true,
+      "seconds": 0.04
+    },
+    {
+      "check": "Informe autorizado summary concilia",
+      "passed": true,
+      "seconds": 0.028
+    },
+    {
+      "check": "Comparación sin gestión inventada",
+      "passed": true
+    }
+  ]
+}

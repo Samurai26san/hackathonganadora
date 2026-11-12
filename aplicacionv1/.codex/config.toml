@@ -1,0 +1,36 @@
+# BEGIN project-agent-tools
+# Generado con make agents-config. Conserva las opciones propias fuera de este bloque.
+
+[mcp_servers.playwright]
+command = "npx"
+args = ["--yes", "@playwright/mcp@0.0.85", "--headless", "--isolated"]
+cwd = "/home/samuel/hackaton2026/hackathonganadora/aplicacionv1"
+startup_timeout_sec = 120
+tool_timeout_sec = 120
+enabled = true
+
+[mcp_servers.chrome-devtools]
+command = "npx"
+args = ["--yes", "chrome-devtools-mcp@1.13.0", "--headless", "--isolated", "--no-usage-statistics"]
+cwd = "/home/samuel/hackaton2026/hackathonganadora/aplicacionv1"
+startup_timeout_sec = 120
+tool_timeout_sec = 120
+enabled = true
+
+[mcp_servers.shadcn]
+command = "npx"
+args = ["--yes", "shadcn@4.23.0", "mcp"]
+cwd = "/home/samuel/hackaton2026/hackathonganadora/aplicacionv1"
+startup_timeout_sec = 120
+tool_timeout_sec = 120
+enabled = true
+
+[mcp_servers.graphify]
+command = "/home/samuel/hackaton2026/hackathonganadora/aplicacionv1/.agents/.venv/bin/python"
+args = ["/home/samuel/hackaton2026/hackathonganadora/aplicacionv1/tools/agents.py", "graphify-mcp"]
+cwd = "/home/samuel/hackaton2026/hackathonganadora/aplicacionv1"
+startup_timeout_sec = 120
+tool_timeout_sec = 120
+enabled = true
+
+# END project-agent-tools

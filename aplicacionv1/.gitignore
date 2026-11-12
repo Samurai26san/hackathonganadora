@@ -1,0 +1,74 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+/coverage/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Widget Preview related
+.widget_preview/
+
+# Local agent dependencies and generated knowledge graph
+/.agents/.venv/
+__pycache__/
+/graphify-out/
+/agents/graphify-8/build/
+/agents/graphify-8/*.egg-info/
+
+# Application secrets, local environments and imported runtime artifacts
+.env
+.env.local
+/backend/.venv/
+/backend/.cache/
+*.gguf
+*.gguf.partial
+*.gguf.ranges.json
+*.gguf.ranges.tmp
+/llama.cpp/models/.download.lock
+/ops/runtime/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.db
+/data_docs/*
+!/data_docs/.gitkeep
+!/data_docs/leer_primero.txt

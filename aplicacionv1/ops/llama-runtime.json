@@ -1,0 +1,8 @@
+{
+  "version": "b12319",
+  "backend": "vulkan",
+  "source": "https://github.com/ggml-org/llama.cpp/releases/download/b12319/llama-b12319-bin-ubuntu-vulkan-x64.tar.gz",
+  "sha256": "9ea9d2a67ccc36528cdb6817345c979526ddc56f4e223ac9f3cad5c8c2675e20",
+  "runtime_directory": "ops/runtime/llama",
+  "status": "verify archive before running; not an inference validation"
+}

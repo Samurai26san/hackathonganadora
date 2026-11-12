@@ -1,0 +1,129 @@
+{
+  "date_utc": "2026-11-12T17:59:03.021412+00:00",
+  "phase": "oidc",
+  "passed": true,
+  "error_type": null,
+  "checks": [
+    {
+      "check": "OIDC autorización solicitada",
+      "passed": true
+    },
+    {
+      "check": "Proveedor local y PKCE S256",
+      "passed": true
+    },
+    {
+      "check": "Formulario real de Keycloak",
+      "passed": true
+    },
+    {
+      "check": "Formulario limitado al realm local",
+      "passed": true
+    },
+    {
+      "check": "Keycloak emite código de autorización",
+      "passed": true
+    },
+    {
+      "check": "Callback para cuenta sin-acceso@exb.demo",
+      "passed": true
+    },
+    {
+      "check": "Cuenta no provisionada sin sesión",
+      "passed": true
+    },
+    {
+      "check": "OIDC autorización solicitada",
+      "passed": true
+    },
+    {
+      "check": "Proveedor local y PKCE S256",
+      "passed": true
+    },
+    {
+      "check": "Formulario real de Keycloak",
+      "passed": true
+    },
+    {
+      "check": "Formulario limitado al realm local",
+      "passed": true
+    },
+    {
+      "check": "Keycloak emite código de autorización",
+      "passed": true
+    },
+    {
+      "check": "Callback para cuenta tecnico@exb.demo",
+      "passed": true
+    },
+    {
+      "check": "Cookie HttpOnly SameSite=Lax",
+      "passed": true
+    },
+    {
+      "check": "Rol de aplicación conservado",
+      "passed": true
+    },
+    {
+      "check": "Técnico sin acceso a usuarios",
+      "passed": true
+    },
+    {
+      "check": "OIDC autorización solicitada",
+      "passed": true
+    },
+    {
+      "check": "Proveedor local y PKCE S256",
+      "passed": true
+    },
+    {
+      "check": "Formulario real de Keycloak",
+      "passed": true
+    },
+    {
+      "check": "Formulario limitado al realm local",
+      "passed": true
+    },
+    {
+      "check": "Keycloak emite código de autorización",
+      "passed": true
+    },
+    {
+      "check": "Callback para cuenta admin@exb.demo",
+      "passed": true
+    },
+    {
+      "check": "Cookie HttpOnly SameSite=Lax",
+      "passed": true
+    },
+    {
+      "check": "Administración provisionada",
+      "passed": true
+    },
+    {
+      "check": "Rotación de sesión",
+      "passed": true
+    },
+    {
+      "check": "Cookie previa revocada",
+      "passed": true
+    },
+    {
+      "check": "Origen ajeno denegado",
+      "passed": true
+    },
+    {
+      "check": "Cierre de sesión",
+      "passed": true
+    },
+    {
+      "check": "Sesión cerrada revocada",
+      "passed": true
+    },
+    {
+      "check": "Flujo OIDC completo real",
+      "passed": true,
+      "seconds": 0.716
+    }
+  ]
+}

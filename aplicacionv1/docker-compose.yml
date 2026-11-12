@@ -1,0 +1,66 @@
+name: exb-budget-copilot
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-budget_ai}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+    ports: ["127.0.0.1:${POSTGRES_HOST_PORT:-55432}:5432"]
+    volumes: ["postgres_data:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks: [budget]
+  llama-cpp:
+    image: ghcr.io/ggml-org/llama.cpp:server
+    command: ["--model", "/models/qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf", "--alias", "qwen2.5-7b-instruct-q4_k_m", "--host", "0.0.0.0", "--port", "8080", "--ctx-size", "8192", "--n-gpu-layers", "${LLM_N_GPU_LAYERS:-0}", "--jinja", "--parallel", "1"]
+    volumes: ["./llama.cpp/models:/models:ro"]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      start_period: 120s
+      interval: 15s
+      retries: 30
+    networks: [budget]
+  embeddings:
+    image: ghcr.io/huggingface/text-embeddings-inference:cpu-1.9
+    command: ["--model-id", "BAAI/bge-m3", "--revision", "5617a9f61b028005a4858fdac845db406aefb181", "--port", "80", "--max-client-batch-size", "4", "--max-batch-tokens", "8192", "--max-batch-requests", "1", "--tokenization-workers", "2"]
+    volumes: ["tei_cache:/data"]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      start_period: 120s
+      interval: 15s
+      retries: 30
+    networks: [budget]
+  backend:
+    build: {context: ., dockerfile: backend/Dockerfile}
+    env_file: [.env]
+    environment:
+      DATABASE_URI: postgresql+asyncpg://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-budget_ai}
+      LLM_SERVER_URL: http://llama-cpp:8080/v1
+      EMBEDDINGS_SERVER_URL: http://embeddings:80
+    ports: ["127.0.0.1:8000:8000"]
+    depends_on:
+      postgres: {condition: service_healthy}
+    volumes: ["./data_docs:/app/data_docs:ro", "./backend/hackaton:/app/source_data:ro"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/ready')"]
+      interval: 10s
+      retries: 10
+    networks: [budget]
+  frontend:
+    build: {context: ., dockerfile: frontend/Dockerfile}
+    ports: ["${FRONTEND_PORT:-8080}:80"]
+    depends_on: [backend]
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost/"]
+      interval: 10s
+      retries: 10
+    networks: [budget]
+networks:
+  budget: {}
+volumes:
+  postgres_data: {}
+  tei_cache: {}

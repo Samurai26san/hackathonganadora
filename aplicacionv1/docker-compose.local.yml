@@ -1,0 +1,32 @@
+# Runtime local con GPU; API y Flutter se ejecutan en el host con make api/web-preview.
+# docker compose -f docker-compose.yml -f docker-compose.local.yml up -d llama-cpp embeddings keycloak
+services:
+  llama-cpp:
+    image: ghcr.io/ggml-org/llama.cpp:server-cuda
+    gpus: all
+    runtime: nvidia
+    mem_limit: 1800m
+    cpus: 6
+    ports: ["127.0.0.1:18081:8080"]
+    command: ["--model", "/models/qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf", "--alias", "qwen2.5-7b-instruct-q4_k_m", "--host", "0.0.0.0", "--port", "8080", "--ctx-size", "8192", "--n-gpu-layers", "99", "--jinja", "--parallel", "1", "--threads", "4", "--batch-size", "256", "--ubatch-size", "128", "--flash-attn", "on", "--cache-type-k", "q8_0", "--cache-type-v", "q8_0"]
+  embeddings:
+    mem_limit: 2600m
+    cpus: 4
+    ports: ["127.0.0.1:8082:80"]
+    command: ["--model-id", "/models/bge-m3", "--port", "80", "--max-client-batch-size", "4", "--max-batch-tokens", "8192", "--max-batch-requests", "1", "--tokenization-workers", "2"]
+    volumes: ["./ops/runtime/bge-m3:/models/bge-m3:ro"]
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.4.7@sha256:9409c59bdfb65dbffa20b11e6f18b8abb9281d480c7ca402f51ed3d5977e6007
+    command: ["start-dev", "--import-realm"]
+    environment:
+      KC_HOSTNAME: http://localhost:8180
+      JAVA_OPTS_KC_HEAP: -Xms64m -Xmx256m
+    mem_limit: 640m
+    cpus: 2
+    ports: ["127.0.0.1:8180:8080"]
+    volumes:
+      - ./ops/runtime/keycloak:/opt/keycloak/data/import:ro
+      - keycloak_local:/opt/keycloak/data
+    networks: [budget]
+volumes:
+  keycloak_local: {}

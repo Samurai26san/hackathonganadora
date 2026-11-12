@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+psycopg[binary]
+pyjwt
+python-multipart
+openpyxl
+reportlab
+pytest
+httpx

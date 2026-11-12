@@ -1,0 +1,4 @@
+Coloca aquí documentos institucionales autorizados (PDF, DOCX, TXT, MD).
+Ejecuta make ingest cuando TEI esté disponible. Los documentos se fragmentan y
+se almacenan con su fuente; no son instrucciones para el modelo ni evidencia
+de montos financieros. No se incluyen leyes o políticas inventadas.

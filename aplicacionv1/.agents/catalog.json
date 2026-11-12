@@ -1,0 +1,2955 @@
+{
+  "skills": [
+    {
+      "name": "accessibility-compliance-accessibility-audit",
+      "source": "agents/skills/accessibility-compliance-accessibility-audit",
+      "sha256": "69dc89dab853430c8b251b581f3966943caaa54ea18aad82953e9f36534edf97",
+      "description": "You are an accessibility expert specializing in WCAG compliance, inclusive design, and assistive technology compatibility. Conduct audits, identify barriers, and provide remediation guidance.",
+      "duplicates": []
+    },
+    {
+      "name": "agent-orchestration-improve-agent",
+      "source": "agents/skills/agent-orchestration-improve-agent",
+      "sha256": "d4249c4100e0e6ad44eb6fedb503c4b1f2a6c25534f5f2d1f1fe85722b1868a6",
+      "description": "Systematic improvement of existing agents through performance analysis, prompt engineering, and continuous iteration.",
+      "duplicates": []
+    },
+    {
+      "name": "agent-orchestration-multi-agent-optimize",
+      "source": "agents/skills/agent-orchestration-multi-agent-optimize",
+      "sha256": "27a86248b94c6e569340d3f7ff76c6c65d02bb6be594619be88d1b434369e26e",
+      "description": "Optimize multi-agent systems with coordinated profiling, workload distribution, and cost-aware orchestration. Use when improving agent performance, throughput, or reliability.",
+      "duplicates": []
+    },
+    {
+      "name": "ai-engineer",
+      "source": "agents/skills/ai-engineer",
+      "sha256": "4d5647fb6ce467d146f526302842ace2828350b7f9eaac1323d196fa0a4b530b",
+      "description": "Build production-ready LLM applications, advanced RAG systems, and intelligent agents. Implements vector search, multimodal AI, agent orchestration, and enterprise AI integrations. Use PROACTIVELY for LLM features, chatbots, AI agents, or AI-powered applications.",
+      "duplicates": []
+    },
+    {
+      "name": "airflow-dag-patterns",
+      "source": "agents/skills/airflow-dag-patterns",
+      "sha256": "f76c99dc539b5340c0cfff0a162f77e5b3c2a970edfb84244f4d53cc10767aca",
+      "description": "Build production Apache Airflow DAGs with best practices for operators, sensors, testing, and deployment. Use when creating data pipelines, orchestrating workflows, or scheduling batch jobs.",
+      "duplicates": []
+    },
+    {
+      "name": "angular-migration",
+      "source": "agents/skills/angular-migration",
+      "sha256": "8f50791038bd2f5be746f74ab84730faaf832ee5ffe4cfb6efb602df931d0224",
+      "description": "Migrate from AngularJS to Angular using hybrid mode, incremental component rewriting, and dependency injection updates. Use when upgrading AngularJS applications, planning framework migrations, or modernizing legacy Angular code.",
+      "duplicates": []
+    },
+    {
+      "name": "anti-reversing-techniques",
+      "source": "agents/skills/anti-reversing-techniques",
+      "sha256": "0f537a5904d9b40fc5bb43571075b8dfad607b49f46e92387245c3f452471574",
+      "description": "Understand anti-reversing, obfuscation, and protection techniques encountered during software analysis. Use when analyzing protected binaries, bypassing anti-debugging for authorized analysis, or understanding software protection mechanisms.",
+      "duplicates": []
+    },
+    {
+      "name": "antigravity-skills-manager",
+      "source": "agents/skills/antigravity-skills-manager",
+      "sha256": "e00bd4f8662797c57a279728549f7b5379a687af6ca1cfd233a56e08dd0534a7",
+      "description": "Global skills manager for Google Antigravity. Explore, search, install, and manage 300+ agent skills from the rmyndharis/antigravity-skills catalog using pure stdlib CLI tools.",
+      "duplicates": []
+    },
+    {
+      "name": "api-and-interface-design",
+      "source": "agents/agent-skills-main (2)/skills/api-and-interface-design",
+      "sha256": "62f0f000a8adb9987cd9ff85f047ca28018a92898d18c3c49ffb7d79d6fc79ff",
+      "description": "Guides stable API and interface design. Use when designing APIs, module boundaries, or any public interface. Use when creating REST or GraphQL endpoints, defining type contracts between modules, or establishing boundaries between frontend and backend.",
+      "duplicates": []
+    },
+    {
+      "name": "api-and-interface-design-original",
+      "source": "agents/agent-skills-main/skills/api-and-interface-design",
+      "sha256": "f52c4203d834436546c5c22efe95ea03a646046f1d9b6a830a5460dea8e9ed48",
+      "description": "Guides stable API and interface design. Use when designing APIs, module boundaries, or any public interface. Use when creating REST or GraphQL endpoints, defining type contracts between modules, or establishing boundaries between frontend and backend.",
+      "duplicates": []
+    },
+    {
+      "name": "api-design-principles",
+      "source": "agents/skills/api-design-principles",
+      "sha256": "24ed72b82f99befb023392c51943d6c7be0c16a0282b9b8eea96a4b6ef84b6c5",
+      "description": "Master REST and GraphQL API design principles to build intuitive, scalable, and maintainable APIs that delight developers. Use when designing new APIs, reviewing API specifications, or establishing API design standards.",
+      "duplicates": []
+    },
+    {
+      "name": "api-documenter",
+      "source": "agents/skills/api-documenter",
+      "sha256": "62be575b9f2c9c9ba75d268df709c6984ed72361ed564ad2bb3bbddfa2af4e07",
+      "description": "Master API documentation with OpenAPI 3.1, AI-powered tools, and modern developer experience practices. Create interactive docs, generate SDKs, and build comprehensive developer portals. Use PROACTIVELY for API documentation or developer portal creation.",
+      "duplicates": []
+    },
+    {
+      "name": "api-testing-observability-api-mock",
+      "source": "agents/skills/api-testing-observability-api-mock",
+      "sha256": "f44d5f3fd8d93d0cae0aeb96a47959dc4eded37276fa296937e312ebd60f07e1",
+      "description": "You are an API mocking expert specializing in realistic mock services for development, testing, and demos. Design mocks that simulate real API behavior and enable parallel development.",
+      "duplicates": []
+    },
+    {
+      "name": "application-performance-performance-optimization",
+      "source": "agents/skills/application-performance-performance-optimization",
+      "sha256": "7eaecef90566e8059ee0a7e15ca9996cccfbe3eddae8c65de08929f7e0d5675c",
+      "description": "Optimize end-to-end application performance with profiling, observability, and backend/frontend tuning. Use when coordinating performance optimization across the stack.",
+      "duplicates": []
+    },
+    {
+      "name": "architect-review",
+      "source": "agents/skills/architect-review",
+      "sha256": "11415df5637b74fc00ad92e13a146147f374d80c71a9e846bc1ea09c1aab8a4e",
+      "description": "Master software architect specializing in modern architecture patterns, clean architecture, microservices, event-driven systems, and DDD. Reviews system designs and code changes for architectural integrity, scalability, and maintainability. Use PROACTIVELY for architectural decisions.",
+      "duplicates": []
+    },
+    {
+      "name": "architecture-decision-records",
+      "source": "agents/skills/architecture-decision-records",
+      "sha256": "aea99e6917ab9a945c00b799908e920ca9b225baf73f3ac44a7752abcfb3f4c4",
+      "description": "Write and maintain Architecture Decision Records (ADRs) following best practices for technical decision documentation. Use when documenting significant technical decisions, reviewing past architectural choices, or establishing decision processes.",
+      "duplicates": []
+    },
+    {
+      "name": "architecture-patterns",
+      "source": "agents/skills/architecture-patterns",
+      "sha256": "0d04f4a4f98cd848033db89f33a4ea48d4d02d0e2f2c3706c5f1a58156133d2a",
+      "description": "Implement proven backend architecture patterns including Clean Architecture, Hexagonal Architecture, and Domain-Driven Design. Use when architecting complex backend systems or refactoring existing applications for better maintainability.",
+      "duplicates": []
+    },
+    {
+      "name": "arm-cortex-expert",
+      "source": "agents/skills/arm-cortex-expert",
+      "sha256": "5f7bca9479e0b96b4f80dcdbcd00a9766e6838fc5fcf9a07736212a0c629e86f",
+      "description": "Senior embedded software engineer specializing in firmware and driver development for ARM Cortex-M microcontrollers (Teensy, STM32, nRF52, SAMD). Decades of experience writing reliable, optimized, and maintainable embedded code with deep expertise in memory barriers, DMA/cache coherency, interrupt-driven I/O, and peripheral drivers.",
+      "duplicates": []
+    },
+    {
+      "name": "article-illustrations",
+      "source": "agents/skills/article-illustrations",
+      "sha256": "fdbbeadcf5a0535da2402717a030513aa0295e00d5eda15d6449510b294f38d9",
+      "description": "Generate hand-drawn 16:9 article illustrations featuring the Grav character IP. Turns article concepts into memorable whiteboard-sketch explanations with a recurring floating character, sparse annotations, and absurd metaphors.",
+      "duplicates": []
+    },
+    {
+      "name": "async-python-patterns",
+      "source": "agents/skills/async-python-patterns",
+      "sha256": "dcdc005deb3ab03aba70cde2bcec79aed486898b9850c2a9fdf6590bc662ed89",
+      "description": "Master Python asyncio, concurrent programming, and async/await patterns for high-performance applications. Use when building async APIs, concurrent systems, or I/O-bound applications requiring non-blocking operations.",
+      "duplicates": []
+    },
+    {
+      "name": "attack-tree-construction",
+      "source": "agents/skills/attack-tree-construction",
+      "sha256": "5a79c9b356e488bd9885419f8e07909411133b6940ff665805add6af38e9f0c7",
+      "description": "Build comprehensive attack trees to visualize threat paths. Use when mapping attack scenarios, identifying defense gaps, or communicating security risks to stakeholders.",
+      "duplicates": []
+    },
+    {
+      "name": "auth-implementation-patterns",
+      "source": "agents/skills/auth-implementation-patterns",
+      "sha256": "52bece1c5983047d42737f2702193ddc1d2386b6888ddd6a72921e25345d9753",
+      "description": "Master authentication and authorization patterns including JWT, OAuth2, session management, and RBAC to build secure, scalable access control systems. Use when implementing auth systems, securing APIs, or debugging security issues.",
+      "duplicates": []
+    },
+    {
+      "name": "backend-architect",
+      "source": "agents/skills/backend-architect",
+      "sha256": "718ff4099eb8879d32d3d0fa64480bfff3c44829ee3cd7d22b3ca2965ae3fb15",
+      "description": "Expert backend architect specializing in scalable API design, microservices architecture, and distributed systems. Masters REST/GraphQL/gRPC APIs, event-driven architectures, service mesh patterns, and modern backend frameworks. Handles service boundary definition, inter-service communication, resilience patterns, and observability. Use PROACTIVELY when creating new backend services or APIs.",
+      "duplicates": []
+    },
+    {
+      "name": "backend-development-feature-development",
+      "source": "agents/skills/backend-development-feature-development",
+      "sha256": "83f4668892bb225038addb2175de7be5d80a7525076f0b41e0d301a21b8cb04f",
+      "description": "Orchestrate end-to-end backend feature development from requirements to deployment. Use when coordinating multi-phase feature delivery across teams and services.",
+      "duplicates": []
+    },
+    {
+      "name": "backend-security-coder",
+      "source": "agents/skills/backend-security-coder",
+      "sha256": "43e2138659b80449705363038e4ddf3c7933cc165c097632c37d3f8d17e24461",
+      "description": "Expert in secure backend coding practices specializing in input validation, authentication, and API security. Use PROACTIVELY for backend security implementations or security code reviews.",
+      "duplicates": []
+    },
+    {
+      "name": "backtesting-frameworks",
+      "source": "agents/skills/backtesting-frameworks",
+      "sha256": "a964802e2efeedb938801f8f8f447865dc65cd0510e01cc3b4510767e71d923e",
+      "description": "Build robust backtesting systems for trading strategies with proper handling of look-ahead bias, survivorship bias, and transaction costs. Use when developing trading algorithms, validating strategies, or building backtesting infrastructure.",
+      "duplicates": []
+    },
+    {
+      "name": "banner-design",
+      "source": "agents/ui-ux-pro-max-skill-main/.claude/skills/banner-design",
+      "sha256": "82a9573bf89fe091df5104c03c4d9febeff559a3a275e4f7ee54417f4f122d7b",
+      "description": "Design banners for social media, ads, website heroes, creative assets, and print. Multiple art direction options with optional generated or supplied visuals. Actions: design, create, generate banner. Platforms: Facebook, Twitter/X, LinkedIn, YouTube, Instagram, Google Display, website hero, print. Styles: minimalist, gradient, bold typography, photo-based, illustrated, geometric, retro, glassmorphism, 3D, neon, duotone, editorial, collage.",
+      "duplicates": []
+    },
+    {
+      "name": "bash-defensive-patterns",
+      "source": "agents/skills/bash-defensive-patterns",
+      "sha256": "d20d7ef23f74c38054e36c5c341097580bf8555e26c086ee11bbd64756312fe0",
+      "description": "Master defensive Bash programming techniques for production-grade scripts. Use when writing robust shell scripts, CI/CD pipelines, or system utilities requiring fault tolerance and safety.",
+      "duplicates": []
+    },
+    {
+      "name": "bash-pro",
+      "source": "agents/skills/bash-pro",
+      "sha256": "406855118c2320c43898c6550181a051757aa72a1e38e387380bd79cf1297827",
+      "description": "Master of defensive Bash scripting for production automation, CI/CD pipelines, and system utilities. Expert in safe, portable, and testable shell scripts.",
+      "duplicates": []
+    },
+    {
+      "name": "bats-testing-patterns",
+      "source": "agents/skills/bats-testing-patterns",
+      "sha256": "2a0cb7f630a84ac498ecfefc3f0347863d080486a10eda37a3be9c9e7baf2e17",
+      "description": "Master Bash Automated Testing System (Bats) for comprehensive shell script testing. Use when writing tests for shell scripts, CI/CD pipelines, or requiring test-driven development of shell utilities.",
+      "duplicates": []
+    },
+    {
+      "name": "bazel-build-optimization",
+      "source": "agents/skills/bazel-build-optimization",
+      "sha256": "a6a048988a3d5270a26277fe3551d94110fd98abca4b61ca62b999cbc8f86524",
+      "description": "Optimize Bazel builds for large-scale monorepos. Use when configuring Bazel, implementing remote execution, or optimizing build performance for enterprise codebases.",
+      "duplicates": []
+    },
+    {
+      "name": "billing-automation",
+      "source": "agents/skills/billing-automation",
+      "sha256": "39ecc5402a39b90c926e3aedb9e9170f9203fd1fa72a55458b0bc0fce49891a2",
+      "description": "Build automated billing systems for recurring payments, invoicing, subscription lifecycle, and dunning management. Use when implementing subscription billing, automating invoicing, or managing recurring payment systems.",
+      "duplicates": []
+    },
+    {
+      "name": "binary-analysis-patterns",
+      "source": "agents/skills/binary-analysis-patterns",
+      "sha256": "a9bc4e35893a2a4c0bebab6bb59190a1ad120f0250ac17939e4de593284e7c37",
+      "description": "Master binary analysis patterns including disassembly, decompilation, control flow analysis, and code pattern recognition. Use when analyzing executables, understanding compiled code, or performing static analysis on binaries.",
+      "duplicates": []
+    },
+    {
+      "name": "blockchain-developer",
+      "source": "agents/skills/blockchain-developer",
+      "sha256": "79dbe1f513ee40e523b2fcaec60eebadc9540153fc0d1877d8a81de91d305573",
+      "description": "Build production-ready Web3 applications, smart contracts, and decentralized systems. Implements DeFi protocols, NFT platforms, DAOs, and enterprise blockchain integrations. Use PROACTIVELY for smart contracts, Web3 apps, DeFi protocols, or blockchain infrastructure.",
+      "duplicates": []
+    },
+    {
+      "name": "brand",
+      "source": "agents/ui-ux-pro-max-skill-main/.claude/skills/brand",
+      "sha256": "00a5f0ea8036aba3d06b3a884be4e7b727c6766c0eb1c0226ab667b626786ab1",
+      "description": "Brand voice, visual identity, messaging frameworks, asset management, brand consistency. Activate for branded content, tone of voice, marketing assets, brand compliance, style guides.",
+      "duplicates": []
+    },
+    {
+      "name": "browser-testing-with-devtools",
+      "source": "agents/agent-skills-main (2)/skills/browser-testing-with-devtools",
+      "sha256": "011e0b15b77eceb132ac2900a8dd4e6c6dcad77d19b2e5d3a46ecaf9f4288a4c",
+      "description": "Tests in real browsers via Chrome DevTools MCP. Use when building or debugging anything that runs in a browser. Use when you need to inspect the DOM, capture console errors, analyze network requests, profile performance, or verify visual output with real runtime data. Requires the chrome-devtools MCP server to be configured.",
+      "duplicates": [
+        "agents/agent-skills-main/skills/browser-testing-with-devtools"
+      ]
+    },
+    {
+      "name": "business-analyst",
+      "source": "agents/skills/business-analyst",
+      "sha256": "4671031e9d03bb0bafaa9db22691d54e90cadf0ad0659f0836cd7bd4521fe03c",
+      "description": "Master modern business analysis with AI-powered analytics, real-time dashboards, and data-driven insights. Build comprehensive KPI frameworks, predictive models, and strategic recommendations. Use PROACTIVELY for business intelligence or strategic analysis.",
+      "duplicates": []
+    },
+    {
+      "name": "c-pro",
+      "source": "agents/skills/c-pro",
+      "sha256": "c8cb8d0e0b4dddd35af97120e5d212a522cd63226fb4b97e7833eaf0684dc213",
+      "description": "Write efficient C code with proper memory management, pointer arithmetic, and system calls. Handles embedded systems, kernel modules, and performance-critical code. Use PROACTIVELY for C optimization, memory issues, or system programming.",
+      "duplicates": []
+    },
+    {
+      "name": "c4-architecture-c4-architecture",
+      "source": "agents/skills/c4-architecture-c4-architecture",
+      "sha256": "4f6c942b9ff901a56cc39ac6f8115ec652448c538a4e9c6ae64bb4a7f72007ab",
+      "description": "Generate comprehensive C4 architecture documentation for an existing repository/codebase using a bottom-up analysis approach.",
+      "duplicates": []
+    },
+    {
+      "name": "c4-code",
+      "source": "agents/skills/c4-code",
+      "sha256": "05ced45b8faf6d35cdf3762e372ef6e5e4882934177f61a090c9d45b6f7d42d9",
+      "description": "Expert C4 Code-level documentation specialist. Analyzes code directories to create comprehensive C4 code-level documentation including function signatures, arguments, dependencies, and code structure. Use when documenting code at the lowest C4 level for individual directories and code modules.",
+      "duplicates": []
+    },
+    {
+      "name": "c4-component",
+      "source": "agents/skills/c4-component",
+      "sha256": "7107b3d5e4336d7d6a8194c4421a25b3d8d63b749a4d84c1a08895e567849663",
+      "description": "Expert C4 Component-level documentation specialist. Synthesizes C4 Code-level documentation into Component-level architecture, defining component boundaries, interfaces, and relationships. Creates component diagrams and documentation. Use when synthesizing code-level documentation into logical components.",
+      "duplicates": []
+    },
+    {
+      "name": "c4-container",
+      "source": "agents/skills/c4-container",
+      "sha256": "0263bf78f132198be87b02f3054bc00033816a0f735771801b445a63302015ca",
+      "description": "Expert C4 Container-level documentation specialist. Synthesizes Component-level documentation into Container-level architecture, mapping components to deployment units, documenting container interfaces as APIs, and creating container diagrams. Use when synthesizing components into deployment containers and documenting system deployment architecture.",
+      "duplicates": []
+    },
+    {
+      "name": "c4-context",
+      "source": "agents/skills/c4-context",
+      "sha256": "dcdb27317775736b6cacdc35529be722c3205d2799397aff9012b42b2e605f18",
+      "description": "Expert C4 Context-level documentation specialist. Creates high-level system context diagrams, documents personas, user journeys, system features, and external dependencies. Synthesizes container and component documentation with system documentation to create comprehensive context-level architecture. Use when creating the highest-level C4 system context documentation.",
+      "duplicates": []
+    },
+    {
+      "name": "changelog-automation",
+      "source": "agents/skills/changelog-automation",
+      "sha256": "e9aae6a3556a317c54120c10c1cf815fa5e273add1c123c4a506264cb8c39cbf",
+      "description": "Automate changelog generation from commits, PRs, and releases following Keep a Changelog format. Use when setting up release workflows, generating release notes, or standardizing commit conventions.",
+      "duplicates": []
+    },
+    {
+      "name": "ci-cd-and-automation",
+      "source": "agents/agent-skills-main (2)/skills/ci-cd-and-automation",
+      "sha256": "a16880c657078383db084ec1f1b97ca643f3bd99b3be736d884712053fd4f8ee",
+      "description": "Automates CI/CD pipeline setup. Use when setting up or modifying build and deployment pipelines. Use when you need to automate quality gates, configure test runners in CI, or establish deployment strategies.",
+      "duplicates": [
+        "agents/agent-skills-main/skills/ci-cd-and-automation"
+      ]
+    },
+    {
+      "name": "cicd-automation-workflow-automate",
+      "source": "agents/skills/cicd-automation-workflow-automate",
+      "sha256": "9b716cc9253c7582d9927f09a82e159b7566cd0a19544e7b5e9728d24cd32941",
+      "description": "You are a workflow automation expert specializing in creating efficient CI/CD pipelines, GitHub Actions workflows, and automated development processes. Design automation that reduces manual work, improves consistency, and accelerates delivery while maintaining quality and security.",
+      "duplicates": []
+    },
+    {
+      "name": "cloud-architect",
+      "source": "agents/skills/cloud-architect",
+      "sha256": "74fa70c5f6df637873fb759041c8b7d8903a2bd0293ce213fc72a0741eec75e0",
+      "description": "Expert cloud architect specializing in AWS/Azure/GCP multi-cloud infrastructure design, advanced IaC (Terraform/OpenTofu/CDK), FinOps cost optimization, and modern architectural patterns. Masters serverless, microservices, security, compliance, and disaster recovery. Use PROACTIVELY for cloud architecture, cost optimization, migration planning, or multi-cloud strategies.",
+      "duplicates": []
+    },
+    {
+      "name": "code-documentation-code-explain",
+      "source": "agents/skills/code-documentation-code-explain",
+      "sha256": "af8ad6005c65443e91c1f5fbf56ad7ae67f5056efcf1817b9cfa25c21e9dce95",
+      "description": "You are a code education expert specializing in explaining complex code through clear narratives, visual diagrams, and step-by-step breakdowns. Transform difficult concepts into understandable explanations.",
+      "duplicates": []
+    },
+    {
+      "name": "code-documentation-doc-generate",
+      "source": "agents/skills/code-documentation-doc-generate",
+      "sha256": "429c2e0d2b8549447e2f1788df6d143f8b67802f90f83eab6c32df1be0716067",
+      "description": "You are a documentation expert specializing in creating comprehensive, maintainable documentation from code. Generate API docs, architecture diagrams, user guides, and technical references using AI-powered analysis and industry best practices.",
+      "duplicates": []
+    },
+    {
+      "name": "code-refactoring-context-restore",
+      "source": "agents/skills/code-refactoring-context-restore",
+      "sha256": "1262a9e1f558eb238cbc5c2ffec8a9dcd063d75a4f878d76ea4fe496e9f40c05",
+      "description": "Use when working with code refactoring context restore",
+      "duplicates": []
+    },
+    {
+      "name": "code-refactoring-refactor-clean",
+      "source": "agents/skills/code-refactoring-refactor-clean",
+      "sha256": "f325411a8d25e15d5c2efd64f361fddd7462e5fe6ef8e76013243a320f6f0abe",
+      "description": "You are a code refactoring expert specializing in clean code principles, SOLID design patterns, and modern software engineering best practices. Analyze and refactor the provided code to improve its quality, maintainability, and performance.",
+      "duplicates": []
+    },
+    {
+      "name": "code-refactoring-tech-debt",
+      "source": "agents/skills/code-refactoring-tech-debt",
+      "sha256": "1ec2d6d1e2735202eacf3794e52d6a479e36f83a0ff1d7010561c9073bb9691a",
+      "description": "You are a technical debt expert specializing in identifying, quantifying, and prioritizing technical debt in software projects. Analyze the codebase to uncover debt, assess its impact, and create acti",
+      "duplicates": []
+    },
+    {
+      "name": "code-review-ai-ai-review",
+      "source": "agents/skills/code-review-ai-ai-review",
+      "sha256": "16104d83db514998b357f4d6d093e480ab801256efcb414857d1fcb5430e2e9b",
+      "description": "You are an expert AI-powered code review specialist combining automated static analysis, intelligent pattern recognition, and modern DevOps practices. Leverage AI tools (GitHub Copilot, Qodo, GPT-5, C",
+      "duplicates": []
+    },
+    {
+      "name": "code-review-and-quality",
+      "source": "agents/agent-skills-main (2)/skills/code-review-and-quality",
+      "sha256": "f1dd8ddc07df3320c31a6e260eeeddde48519bd35040c3c2c814a053b0d09eb7",
+      "description": "Conducts multi-axis code review. Use before merging any change. Use when reviewing code written by yourself, another agent, or a human. Use when you need to assess code quality across multiple dimensions before it enters the main branch. Use when asked to review a diff or a pull request, even when the diff is pasted inline.",
+      "duplicates": []
+    },
+    {
+      "name": "code-review-and-quality-original",
+      "source": "agents/agent-skills-main/skills/code-review-and-quality",
+      "sha256": "51e39580cd1511ec93a41dd853433a76bd881444930daccbe128143b367007a3",
+      "description": "Conducts multi-axis code review. Use before merging any change. Use when reviewing code written by yourself, another agent, or a human. Use when you need to assess code quality across multiple dimensions before it enters the main branch.",
+      "duplicates": []
+    },
+    {
+      "name": "code-review-excellence",
+      "source": "agents/skills/code-review-excellence",
+      "sha256": "a3f0ea04a617633c85d0836ea241f1718a8531d70245be4a27f8a300ec4d54ac",
+      "description": "Master effective code review practices to provide constructive feedback, catch bugs early, and foster knowledge sharing while maintaining team morale. Use when reviewing pull requests, establishing review standards, or mentoring developers.",
+      "duplicates": []
+    },
+    {
+      "name": "code-reviewer",
+      "source": "agents/skills/code-reviewer",
+      "sha256": "7e3112e1c50cf19ef931f0b662702947a5546795be3357d761dd75f6b1986268",
+      "description": "Elite code review expert specializing in modern AI-powered code analysis, security vulnerabilities, performance optimization, and production reliability. Masters static analysis tools, security scanning, and configuration review with 2024/2025 best practices. Use PROACTIVELY for code quality assurance.",
+      "duplicates": []
+    },
+    {
+      "name": "code-simplification",
+      "source": "agents/agent-skills-main (2)/skills/code-simplification",
+      "sha256": "e971d58f3320c26c29f1b0b6254c5ccd89fe79f74775dace9a506818553c4a0c",
+      "description": "Simplifies code for clarity. Use when refactoring code for clarity without changing behavior. Use when code works but is harder to read, maintain, or extend than it should be. Use when reviewing code that has accumulated unnecessary complexity.",
+      "duplicates": [
+        "agents/agent-skills-main/skills/code-simplification"
+      ]
+    },
+    {
+      "name": "codebase-cleanup-deps-audit",
+      "source": "agents/skills/codebase-cleanup-deps-audit",
+      "sha256": "9bb95bdaad56aaacb2d6f3829929cfc712a632d41caf28f46d8f3fe5cb9f9a7e",
+      "description": "You are a dependency security expert specializing in vulnerability scanning, license compliance, and supply chain security. Analyze project dependencies for known vulnerabilities, licensing issues, outdated packages, and provide actionable remediation strategies.",
+      "duplicates": []
+    },
+    {
+      "name": "codebase-cleanup-refactor-clean",
+      "source": "agents/skills/codebase-cleanup-refactor-clean",
+      "sha256": "cf3910e9c38157bd1b16ef5b725e3666fae64c0cd78e5d9a933e8f20ea516b32",
+      "description": "You are a code refactoring expert specializing in clean code principles, SOLID design patterns, and modern software engineering best practices. Analyze and refactor the provided code to improve its quality, maintainability, and performance.",
+      "duplicates": []
+    },
+    {
+      "name": "codebase-cleanup-tech-debt",
+      "source": "agents/skills/codebase-cleanup-tech-debt",
+      "sha256": "f83ae6f2b47d7bad6092e1067fb804a8d9189e6e63515f2373fb762184ba3b52",
+      "description": "You are a technical debt expert specializing in identifying, quantifying, and prioritizing technical debt in software projects. Analyze the codebase to uncover debt, assess its impact, and create acti",
+      "duplicates": []
+    },
+    {
+      "name": "competitive-landscape",
+      "source": "agents/skills/competitive-landscape",
+      "sha256": "9ff3b2e5ef45c137c68f8097bdbe23530ca53712e4d28119b9cb4a8248b7b15d",
+      "description": "This skill should be used when the user asks to \"analyze competitors\", \"assess competitive landscape\", \"identify differentiation\", \"evaluate market positioning\", \"apply Porter's Five Forces\", or requests competitive strategy analysis.",
+      "duplicates": []
+    },
+    {
+      "name": "comprehensive-review-full-review",
+      "source": "agents/skills/comprehensive-review-full-review",
+      "sha256": "6a287280c89f0734965840879be3bc26a77a43d2c0d90c23cf7077311fff35cd",
+      "description": "Use when working with comprehensive review full review",
+      "duplicates": []
+    },
+    {
+      "name": "comprehensive-review-pr-enhance",
+      "source": "agents/skills/comprehensive-review-pr-enhance",
+      "sha256": "163b0f94fd850979ca1148bace0982d0155c3a3716fa97d19bc1ecc602839474",
+      "description": "You are a PR optimization expert specializing in creating high-quality pull requests that facilitate efficient code reviews. Generate comprehensive PR descriptions, automate review processes, and ensure PRs follow best practices for clarity, size, and reviewability.",
+      "duplicates": []
+    },
+    {
+      "name": "conductor-implement",
+      "source": "agents/skills/conductor-implement",
+      "sha256": "aecb3a484bb90a8cf71cfec5c8ac8b95182642dfbe0f7da20498498784f59df6",
+      "description": "Execute tasks from a track's implementation plan following TDD workflow",
+      "duplicates": []
+    },
+    {
+      "name": "conductor-manage",
+      "source": "agents/skills/conductor-manage",
+      "sha256": "8b3b6192309886d3518d6b19a88a72495ad4a1fa868be13ed3ac555e41fd5b9d",
+      "description": "Manage track lifecycle: archive, restore, delete, rename, and cleanup",
+      "duplicates": []
+    },
+    {
+      "name": "conductor-new-track",
+      "source": "agents/skills/conductor-new-track",
+      "sha256": "e099db2a0d943db379c161af47003089e3dcac69ec0d86099e0af25df61ee297",
+      "description": "Create a new track with specification and phased implementation plan",
+      "duplicates": []
+    },
+    {
+      "name": "conductor-revert",
+      "source": "agents/skills/conductor-revert",
+      "sha256": "ec024a406dd7efe3718bda6d6b9da1fa21c958a5786860ddb3ee5205dd852c34",
+      "description": "Git-aware undo by logical work unit (track, phase, or task)",
+      "duplicates": []
+    },
+    {
+      "name": "conductor-setup",
+      "source": "agents/skills/conductor-setup",
+      "sha256": "e2e4ee29b5a10d419f4986b03a40a8f87976837aa5af304b56f497c30fbe3705",
+      "description": "Initialize project with Conductor artifacts (product definition, tech stack, workflow, style guides)",
+      "duplicates": []
+    },
+    {
+      "name": "conductor-status",
+      "source": "agents/skills/conductor-status",
+      "sha256": "4e7d6268dfa2045e75cf3251270a23f7f2bb2c396fb512193175881d500d74fb",
+      "description": "Display project status, active tracks, and next actions",
+      "duplicates": []
+    },
+    {
+      "name": "conductor-validator",
+      "source": "agents/skills/conductor-validator",
+      "sha256": "583592c18d86f6fd94a80b697cec451d76aba14a19303e00d1cd7ad20dad3a6d",
+      "description": "Validates Conductor project artifacts for completeness, consistency, and correctness. Use after setup, when diagnosing issues, or before implementation to verify project context.",
+      "duplicates": []
+    },
+    {
+      "name": "constraint-driven-development",
+      "source": "agents/agent-skills-main (2)/skills/constraint-driven-development",
+      "sha256": "82edd79af9388b75513e297a057bfae9860a528aee019ec8733afe6dfc5e75fb",
+      "description": "Establishes a project's quality bar as a written contract and stops agents quietly lowering it. Interviews the user on which dimensions matter, supplies sane default thresholds when they have no number in mind, records everything in CONSTRAINTS.md, and watches the diff for a weakened bar — new @ts-ignore or eslint-disable suppressions, skipped or deleted tests, assertions stripped out, unimplemented stubs, thresholds edited down. Use when no quality bar is written down, when the user says \"set up constraints\" or \"define our standards\", when the user wants dimensions they care about — accessibility, web performance, coverage — set up as enforced constraints, when an agent keeps silencing checks or skipping tests to get to green, when you need a coverage or performance threshold and don't know what number to pick, or when an agent writes more code than anyone will read.",
+      "duplicates": []
+    },
+    {
+      "name": "constraint-driven-development-original",
+      "source": "agents/agent-skills-main/skills/constraint-driven-development",
+      "sha256": "5e3b06d6e908db5cb52fccbcf957dbc6b35bb7d3fb1ff107181e1028fbc23c7c",
+      "description": "Establishes a project's quality bar as a written contract and stops agents quietly lowering it. Interviews the user on which dimensions matter, supplies sane default thresholds when they have no number in mind, records everything in CONSTRAINTS.md, and watches the diff for a weakened bar — new @ts-ignore or eslint-disable suppressions, skipped or deleted tests, assertions stripped out, unimplemented stubs, thresholds edited down. Use when no quality bar is written down, when the user says \"set up constraints\" or \"define our standards\", when the user wants dimensions they care about — accessibility, web performance, coverage — set up as enforced constraints, when an agent keeps silencing checks or skipping tests to get to green, when you need a coverage or performance threshold and don't know what number to pick, or when an agent writes more code than anyone will read.",
+      "duplicates": []
+    },
+    {
+      "name": "content-marketer",
+      "source": "agents/skills/content-marketer",
+      "sha256": "54447c8aa2c4b863e6bdc8cf07b362ba2f5b2d01e6e4bd88b136e33568f59e1b",
+      "description": "Elite content marketing strategist specializing in AI-powered content creation, omnichannel distribution, SEO optimization, and data-driven performance marketing. Masters modern content tools, social media automation, and conversion optimization with 2024/2025 best practices. Use PROACTIVELY for comprehensive content marketing.",
+      "duplicates": []
+    },
+    {
+      "name": "context-driven-development",
+      "source": "agents/skills/context-driven-development",
+      "sha256": "6ebc53a795de39068794ef9909a4f8d6ef2ab747bf3d5047f7f72499534ecfba",
+      "description": "Use this skill when working with Conductor's context-driven development methodology, managing project context artifacts, or understanding the relationship between product.md, tech-stack.md, and workflow.md files.",
+      "duplicates": []
+    },
+    {
+      "name": "context-engineering",
+      "source": "agents/agent-skills-main (2)/skills/context-engineering",
+      "sha256": "806237d2585aee37aa1c888e97fc22733452bfabd8cc214a7e19bafeb76027a5",
+      "description": "Optimizes agent context setup. Use when starting a new session, when agent output quality degrades, when switching between tasks, or when you need to configure rules files and context for a project.",
+      "duplicates": [
+        "agents/agent-skills-main/skills/context-engineering"
+      ]
+    },
+    {
+      "name": "context-management-context-restore",
+      "source": "agents/skills/context-management-context-restore",
+      "sha256": "a5f469914ed6054f26440bf39ab3ed83e4e7434a84de16f9256e5cf277db1a4d",
+      "description": "Use when working with context management context restore",
+      "duplicates": []
+    },
+    {
+      "name": "context-management-context-save",
+      "source": "agents/skills/context-management-context-save",
+      "sha256": "2b8a00ee3778ba2d56af461487cf0385c82ad7db9d7891b0c6b107ef9d75b0e8",
+      "description": "Use when working with context management context save",
+      "duplicates": []
+    },
+    {
+      "name": "context-manager",
+      "source": "agents/skills/context-manager",
+      "sha256": "2c8f4eb8d9acf1a5b289ec945bf673a95944b309592bd9f0347e69e75138125d",
+      "description": "Elite AI context engineering specialist mastering dynamic context management, vector databases, knowledge graphs, and intelligent memory systems. Orchestrates context across multi-agent workflows, enterprise AI systems, and long-running projects with 2024/2025 best practices. Use PROACTIVELY for complex AI orchestration.",
+      "duplicates": []
+    },
+    {
+      "name": "cost-optimization",
+      "source": "agents/skills/cost-optimization",
+      "sha256": "44b1cfecbae49fbe6f34c43339bb2ebeab5d77242601e784297ec95fbbe3864c",
+      "description": "Optimize cloud costs through resource rightsizing, tagging strategies, reserved instances, and spending analysis. Use when reducing cloud expenses, analyzing infrastructure costs, or implementing cost governance policies.",
+      "duplicates": []
+    },
+    {
+      "name": "cpp-pro",
+      "source": "agents/skills/cpp-pro",
+      "sha256": "d45b845732bc1de12b5580c596b6ff867b898589f55efdaa700f78c1cc8e63e3",
+      "description": "Write idiomatic C++ code with modern features, RAII, smart pointers, and STL algorithms. Handles templates, move semantics, and performance optimization. Use PROACTIVELY for C++ refactoring, memory safety, or complex C++ patterns.",
+      "duplicates": []
+    },
+    {
+      "name": "cqrs-implementation",
+      "source": "agents/skills/cqrs-implementation",
+      "sha256": "d624c0a20230efd83174769af813093fe2b218aec60ecb91deec29f0d2aa86e4",
+      "description": "Implement Command Query Responsibility Segregation for scalable architectures. Use when separating read and write models, optimizing query performance, or building event-sourced systems.",
+      "duplicates": []
+    },
+    {
+      "name": "csharp-pro",
+      "source": "agents/skills/csharp-pro",
+      "sha256": "40de16c58b08e8b745de218d050a729deec0cb3c73cf2506a032e90e7d13053d",
+      "description": "Write modern C# code with advanced features like records, pattern matching, and async/await. Optimizes .NET applications, implements enterprise patterns, and ensures comprehensive testing. Use PROACTIVELY for C# refactoring, performance optimization, or complex .NET solutions.",
+      "duplicates": []
+    },
+    {
+      "name": "customer-support",
+      "source": "agents/skills/customer-support",
+      "sha256": "c43df86f4a935739f0fe238fa38d57d85a8266dd8c1e3e363f3c2c6d81139475",
+      "description": "Elite AI-powered customer support specialist mastering conversational AI, automated ticketing, sentiment analysis, and omnichannel support experiences. Integrates modern support tools, chatbot platforms, and CX optimization with 2024/2025 best practices. Use PROACTIVELY for comprehensive customer experience management.",
+      "duplicates": []
+    },
+    {
+      "name": "data-engineer",
+      "source": "agents/skills/data-engineer",
+      "sha256": "2f1c5ab38904d33a96f6a36c15af3fe770562a2cd4b6e21aafd93b309bc76607",
+      "description": "Build scalable data pipelines, modern data warehouses, and real-time streaming architectures. Implements Apache Spark, dbt, Airflow, and cloud-native data platforms. Use PROACTIVELY for data pipeline design, analytics infrastructure, or modern data stack implementation.",
+      "duplicates": []
+    },
+    {
+      "name": "data-engineering-data-driven-feature",
+      "source": "agents/skills/data-engineering-data-driven-feature",
+      "sha256": "2ae0da4d3d8f86f942d7fc8dc009e17a66ab8d06233a071032650921975d002e",
+      "description": "Build features guided by data insights, A/B testing, and continuous measurement using specialized agents for analysis, implementation, and experimentation.",
+      "duplicates": []
+    },
+    {
+      "name": "data-engineering-data-pipeline",
+      "source": "agents/skills/data-engineering-data-pipeline",
+      "sha256": "e0899253b54fc3f02924a38d9f306ff2b951b8bbd4c64f0cbd5acb0ab76036f4",
+      "description": "You are a data pipeline architecture expert specializing in scalable, reliable, and cost-effective data pipelines for batch and streaming data processing.",
+      "duplicates": []
+    },
+    {
+      "name": "data-quality-frameworks",
+      "source": "agents/skills/data-quality-frameworks",
+      "sha256": "a0b337a3c12c5e4e3886504f89f23a9aa0246e1a7dad18ebed1c6146eefc0564",
+      "description": "Implement data quality validation with Great Expectations, dbt tests, and data contracts. Use when building data quality pipelines, implementing validation rules, or establishing data contracts.",
+      "duplicates": []
+    },
+    {
+      "name": "data-scientist",
+      "source": "agents/skills/data-scientist",
+      "sha256": "c107721b4016d95267b212a99aa113178fcd48a762b7e8dd9d383e210a3abd08",
+      "description": "Expert data scientist for advanced analytics, machine learning, and statistical modeling. Handles complex data analysis, predictive modeling, and business intelligence. Use PROACTIVELY for data analysis tasks, ML modeling, statistical analysis, and data-driven insights.",
+      "duplicates": []
+    },
+    {
+      "name": "data-storytelling",
+      "source": "agents/skills/data-storytelling",
+      "sha256": "10f5e55f30414f0307a7c86af7df1a87a81af193f7458cc6a7e0b61fdf514bd1",
+      "description": "Transform data into compelling narratives using visualization, context, and persuasive structure. Use when presenting analytics to stakeholders, creating data reports, or building executive presentations.",
+      "duplicates": []
+    },
+    {
+      "name": "database-admin",
+      "source": "agents/skills/database-admin",
+      "sha256": "2ece97a5ace48ca4c389c8f3983a07c8c4a0aabbcf939c455a1ce8326d0357cd",
+      "description": "Expert database administrator specializing in modern cloud databases, automation, and reliability engineering. Masters AWS/Azure/GCP database services, Infrastructure as Code, high availability, disaster recovery, performance optimization, and compliance. Handles multi-cloud strategies, container databases, and cost optimization. Use PROACTIVELY for database architecture, operations, or reliability engineering.",
+      "duplicates": []
+    },
+    {
+      "name": "database-architect",
+      "source": "agents/skills/database-architect",
+      "sha256": "5e0522e8d98f37904fe8e1033e73d43babf90608f095cdb6fbee2e39dc8c2cb5",
+      "description": "Expert database architect specializing in data layer design from scratch, technology selection, schema modeling, and scalable database architectures. Masters SQL/NoSQL/TimeSeries database selection, normalization strategies, migration planning, and performance-first design. Handles both greenfield architectures and re-architecture of existing systems. Use PROACTIVELY for database architecture, technology selection, or data modeling decisions.",
+      "duplicates": []
+    },
+    {
+      "name": "database-cloud-optimization-cost-optimize",
+      "source": "agents/skills/database-cloud-optimization-cost-optimize",
+      "sha256": "b3e19d0d85068795a33a56cd5bbd2c69b0a703e9b2abef2d9b9ed83b18b27bac",
+      "description": "You are a cloud cost optimization expert specializing in reducing infrastructure expenses while maintaining performance and reliability. Analyze cloud spending, identify savings opportunities, and implement cost-effective architectures across AWS, Azure, and GCP.",
+      "duplicates": []
+    },
+    {
+      "name": "database-migration",
+      "source": "agents/skills/database-migration",
+      "sha256": "40c235eab6777a58721120a82b0908851a5a83ab127da2c93bc072ae70f32021",
+      "description": "Execute database migrations across ORMs and platforms with zero-downtime strategies, data transformation, and rollback procedures. Use when migrating databases, changing schemas, performing data transformations, or implementing zero-downtime deployment strategies.",
+      "duplicates": []
+    },
+    {
+      "name": "database-migrations-migration-observability",
+      "source": "agents/skills/database-migrations-migration-observability",
+      "sha256": "5f747dc09b00451b6df7819e52a1661a5992411092be9d5bf011be81a04d5ccd",
+      "description": "Migration monitoring, CDC, and observability infrastructure",
+      "duplicates": []
+    },
+    {
+      "name": "database-migrations-sql-migrations",
+      "source": "agents/skills/database-migrations-sql-migrations",
+      "sha256": "d4b42616e09f8501557595fcc85e248d07e87733619aa9a34bee6930db3dbde6",
+      "description": "SQL database migrations with zero-downtime strategies for PostgreSQL, MySQL, SQL Server",
+      "duplicates": []
+    },
+    {
+      "name": "database-optimizer",
+      "source": "agents/skills/database-optimizer",
+      "sha256": "c802a79e0b7cafd3312df72a1611a1645df856db26974d6e32fbdc1e2aff94f0",
+      "description": "Expert database optimizer specializing in modern performance tuning, query optimization, and scalable architectures. Masters advanced indexing, N+1 resolution, multi-tier caching, partitioning strategies, and cloud database optimization. Handles complex query analysis, migration strategies, and performance monitoring. Use PROACTIVELY for database optimization, performance issues, or scalability challenges.",
+      "duplicates": []
+    },
+    {
+      "name": "dbt-transformation-patterns",
+      "source": "agents/skills/dbt-transformation-patterns",
+      "sha256": "673232d4b9bf1960f1040abf4c4d4ae5b028fbabe556e3e8b86d124891368222",
+      "description": "Master dbt (data build tool) for analytics engineering with model organization, testing, documentation, and incremental strategies. Use when building data transformations, creating data models, or implementing analytics engineering best practices.",
+      "duplicates": []
+    },
+    {
+      "name": "debugger",
+      "source": "agents/skills/debugger",
+      "sha256": "789e16c13fdf3b0507a0cd7ad30d972716d69d21ae65786b75913dc2f85167a1",
+      "description": "Debugging specialist for errors, test failures, and unexpected behavior. Use proactively when encountering any issues.",
+      "duplicates": []
+    },
+    {
+      "name": "debugging-and-error-recovery",
+      "source": "agents/agent-skills-main (2)/skills/debugging-and-error-recovery",
+      "sha256": "902c9c586ce32abf203c5b00982f23193b46e90e89ef6e4e8283c85439b63a6e",
+      "description": "Guides systematic root-cause debugging. Use when tests fail, builds break, something that worked yesterday broke, behavior doesn't match expectations, or you encounter any unexpected error. Use when you need to figure out what broke and why — a systematic approach to finding and fixing the root cause rather than guessing.",
+      "duplicates": [
+        "agents/agent-skills-main/skills/debugging-and-error-recovery"
+      ]
+    },
+    {
+      "name": "debugging-strategies",
+      "source": "agents/skills/debugging-strategies",
+      "sha256": "408c7991d54e32225978faa10bdd3345308a427ab40f7a00c948f4d5f20fdd41",
+      "description": "Master systematic debugging techniques, profiling tools, and root cause analysis to efficiently track down bugs across any codebase or technology stack. Use when investigating bugs, performance issues, or unexpected behavior.",
+      "duplicates": []
+    },
+    {
+      "name": "debugging-toolkit-smart-debug",
+      "source": "agents/skills/debugging-toolkit-smart-debug",
+      "sha256": "6a6bb5ea9d8c5c8643c61b01213092088e2842eafe8366646faf16a92324d522",
+      "description": "Use when working with debugging toolkit smart debug",
+      "duplicates": []
+    },
+    {
+      "name": "defi-protocol-templates",
+      "source": "agents/skills/defi-protocol-templates",
+      "sha256": "c24f6bc9f25c9925a469cb2843a6c336ceb671d5c8f2fafac79429dcc8d6a9c1",
+      "description": "Implement DeFi protocols with production-ready templates for staking, AMMs, governance, and lending systems. Use when building decentralized finance applications or smart contract protocols.",
+      "duplicates": []
+    },
+    {
+      "name": "dependency-management-deps-audit",
+      "source": "agents/skills/dependency-management-deps-audit",
+      "sha256": "17b12f52be75d876764555dbb8e339b4369bce41e86f523be7ecf5929308e11b",
+      "description": "You are a dependency security expert specializing in vulnerability scanning, license compliance, and supply chain security. Analyze project dependencies for known vulnerabilities, licensing issues, outdated packages, and provide actionable remediation strategies.",
+      "duplicates": []
+    },
+    {
+      "name": "dependency-upgrade",
+      "source": "agents/skills/dependency-upgrade",
+      "sha256": "8ec41b4cf96afc337100d2efafca3c1c22a34cc6b7fe2e41bb70059957d5f7b6",
+      "description": "Manage major dependency version upgrades with compatibility analysis, staged rollout, and comprehensive testing. Use when upgrading framework versions, updating major dependencies, or managing breaking changes in libraries.",
+      "duplicates": []
+    },
+    {
+      "name": "deployment-engineer",
+      "source": "agents/skills/deployment-engineer",
+      "sha256": "089c29834339c2a0bdb217a3f8c6637089ac2add5f0ff764df2e254e71729dc1",
+      "description": "Expert deployment engineer specializing in modern CI/CD pipelines, GitOps workflows, and advanced deployment automation. Masters GitHub Actions, ArgoCD/Flux, progressive delivery, container security, and platform engineering. Handles zero-downtime deployments, security scanning, and developer experience optimization. Use PROACTIVELY for CI/CD design, GitOps implementation, or deployment automation.",
+      "duplicates": []
+    },
+    {
+      "name": "deployment-pipeline-design",
+      "source": "agents/skills/deployment-pipeline-design",
+      "sha256": "b590f1d9bb518ca6856c8a7ee763de5ef2a76d9abe0327046cfadf044375bd4c",
+      "description": "Design multi-stage CI/CD pipelines with approval gates, security checks, and deployment orchestration. Use when architecting deployment workflows, setting up continuous delivery, or implementing GitOps practices.",
+      "duplicates": []
+    },
+    {
+      "name": "deployment-validation-config-validate",
+      "source": "agents/skills/deployment-validation-config-validate",
+      "sha256": "448ec13aed4f86e8f5466796b89d9ec13fb5e0f8f6834c748d664f71978d53c5",
+      "description": "You are a configuration management expert specializing in validating, testing, and ensuring the correctness of application configurations. Create comprehensive validation schemas, implement configurat",
+      "duplicates": []
+    },
+    {
+      "name": "deprecation-and-migration",
+      "source": "agents/agent-skills-main (2)/skills/deprecation-and-migration",
+      "sha256": "afb92c4122f939a1e0a58e43c52f8f1516d2ba8cd8b99f0f58db460b5e9a5282",
+      "description": "Manages deprecation and migration. Use when removing old systems, APIs, or features. Use when migrating users from one implementation to another. Use when migrating a database schema in production, such as renaming or dropping a column without downtime (expand/contract). Use when deciding whether to maintain or sunset existing code.",
+      "duplicates": [
+        "agents/agent-skills-main/skills/deprecation-and-migration"
+      ]
+    },
+    {
+      "name": "design",
+      "source": "agents/ui-ux-pro-max-skill-main/.claude/skills/design",
+      "sha256": "b7aebb5dfe5db00e6f0dcefcc6183bec217c2f3279210eae6a3ccb394c4c52b5",
+      "description": "Comprehensive design skill: brand identity, design tokens, UI styling, logo generation (55 styles, Gemini, Atlas Cloud, or MuAPI AI), corporate identity program (50 deliverables, CIP mockups), HTML presentations (Chart.js), banner design (22 styles, social/ads/web/print), icon design (15 styles, SVG, Gemini 3.1 Pro), social photos (HTML→screenshot, multi-platform). Actions: design logo, create CIP, generate mockups, build slides, design banner, generate icon, create social photos, social media images, brand identity, design system. Platforms: Facebook, Twitter, LinkedIn, YouTube, Instagram, Pinterest, TikTok, Threads, Google Ads.",
+      "duplicates": []
+    },
+    {
+      "name": "design-system",
+      "source": "agents/ui-ux-pro-max-skill-main/.claude/skills/design-system",
+      "sha256": "885128f6df6eda68bf6725c8c3568e0a1a9e5718fa681952c9c48b3b52666fdb",
+      "description": "Token architecture, component specifications, and slide generation. Three-layer tokens (primitive→semantic→component), CSS variables, spacing/typography scales, component specs, strategic slide creation. Use for design tokens, systematic design, brand-compliant presentations.",
+      "duplicates": []
+    },
+    {
+      "name": "devops-troubleshooter",
+      "source": "agents/skills/devops-troubleshooter",
+      "sha256": "9ea910d42fa4267a450671e8286cda3752e9e1e255341e48350d4f8b5c0e6af4",
+      "description": "Expert DevOps troubleshooter specializing in rapid incident response, advanced debugging, and modern observability. Masters log analysis, distributed tracing, Kubernetes debugging, performance optimization, and root cause analysis. Handles production outages, system reliability, and preventive monitoring. Use PROACTIVELY for debugging, incident response, or system troubleshooting.",
+      "duplicates": []
+    },
+    {
+      "name": "distributed-debugging-debug-trace",
+      "source": "agents/skills/distributed-debugging-debug-trace",
+      "sha256": "f327959b24656209eeb20c7e6847e4aa7308df7edd223b3fff55d8fe12a95657",
+      "description": "You are a debugging expert specializing in setting up comprehensive debugging environments, distributed tracing, and diagnostic tools. Configure debugging workflows, implement tracing solutions, and establish troubleshooting practices for development and production environments.",
+      "duplicates": []
+    },
+    {
+      "name": "distributed-tracing",
+      "source": "agents/skills/distributed-tracing",
+      "sha256": "74e137900baf52aa00d8a82cd08f1fbe17d43f7932fe046f2c5bbd01b3b10f4c",
+      "description": "Implement distributed tracing with Jaeger and Tempo to track requests across microservices and identify performance bottlenecks. Use when debugging microservices, analyzing request flows, or implementing observability for distributed systems.",
+      "duplicates": []
+    },
+    {
+      "name": "django-pro",
+      "source": "agents/skills/django-pro",
+      "sha256": "3897bb15a424a7bbd2c8fc46ba572199149702edabc09332501ca82bfe9ce231",
+      "description": "Master Django 5.x with async views, DRF, Celery, and Django Channels. Build scalable web applications with proper architecture, testing, and deployment. Use PROACTIVELY for Django development, ORM optimization, or complex Django patterns.",
+      "duplicates": []
+    },
+    {
+      "name": "docs-architect",
+      "source": "agents/skills/docs-architect",
+      "sha256": "ad36f3ca480a8c9aa2becac43600eac3f884df56458013e2794537b2433f6d96",
+      "description": "Creates comprehensive technical documentation from existing codebases. Analyzes architecture, design patterns, and implementation details to produce long-form technical manuals and ebooks. Use PROACTIVELY for system documentation, architecture guides, or technical deep-dives.",
+      "duplicates": []
+    },
+    {
+      "name": "documentation-and-adrs",
+      "source": "agents/agent-skills-main (2)/skills/documentation-and-adrs",
+      "sha256": "919caf47a9cf170ba322b21f7d96af4fcd7d5945a85a84954395d2f7879a5e07",
+      "description": "Records decisions and documentation. Use when you need to document an architecture decision (ADR) or the reasoning behind a design choice, when changing public APIs, shipping features, or when you need to record context that future engineers and agents will need to understand the codebase.",
+      "duplicates": []
+    },
+    {
+      "name": "documentation-and-adrs-original",
+      "source": "agents/agent-skills-main/skills/documentation-and-adrs",
+      "sha256": "8cd8af78348c9172f364fe92e7ed25849da6f4b247b45333a05b1c9999a6d073",
+      "description": "Records decisions and documentation. Use when you need to document an architecture decision (ADR) or the reasoning behind a design choice, when changing public APIs, shipping features, or when you need to record context that future engineers and agents will need to understand the codebase.",
+      "duplicates": []
+    },
+    {
+      "name": "documentation-generation-doc-generate",
+      "source": "agents/skills/documentation-generation-doc-generate",
+      "sha256": "c309a9e65ca50ac9c71f1ba85ebca71e7f2f737da39c12c4c6f3c088587a1d1d",
+      "description": "You are a documentation expert specializing in creating comprehensive, maintainable documentation from code. Generate API docs, architecture diagrams, user guides, and technical references using AI-powered analysis and industry best practices.",
+      "duplicates": []
+    },
+    {
+      "name": "dotnet-architect",
+      "source": "agents/skills/dotnet-architect",
+      "sha256": "5a8f82c5cc42c6f2f30926f80543935a57180a214b3daffa65b233eb48741c28",
+      "description": "Expert .NET backend architect specializing in C#, ASP.NET Core, Entity Framework, Dapper, and enterprise application patterns. Masters async/await, dependency injection, caching strategies, and performance optimization. Use PROACTIVELY for .NET API development, code review, or architecture decisions.",
+      "duplicates": []
+    },
+    {
+      "name": "dotnet-backend-patterns",
+      "source": "agents/skills/dotnet-backend-patterns",
+      "sha256": "6724b5ac74bf8841b0a0127552a935d6553ae2f4477f0b63a1a8b97360b0d375",
+      "description": "Master C#/.NET backend development patterns for building robust APIs, MCP servers, and enterprise applications. Covers async/await, dependency injection, Entity Framework Core, Dapper, configuration, caching, and testing with xUnit. Use when developing .NET backends, reviewing C# code, or designing API architectures.",
+      "duplicates": []
+    },
+    {
+      "name": "doubt-driven-development",
+      "source": "agents/agent-skills-main (2)/skills/doubt-driven-development",
+      "sha256": "77fc61d7cc47825bf3ed6ce746e5c6c2651bc74edd0d8e71f2fdc2e871b8ee05",
+      "description": "Subjects every non-trivial decision to a fresh-context adversarial review before it stands. Use when you want every assumption cross-examined before proceeding, when stress-testing a plan for hidden failure modes, when correctness matters more than speed, when working in unfamiliar code, when stakes are high (production auth, security-sensitive logic, a high-stakes migration, irreversible operations), or any time a confident output would be cheaper to verify now than to debug later.",
+      "duplicates": [
+        "agents/agent-skills-main/skills/doubt-driven-development"
+      ]
+    },
+    {
+      "name": "dx-optimizer",
+      "source": "agents/skills/dx-optimizer",
+      "sha256": "b6b4147117d2b750cd049e24f8a05f3a61b199a727094558eed7212d1f80c97c",
+      "description": "Developer Experience specialist. Improves tooling, setup, and workflows. Use PROACTIVELY when setting up new projects, after team feedback, or when development friction is noticed.",
+      "duplicates": []
+    },
+    {
+      "name": "e2e-testing-patterns",
+      "source": "agents/skills/e2e-testing-patterns",
+      "sha256": "f7312cb42aac42051e9c07e5bddd3dff44183598debf79f6d8487ab209cc024d",
+      "description": "Master end-to-end testing with Playwright and Cypress to build reliable test suites that catch bugs, improve confidence, and enable fast deployment. Use when implementing E2E tests, debugging flaky tests, or establishing testing standards.",
+      "duplicates": []
+    },
+    {
+      "name": "elixir-pro",
+      "source": "agents/skills/elixir-pro",
+      "sha256": "e2f306171fb15894b998124378de673419e5e6c8b737461bca0ea2e5bc7fab77",
+      "description": "Write idiomatic Elixir code with OTP patterns, supervision trees, and Phoenix LiveView. Masters concurrency, fault tolerance, and distributed systems. Use PROACTIVELY for Elixir refactoring, OTP design, or complex BEAM optimizations.",
+      "duplicates": []
+    },
+    {
+      "name": "embedding-strategies",
+      "source": "agents/skills/embedding-strategies",
+      "sha256": "f11d4c46dc271451eaffceaac85a7f774c8ecd795f00de353f1326bfe1121dc9",
+      "description": "Select and optimize embedding models for semantic search and RAG applications. Use when choosing embedding models, implementing chunking strategies, or optimizing embedding quality for specific domains.",
+      "duplicates": []
+    },
+    {
+      "name": "employment-contract-templates",
+      "source": "agents/skills/employment-contract-templates",
+      "sha256": "d7f935deebd130128b39d7e0a0e8c2cbb42525f8ea2557b12b6562336c188b05",
+      "description": "Create employment contracts, offer letters, and HR policy documents following legal best practices. Use when drafting employment agreements, creating HR policies, or standardizing employment documentation.",
+      "duplicates": []
+    },
+    {
+      "name": "error-debugging-error-analysis",
+      "source": "agents/skills/error-debugging-error-analysis",
+      "sha256": "393b5927f21a916b53e19c7306e546edb4e08b4d28dfd05bad12dec1f0bd37cb",
+      "description": "You are an expert error analysis specialist with deep expertise in debugging distributed systems, analyzing production incidents, and implementing comprehensive observability solutions.",
+      "duplicates": []
+    },
+    {
+      "name": "error-debugging-error-trace",
+      "source": "agents/skills/error-debugging-error-trace",
+      "sha256": "926a35e0b7403017940a285e73a194777aeb6cff88574abf06201c6b966d936a",
+      "description": "You are an error tracking and observability expert specializing in implementing comprehensive error monitoring solutions. Set up error tracking systems, configure alerts, implement structured logging, and ensure teams can quickly identify and resolve production issues.",
+      "duplicates": []
+    },
+    {
+      "name": "error-debugging-multi-agent-review",
+      "source": "agents/skills/error-debugging-multi-agent-review",
+      "sha256": "9f13fe73b6288571c3d5a6b0c2575b675616aa5ecffc92dc0b0b1e5d9e2dcec1",
+      "description": "Use when working with error debugging multi agent review",
+      "duplicates": []
+    },
+    {
+      "name": "error-detective",
+      "source": "agents/skills/error-detective",
+      "sha256": "fda29bdd0c30f004df29cdeae373603a310014d4a6ae7c141628c3c9e3fe02cb",
+      "description": "Search logs and codebases for error patterns, stack traces, and anomalies. Correlates errors across systems and identifies root causes. Use PROACTIVELY when debugging issues, analyzing logs, or investigating production errors.",
+      "duplicates": []
+    },
+    {
+      "name": "error-diagnostics-error-analysis",
+      "source": "agents/skills/error-diagnostics-error-analysis",
+      "sha256": "75551e2a90bfb65cbdd8fb0bfec07ca956f0a4c949f82f80b0aa8513edec804a",
+      "description": "You are an expert error analysis specialist with deep expertise in debugging distributed systems, analyzing production incidents, and implementing comprehensive observability solutions.",
+      "duplicates": []
+    },
+    {
+      "name": "error-diagnostics-error-trace",
+      "source": "agents/skills/error-diagnostics-error-trace",
+      "sha256": "b7ac43379353cca69bf10532dd3a079e1029e840421e63034879d534380641da",
+      "description": "You are an error tracking and observability expert specializing in implementing comprehensive error monitoring solutions. Set up error tracking systems, configure alerts, implement structured logging,",
+      "duplicates": []
+    },
+    {
+      "name": "error-diagnostics-smart-debug",
+      "source": "agents/skills/error-diagnostics-smart-debug",
+      "sha256": "6edfdccda2fc268dcd59257c49b26fbe0426b3bbfc762a0e66905910e40e28ee",
+      "description": "Use when working with error diagnostics smart debug",
+      "duplicates": []
+    },
+    {
+      "name": "error-handling-patterns",
+      "source": "agents/skills/error-handling-patterns",
+      "sha256": "d1ea337952a9da3880c4ba031997e053ea5efc98b57d3f5d47415fa490504884",
+      "description": "Master error handling patterns across languages including exceptions, Result types, error propagation, and graceful degradation to build resilient applications. Use when implementing error handling, designing APIs, or improving application reliability.",
+      "duplicates": []
+    },
+    {
+      "name": "event-sourcing-architect",
+      "source": "agents/skills/event-sourcing-architect",
+      "sha256": "4447e6e90b777cca341e0e746d8e9d7db0e425e0d2d759cbd46a2a06fc323bfe",
+      "description": "Expert in event sourcing, CQRS, and event-driven architecture patterns. Masters event store design, projection building, saga orchestration, and eventual consistency patterns. Use PROACTIVELY for event-sourced systems, audit trails, or temporal queries.",
+      "duplicates": []
+    },
+    {
+      "name": "event-store-design",
+      "source": "agents/skills/event-store-design",
+      "sha256": "9c0fb175d4ee7f49017c9a94b8d8e2ff0e2248c99dd39505afd03d0b0570133a",
+      "description": "Design and implement event stores for event-sourced systems. Use when building event sourcing infrastructure, choosing event store technologies, or implementing event persistence patterns.",
+      "duplicates": []
+    },
+    {
+      "name": "fastapi-pro",
+      "source": "agents/skills/fastapi-pro",
+      "sha256": "aa6d9674c4b57dfffe9e18e7a9f7d0f8928cdb6cd8b0cc4a9e5dafa2edf28618",
+      "description": "Build high-performance async APIs with FastAPI, SQLAlchemy 2.0, and Pydantic V2. Master microservices, WebSockets, and modern Python async patterns. Use PROACTIVELY for FastAPI development, async optimization, or API architecture.",
+      "duplicates": []
+    },
+    {
+      "name": "fastapi-templates",
+      "source": "agents/skills/fastapi-templates",
+      "sha256": "025713aad2b29a90352dc8932e52a14ea3c0d09de521daf712af7c88ccf6fe80",
+      "description": "Create production-ready FastAPI projects with async patterns, dependency injection, and comprehensive error handling. Use when building new FastAPI applications or setting up backend API projects.",
+      "duplicates": []
+    },
+    {
+      "name": "firmware-analyst",
+      "source": "agents/skills/firmware-analyst",
+      "sha256": "ae64a84a80c0a86713640ada0186b743737849436ea971f6d5896077cf06a00b",
+      "description": "Expert firmware analyst specializing in embedded systems, IoT security, and hardware reverse engineering. Masters firmware extraction, analysis, and vulnerability research for routers, IoT devices, automotive systems, and industrial controllers. Use PROACTIVELY for firmware security audits, IoT penetration testing, or embedded systems research.",
+      "duplicates": []
+    },
+    {
+      "name": "flutter-expert",
+      "source": "agents/skills/flutter-expert",
+      "sha256": "d4a005db9ec9b1d85c71fdc56435e8c661f1fdb0ae7ab3e0d35361f91e8caf8c",
+      "description": "Master Flutter development with Dart 3, advanced widgets, and multi-platform deployment. Handles state management, animations, testing, and performance optimization for mobile, web, desktop, and embedded platforms. Use PROACTIVELY for Flutter architecture, UI implementation, or cross-platform features.",
+      "duplicates": []
+    },
+    {
+      "name": "framework-migration-code-migrate",
+      "source": "agents/skills/framework-migration-code-migrate",
+      "sha256": "8ded6bc781ed27c18519c493b818f19954d22d7406557838c8ec4957233b7024",
+      "description": "You are a code migration expert specializing in transitioning codebases between frameworks, languages, versions, and platforms. Generate comprehensive migration plans, automated migration scripts, and",
+      "duplicates": []
+    },
+    {
+      "name": "framework-migration-deps-upgrade",
+      "source": "agents/skills/framework-migration-deps-upgrade",
+      "sha256": "c7ec053264c1bcf71b0fac4e398a4d03ab010b30cccf619ebe6b18246332a71a",
+      "description": "You are a dependency management expert specializing in safe, incremental upgrades of project dependencies. Plan and execute dependency updates with minimal risk, proper testing, and clear migration pa",
+      "duplicates": []
+    },
+    {
+      "name": "framework-migration-legacy-modernize",
+      "source": "agents/skills/framework-migration-legacy-modernize",
+      "sha256": "6eb78f427b5255613f4cebd051a4b1ac5a5c036fbb346d8c978c759634459f59",
+      "description": "Orchestrate a comprehensive legacy system modernization using the strangler fig pattern, enabling gradual replacement of outdated components while maintaining continuous business operations through ex",
+      "duplicates": []
+    },
+    {
+      "name": "frontend-developer",
+      "source": "agents/skills/frontend-developer",
+      "sha256": "2d954740e13de4c8195b4687d5a98a62c4cde9fed5e8cb5162d55128ac75fd93",
+      "description": "Build React components, implement responsive layouts, and handle client-side state management. Masters React 19, Next.js 15, and modern frontend architecture. Optimizes performance and ensures accessibility. Use PROACTIVELY when creating UI components or fixing frontend issues.",
+      "duplicates": []
+    },
+    {
+      "name": "frontend-mobile-development-component-scaffold",
+      "source": "agents/skills/frontend-mobile-development-component-scaffold",
+      "sha256": "12b99889d1b2c379a2a0664f2d720cf1602146b2692da0dc0ddb79e8304617a4",
+      "description": "You are a React component architecture expert specializing in scaffolding production-ready, accessible, and performant components. Generate complete component implementations with TypeScript, tests, s",
+      "duplicates": []
+    },
+    {
+      "name": "frontend-mobile-security-xss-scan",
+      "source": "agents/skills/frontend-mobile-security-xss-scan",
+      "sha256": "a55fb2035b3a75f18b281fdb465b9e857cba8bc4b4a91eaac5b22fd801ef4373",
+      "description": "You are a frontend security specialist focusing on Cross-Site Scripting (XSS) vulnerability detection and prevention. Analyze React, Vue, Angular, and vanilla JavaScript code to identify injection poi",
+      "duplicates": []
+    },
+    {
+      "name": "frontend-security-coder",
+      "source": "agents/skills/frontend-security-coder",
+      "sha256": "6ecdf0cbf51a80b06501ec7899d8212e3049b6ef2e2f1279d9b8dc6101258ce9",
+      "description": "Expert in secure frontend coding practices specializing in XSS prevention, output sanitization, and client-side security patterns. Use PROACTIVELY for frontend security implementations or client-side security code reviews.",
+      "duplicates": []
+    },
+    {
+      "name": "frontend-ui-engineering",
+      "source": "agents/agent-skills-main (2)/skills/frontend-ui-engineering",
+      "sha256": "71a326bbf6ae410d0560bccbd885325f27960eaa7bee3ff5d6da92b650502625",
+      "description": "Builds production-quality, accessible, responsive user-facing UIs. Use when building or modifying interfaces and pages, creating components, implementing layouts, meeting WCAG accessibility requirements, managing state, or when the output needs to look and feel production-quality rather than AI-generated.",
+      "duplicates": []
+    },
+    {
+      "name": "frontend-ui-engineering-original",
+      "source": "agents/agent-skills-main/skills/frontend-ui-engineering",
+      "sha256": "023ff46f49892efe0dd09a1ee165973b2cac46705f12e351518487e58336ab25",
+      "description": "Builds production-quality, accessible, responsive user-facing UIs. Use when building or modifying interfaces and pages, creating components, implementing layouts, meeting WCAG accessibility requirements, managing state, or when the output needs to look and feel production-quality rather than AI-generated.",
+      "duplicates": []
+    },
+    {
+      "name": "full-stack-orchestration-full-stack-feature",
+      "source": "agents/skills/full-stack-orchestration-full-stack-feature",
+      "sha256": "a769f3ca7f22cf6a9c8ab5cf499d2d76a3487d7c1d149ad800a99e5bf8722771",
+      "description": "Use when working with full stack orchestration full stack feature",
+      "duplicates": []
+    },
+    {
+      "name": "garrafa-ble",
+      "source": "agents/skills/garrafa-ble",
+      "sha256": "aa57f35c3a897aa6ee1eb822e5d8c709ae1e9e0bfb39181ff5e0fa57d1237c43",
+      "description": "Implementar y verificar la integración Flutter con los sensores BLE-Ultra de este proyecto Garrafa, conservando su protocolo ESP32.",
+      "duplicates": []
+    },
+    {
+      "name": "gdpr-data-handling",
+      "source": "agents/skills/gdpr-data-handling",
+      "sha256": "ca5f1a8344ffaec00011a0845f03e93c9b0ae677a0352cb985ae8aafdad6b16e",
+      "description": "Implement GDPR-compliant data handling with consent management, data subject rights, and privacy by design. Use when building systems that process EU personal data, implementing privacy controls, or conducting GDPR compliance reviews.",
+      "duplicates": []
+    },
+    {
+      "name": "git-advanced-workflows",
+      "source": "agents/skills/git-advanced-workflows",
+      "sha256": "b77083e0d4649e1119244f22637fd5a62c14d3ab717f9c4f90d212598e205236",
+      "description": "Master advanced Git workflows including rebasing, cherry-picking, bisect, worktrees, and reflog to maintain clean history and recover from any situation. Use when managing complex Git histories, collaborating on feature branches, or troubleshooting repository issues.",
+      "duplicates": []
+    },
+    {
+      "name": "git-pr-workflows-git-workflow",
+      "source": "agents/skills/git-pr-workflows-git-workflow",
+      "sha256": "bd5a7a847a42a5d1ac3662beb553e34d1ac6779f07888289237e25b2f7d67e04",
+      "description": "Orchestrate a comprehensive git workflow from code review through PR creation, leveraging specialized agents for quality assurance, testing, and deployment readiness. This workflow implements modern g",
+      "duplicates": []
+    },
+    {
+      "name": "git-pr-workflows-onboard",
+      "source": "agents/skills/git-pr-workflows-onboard",
+      "sha256": "2109d178ef7c4a17b01e3530f292d14188cccbdc7be9773cd872c6b068d3290e",
+      "description": "You are an **expert onboarding specialist and knowledge transfer architect** with deep experience in remote-first organizations, technical team integration, and accelerated learning methodologies. You",
+      "duplicates": []
+    },
+    {
+      "name": "git-pr-workflows-pr-enhance",
+      "source": "agents/skills/git-pr-workflows-pr-enhance",
+      "sha256": "5c0fb983f30d476f47ba1ecf85e4dc430d259037abe1768852462049b68f4241",
+      "description": "You are a PR optimization expert specializing in creating high-quality pull requests that facilitate efficient code reviews. Generate comprehensive PR descriptions, automate review processes, and ensu",
+      "duplicates": []
+    },
+    {
+      "name": "git-workflow-and-versioning",
+      "source": "agents/agent-skills-main (2)/skills/git-workflow-and-versioning",
+      "sha256": "b1d35f2eceacf6d4aeb94f6fe2c0fa71f2baa169fb7c3d2bad2a87299ddc08de",
+      "description": "Structures git workflow practices. Use when making any code change. Use when committing, branching, resolving conflicts, splitting uncommitted work in a messy working tree into clean atomic commits, opening or reviewing a pull request (PR), pushing to a remote, or when you need to organize work across multiple parallel streams. Use when cutting a release, choosing a semantic version bump, tagging, or writing a changelog.",
+      "duplicates": [
+        "agents/agent-skills-main/skills/git-workflow-and-versioning"
+      ]
+    },
+    {
+      "name": "github-actions-templates",
+      "source": "agents/skills/github-actions-templates",
+      "sha256": "da04d5c1d524bd119aa72c80b772b65243c7163469ab583ce5d1e0b7773cd263",
+      "description": "Create production-ready GitHub Actions workflows for automated testing, building, and deploying applications. Use when setting up CI/CD with GitHub Actions, automating development workflows, or creating reusable workflow templates.",
+      "duplicates": []
+    },
+    {
+      "name": "gitlab-ci-patterns",
+      "source": "agents/skills/gitlab-ci-patterns",
+      "sha256": "3132310d8401e9930a28feef5b6c4d5488ea28bd0efe37e5d9fbfdf256d9195d",
+      "description": "Build GitLab CI/CD pipelines with multi-stage workflows, caching, and distributed runners for scalable automation. Use when implementing GitLab CI/CD, optimizing pipeline performance, or setting up automated testing and deployment.",
+      "duplicates": []
+    },
+    {
+      "name": "gitops-workflow",
+      "source": "agents/skills/gitops-workflow",
+      "sha256": "2b4159e6f78536b2c30a302b269f1872c8689c485fdf7903a2cc5ee5571ac313",
+      "description": "Implement GitOps workflows with ArgoCD and Flux for automated, declarative Kubernetes deployments with continuous reconciliation. Use when implementing GitOps practices, automating Kubernetes deployments, or setting up declarative infrastructure management.",
+      "duplicates": []
+    },
+    {
+      "name": "go-concurrency-patterns",
+      "source": "agents/skills/go-concurrency-patterns",
+      "sha256": "891782a84a757eeb7fded12e224ce6c916868e174911593ce004643afd52954f",
+      "description": "Master Go concurrency with goroutines, channels, sync primitives, and context. Use when building concurrent Go applications, implementing worker pools, or debugging race conditions.",
+      "duplicates": []
+    },
+    {
+      "name": "godot-gdscript-patterns",
+      "source": "agents/skills/godot-gdscript-patterns",
+      "sha256": "b5781e112ddeb3a4335dcb337c42b647315408e699223dcb280cc0fc60f4fb84",
+      "description": "Master Godot 4 GDScript patterns including signals, scenes, state machines, and optimization. Use when building Godot games, implementing game systems, or learning GDScript best practices.",
+      "duplicates": []
+    },
+    {
+      "name": "golang-pro",
+      "source": "agents/skills/golang-pro",
+      "sha256": "a4322594894ec9649c6db0fdca0ca334d5f0ed307532e0175c0d418915ad15cc",
+      "description": "Master Go 1.21+ with modern patterns, advanced concurrency, performance optimization, and production-ready microservices. Expert in the latest Go ecosystem including generics, workspaces, and cutting-edge frameworks. Use PROACTIVELY for Go development, architecture design, or performance optimization.",
+      "duplicates": []
+    },
+    {
+      "name": "grafana-dashboards",
+      "source": "agents/skills/grafana-dashboards",
+      "sha256": "d2ae5bca1fa27e5518a6f327891c5187fe009517948ab89ea5594458e905de1f",
+      "description": "Create and manage production Grafana dashboards for real-time visualization of system and application metrics. Use when building monitoring dashboards, visualizing metrics, or creating operational observability interfaces.",
+      "duplicates": []
+    },
+    {
+      "name": "graphify",
+      "source": "agents/graphify-8/graphify/skill-codex.md",
+      "sha256": "594991c24b0d8e363a9634d5231ba6ea205097ae09daca618da748ce05985f97",
+      "description": "Use for any question about a codebase, its architecture, file relationships, or project content — especially when graphify-out/ exists, where the question should be treated as a graphify query first. Turns any input (code, docs, papers, images, videos) into a persistent knowledge graph with god nodes, community detection, and query/path/explain tools.",
+      "duplicates": []
+    },
+    {
+      "name": "graphql-architect",
+      "source": "agents/skills/graphql-architect",
+      "sha256": "60645a467ab1022df4b8996b03ea3b26217ebe015f911bcec6b33d87b959f9af",
+      "description": "Master modern GraphQL with federation, performance optimization, and enterprise security. Build scalable schemas, implement advanced caching, and design real-time systems. Use PROACTIVELY for GraphQL architecture or performance optimization.",
+      "duplicates": []
+    },
+    {
+      "name": "haskell-pro",
+      "source": "agents/skills/haskell-pro",
+      "sha256": "7a3be4281c50f4635b9bc47c3da0f60a15817a08ba7c607405589f377e19d913",
+      "description": "Expert Haskell engineer specializing in advanced type systems, pure functional design, and high-reliability software. Use PROACTIVELY for type-level programming, concurrency, and architecture guidance.",
+      "duplicates": []
+    },
+    {
+      "name": "helm-chart-scaffolding",
+      "source": "agents/skills/helm-chart-scaffolding",
+      "sha256": "c3b5b3bcb3a61731eb24548c74fd0a7c1ab4e5153f04692faa4d046fa467a5ad",
+      "description": "Design, organize, and manage Helm charts for templating and packaging Kubernetes applications with reusable configurations. Use when creating Helm charts, packaging Kubernetes applications, or implementing templated deployments.",
+      "duplicates": []
+    },
+    {
+      "name": "hr-pro",
+      "source": "agents/skills/hr-pro",
+      "sha256": "e8c506b4d1378347d87c167a97f9faca49ff78a259ddd0b284d988e0afe63222",
+      "description": "Professional, ethical HR partner for hiring, onboarding/offboarding, PTO and leave, performance, compliant policies, and employee relations. Ask for jurisdiction and company context before advising; produce structured, bias-mitigated, lawful templates.",
+      "duplicates": []
+    },
+    {
+      "name": "hybrid-cloud-architect",
+      "source": "agents/skills/hybrid-cloud-architect",
+      "sha256": "b0b67dc9f6822af57856fad954c31663f6dcdbf1ff4ce2e64031babfbc9b03c9",
+      "description": "Expert hybrid cloud architect specializing in complex multi-cloud solutions across AWS/Azure/GCP and private clouds (OpenStack/VMware). Masters hybrid connectivity, workload placement optimization, edge computing, and cross-cloud automation. Handles compliance, cost optimization, disaster recovery, and migration strategies. Use PROACTIVELY for hybrid architecture, multi-cloud strategy, or complex infrastructure integration.",
+      "duplicates": []
+    },
+    {
+      "name": "hybrid-cloud-networking",
+      "source": "agents/skills/hybrid-cloud-networking",
+      "sha256": "5dcd74eab53deeedcee0ce70a1b9feafaa935a174e5faf179c87ecc008b981a0",
+      "description": "Configure secure, high-performance connectivity between on-premises infrastructure and cloud platforms using VPN and dedicated connections. Use when building hybrid cloud architectures, connecting data centers to cloud, or implementing secure cross-premises networking.",
+      "duplicates": []
+    },
+    {
+      "name": "hybrid-search-implementation",
+      "source": "agents/skills/hybrid-search-implementation",
+      "sha256": "9c0217a60d4721b66aea6017a66a44f4e9ae54dd20675fdb4d3b409f2778da8b",
+      "description": "Combine vector and keyword search for improved retrieval. Use when implementing RAG systems, building search engines, or when neither approach alone provides sufficient recall.",
+      "duplicates": []
+    },
+    {
+      "name": "idea-refine",
+      "source": "agents/agent-skills-main (2)/skills/idea-refine",
+      "sha256": "e3131819270d0d0418e4c02a31804f49734a51609b631b5ee971046aa2c7724e",
+      "description": "Refines raw ideas into sharp, actionable concepts through structured divergent and convergent thinking. Use when an idea is still vague, when you need to stress-test assumptions before committing to a plan, or when you want to expand options before converging on one. Triggers on \"ideate\", \"refine this idea\", or \"stress-test my plan\".",
+      "duplicates": []
+    },
+    {
+      "name": "idea-refine-original",
+      "source": "agents/agent-skills-main/skills/idea-refine",
+      "sha256": "279f1b6718a9dd09328854064a4308e6437a97cb35f250048a500d768769d86e",
+      "description": "Refines raw ideas into sharp, actionable concepts through structured divergent and convergent thinking. Use when an idea is still vague, when you need to stress-test assumptions before committing to a plan, or when you want to expand options before converging on one. Triggers on \"ideate\", \"refine this idea\", or \"stress-test my plan\".",
+      "duplicates": []
+    },
+    {
+      "name": "incident-responder",
+      "source": "agents/skills/incident-responder",
+      "sha256": "f4be8824e8fe67e618abd2c4c64f6f0ddd94a1edec374a2963545f3500811211",
+      "description": "Expert SRE incident responder specializing in rapid problem resolution, modern observability, and comprehensive incident management. Masters incident command, blameless post-mortems, error budget management, and system reliability patterns. Handles critical outages, communication strategies, and continuous improvement. Use IMMEDIATELY for production incidents or SRE practices.",
+      "duplicates": []
+    },
+    {
+      "name": "incident-response-incident-response",
+      "source": "agents/skills/incident-response-incident-response",
+      "sha256": "a7ad774493dec2c360ca22a87e99cf98c91d4b4b8ef501387710a51769cbc7b9",
+      "description": "Use when working with incident response incident response",
+      "duplicates": []
+    },
+    {
+      "name": "incident-response-smart-fix",
+      "source": "agents/skills/incident-response-smart-fix",
+      "sha256": "cf2f8758ca94df5195693cf334918f4d4f11b1b1a29446fbce1eddef0e3b4b7e",
+      "description": "[Extended thinking: This workflow implements a sophisticated debugging and resolution pipeline that leverages AI-assisted debugging tools and observability platforms to systematically diagnose and res",
+      "duplicates": []
+    },
+    {
+      "name": "incident-runbook-templates",
+      "source": "agents/skills/incident-runbook-templates",
+      "sha256": "8973956929a24d1f5599f9b03750e719a1d10da22ace03b60fae7cac42c39006",
+      "description": "Create structured incident response runbooks with step-by-step procedures, escalation paths, and recovery actions. Use when building runbooks, responding to incidents, or establishing incident response procedures.",
+      "duplicates": []
+    },
+    {
+      "name": "incremental-implementation",
+      "source": "agents/agent-skills-main (2)/skills/incremental-implementation",
+      "sha256": "b6a791172452145768a86a16b78253153a1b47e04687e2a16eb9260f874e73ab",
+      "description": "Delivers changes incrementally in thin, verifiable slices. Use when implementing any feature or change that touches more than one file, or when picking up the next task from a plan. Use when rolling a change out behind a feature flag, when you're about to write a large amount of code at once, or when a task feels too big to land in one step.",
+      "duplicates": [
+        "agents/agent-skills-main/skills/incremental-implementation"
+      ]
+    },
+    {
+      "name": "interview-me",
+      "source": "agents/agent-skills-main (2)/skills/interview-me",
+      "sha256": "cc72118fe40d69a17d6aca1f950564713a1202a36e345159532264a4146fc82b",
+      "description": "Extracts what the user actually wants instead of what they think they should want. Achieves this through one-question-at-a-time interview until ~95% confidence about the underlying intent. Use when an ask is underspecified (\"build me X\" without \"for whom\" or \"why now\"), when the user explicitly invokes (\"interview me\", \"grill me\", \"are we sure?\", \"stress-test my thinking\"), or when you catch yourself silently filling in ambiguous requirements before any plan, spec, or code exists.",
+      "duplicates": [
+        "agents/agent-skills-main/skills/interview-me"
+      ]
+    },
+    {
+      "name": "ios-developer",
+      "source": "agents/skills/ios-developer",
+      "sha256": "28888ab55ec14cbc7d25ca6bc0c52359d75e0a7d9780732a757667930265adfc",
+      "description": "Develop native iOS applications with Swift/SwiftUI. Masters iOS 18, SwiftUI, UIKit integration, Core Data, networking, and App Store optimization. Use PROACTIVELY for iOS-specific features, App Store optimization, or native iOS development.",
+      "duplicates": []
+    },
+    {
+      "name": "istio-traffic-management",
+      "source": "agents/skills/istio-traffic-management",
+      "sha256": "74a3b25ffe5065f30236a3641f68f1dd8da8bd7ea111d4b6cf2ab5bf6e02d44e",
+      "description": "Configure Istio traffic management including routing, load balancing, circuit breakers, and canary deployments. Use when implementing service mesh traffic policies, progressive delivery, or resilience patterns.",
+      "duplicates": []
+    },
+    {
+      "name": "java-pro",
+      "source": "agents/skills/java-pro",
+      "sha256": "d77d3f8f5d04d1e22c97364f81cbc5791005dd29e9f9260431578bce447ec8b7",
+      "description": "Master Java 21+ with modern features like virtual threads, pattern matching, and Spring Boot 3.x. Expert in the latest Java ecosystem including GraalVM, Project Loom, and cloud-native patterns. Use PROACTIVELY for Java development, microservices architecture, or performance optimization.",
+      "duplicates": []
+    },
+    {
+      "name": "javascript-pro",
+      "source": "agents/skills/javascript-pro",
+      "sha256": "abf2f482c20f36732d2e7cf12112f863fef6e4aabf93263e4a40735e2e96ee08",
+      "description": "Master modern JavaScript with ES6+, async patterns, and Node.js APIs. Handles promises, event loops, and browser/Node compatibility. Use PROACTIVELY for JavaScript optimization, async debugging, or complex JS patterns.",
+      "duplicates": []
+    },
+    {
+      "name": "javascript-testing-patterns",
+      "source": "agents/skills/javascript-testing-patterns",
+      "sha256": "098789900f351e43739aee5bf04a6366b1b3d692f51cc3d0b9e2106ce252872c",
+      "description": "Implement comprehensive testing strategies using Jest, Vitest, and Testing Library for unit tests, integration tests, and end-to-end testing with mocking, fixtures, and test-driven development. Use when writing JavaScript/TypeScript tests, setting up test infrastructure, or implementing TDD/BDD workflows.",
+      "duplicates": []
+    },
+    {
+      "name": "javascript-typescript-typescript-scaffold",
+      "source": "agents/skills/javascript-typescript-typescript-scaffold",
+      "sha256": "70cd5e650906f076cffd523e1c6194a1d991ecf72eac5941a0550c7d5bf2eac1",
+      "description": "You are a TypeScript project architecture expert specializing in scaffolding production-ready Node.js and frontend applications. Generate complete project structures with modern tooling (pnpm, Vite, N",
+      "duplicates": []
+    },
+    {
+      "name": "julia-pro",
+      "source": "agents/skills/julia-pro",
+      "sha256": "5c1589fb090dd4170f9a04022ca247e8e78cf05d4bef4c211f7800fec3f5cedc",
+      "description": "Master Julia 1.10+ with modern features, performance optimization, multiple dispatch, and production-ready practices. Expert in the Julia ecosystem including package management, scientific computing, and high-performance numerical code. Use PROACTIVELY for Julia development, optimization, or advanced Julia patterns.",
+      "duplicates": []
+    },
+    {
+      "name": "k8s-manifest-generator",
+      "source": "agents/skills/k8s-manifest-generator",
+      "sha256": "41d8a3d75ec21b57727e5b6ea532fad689afbc97997e1d172d11e0376263e01a",
+      "description": "Create production-ready Kubernetes manifests for Deployments, Services, ConfigMaps, and Secrets following best practices and security standards. Use when generating Kubernetes YAML manifests, creating K8s resources, or implementing production-grade Kubernetes configurations.",
+      "duplicates": []
+    },
+    {
+      "name": "k8s-security-policies",
+      "source": "agents/skills/k8s-security-policies",
+      "sha256": "367768c2d398d65ee07537971ef24c7437fc5ecf3bbc18b9aaab463e10ac4246",
+      "description": "Implement Kubernetes security policies including NetworkPolicy, PodSecurityPolicy, and RBAC for production-grade security. Use when securing Kubernetes clusters, implementing network isolation, or enforcing pod security standards.",
+      "duplicates": []
+    },
+    {
+      "name": "kpi-dashboard-design",
+      "source": "agents/skills/kpi-dashboard-design",
+      "sha256": "8c450f7da0b4578091adf4af1e4f60805c28e3eb2f6c569df6f6d5ed28679547",
+      "description": "Design effective KPI dashboards with metrics selection, visualization best practices, and real-time monitoring patterns. Use when building business dashboards, selecting metrics, or designing data visualization layouts.",
+      "duplicates": []
+    },
+    {
+      "name": "kubernetes-architect",
+      "source": "agents/skills/kubernetes-architect",
+      "sha256": "387c67f71925c7bad0fc4f09f9b05d19831f872c42f944a14a9161b7dcd22e79",
+      "description": "Expert Kubernetes architect specializing in cloud-native infrastructure, advanced GitOps workflows (ArgoCD/Flux), and enterprise container orchestration. Masters EKS/AKS/GKE, service mesh (Istio/Linkerd), progressive delivery, multi-tenancy, and platform engineering. Handles security, observability, cost optimization, and developer experience. Use PROACTIVELY for K8s architecture, GitOps implementation, or cloud-native platform design.",
+      "duplicates": []
+    },
+    {
+      "name": "langchain-architecture",
+      "source": "agents/skills/langchain-architecture",
+      "sha256": "cae513ccf89bc94cbba208740b757608936dc3ecad6392b8b330bceab603b1c8",
+      "description": "Design LLM applications using the LangChain framework with agents, memory, and tool integration patterns. Use when building LangChain applications, implementing AI agents, or creating complex LLM workflows.",
+      "duplicates": []
+    },
+    {
+      "name": "legacy-modernizer",
+      "source": "agents/skills/legacy-modernizer",
+      "sha256": "5acce69c992763251a1087b87bcbc193cb3c40c337536ec2f3b4e5fd390150a7",
+      "description": "Refactor legacy codebases, migrate outdated frameworks, and implement gradual modernization. Handles technical debt, dependency updates, and backward compatibility. Use PROACTIVELY for legacy system updates, framework migrations, or technical debt reduction.",
+      "duplicates": []
+    },
+    {
+      "name": "legal-advisor",
+      "source": "agents/skills/legal-advisor",
+      "sha256": "5595449dc164a6b91b29ab5fb22e6a257836d1fbb784ba795d7cdbb394edeb80",
+      "description": "Draft privacy policies, terms of service, disclaimers, and legal notices. Creates GDPR-compliant texts, cookie policies, and data processing agreements. Use PROACTIVELY for legal documentation, compliance texts, or regulatory requirements.",
+      "duplicates": []
+    },
+    {
+      "name": "linkerd-patterns",
+      "source": "agents/skills/linkerd-patterns",
+      "sha256": "e0eaa23c1d79ae24e7345406b64f057a599a6168611ecbc9ecd57966e0162b55",
+      "description": "Implement Linkerd service mesh patterns for lightweight, security-focused service mesh deployments. Use when setting up Linkerd, configuring traffic policies, or implementing zero-trust networking with minimal overhead.",
+      "duplicates": []
+    },
+    {
+      "name": "llm-application-dev-ai-assistant",
+      "source": "agents/skills/llm-application-dev-ai-assistant",
+      "sha256": "4774099372f1490512dd2c16ad47fe2d92bd1883c6dc7e551170f4cf6e8f3f78",
+      "description": "You are an AI assistant development expert specializing in creating intelligent conversational interfaces, chatbots, and AI-powered applications. Design comprehensive AI assistant solutions with natur",
+      "duplicates": []
+    },
+    {
+      "name": "llm-application-dev-langchain-agent",
+      "source": "agents/skills/llm-application-dev-langchain-agent",
+      "sha256": "36f057c494521f534d8aa147c682cbe824dce2194ff84cf5e35cd3f28773746e",
+      "description": "You are an expert LangChain agent developer specializing in production-grade AI systems using LangChain 0.1+ and LangGraph.",
+      "duplicates": []
+    },
+    {
+      "name": "llm-application-dev-prompt-optimize",
+      "source": "agents/skills/llm-application-dev-prompt-optimize",
+      "sha256": "d13906d6de7724babc99b917ed7edd23f8509b8f1d6956598415a116cdeb2b49",
+      "description": "You are an expert prompt engineer specializing in crafting effective prompts for LLMs through advanced techniques including constitutional AI, chain-of-thought reasoning, and model-specific optimizati",
+      "duplicates": []
+    },
+    {
+      "name": "llm-evaluation",
+      "source": "agents/skills/llm-evaluation",
+      "sha256": "6dd83f731beb8186485f0b6d6d82a9877b94fbc7ab0d110143b0c87f79dad7db",
+      "description": "Implement comprehensive evaluation strategies for LLM applications using automated metrics, human feedback, and benchmarking. Use when testing LLM performance, measuring AI application quality, or establishing evaluation frameworks.",
+      "duplicates": []
+    },
+    {
+      "name": "machine-learning-ops-ml-pipeline",
+      "source": "agents/skills/machine-learning-ops-ml-pipeline",
+      "sha256": "d740a2e28efea357b2741ad0baf70ed0b6e356031c656b96bb31bc2eaa23f059",
+      "description": "Design and implement a complete ML pipeline for: $ARGUMENTS",
+      "duplicates": []
+    },
+    {
+      "name": "malware-analyst",
+      "source": "agents/skills/malware-analyst",
+      "sha256": "04e6405edc101b4a206b010ae3de8da48a19ac5b03349c532e7964b19b0aa9a5",
+      "description": "Expert malware analyst specializing in defensive malware research, threat intelligence, and incident response. Masters sandbox analysis, behavioral analysis, and malware family identification. Handles static/dynamic analysis, unpacking, and IOC extraction. Use PROACTIVELY for malware triage, threat hunting, incident response, or security research.",
+      "duplicates": []
+    },
+    {
+      "name": "market-sizing-analysis",
+      "source": "agents/skills/market-sizing-analysis",
+      "sha256": "12a1526de3f68588882a1aaac11e1db976d7ed5c68e36af8051cec16bdc1fb50",
+      "description": "This skill should be used when the user asks to \"calculate TAM\", \"determine SAM\", \"estimate SOM\", \"size the market\", \"calculate market opportunity\", \"what's the total addressable market\", or requests market sizing analysis for a startup or business opportunity.",
+      "duplicates": []
+    },
+    {
+      "name": "memory-forensics",
+      "source": "agents/skills/memory-forensics",
+      "sha256": "fd8b4c40c6cc4d59769d909d07735dfc4915bbce3dc74422cc269310f30d26f0",
+      "description": "Master memory forensics techniques including memory acquisition, process analysis, and artifact extraction using Volatility and related tools. Use when analyzing memory dumps, investigating incidents, or performing malware analysis from RAM captures.",
+      "duplicates": []
+    },
+    {
+      "name": "memory-safety-patterns",
+      "source": "agents/skills/memory-safety-patterns",
+      "sha256": "4a647232d0d442f53937c4483309a2a0525acb57ae9238ac3a4b799ec8ba24c5",
+      "description": "Implement memory-safe programming with RAII, ownership, smart pointers, and resource management across Rust, C++, and C. Use when writing safe systems code, managing resources, or preventing memory bugs.",
+      "duplicates": []
+    },
+    {
+      "name": "mermaid-expert",
+      "source": "agents/skills/mermaid-expert",
+      "sha256": "4b9a298dd185f555ec8754c889caf9545a46e071536a6f46cd2cf48bcf9d6a49",
+      "description": "Create Mermaid diagrams for flowcharts, sequences, ERDs, and architectures. Masters syntax for all diagram types and styling. Use PROACTIVELY for visual documentation, system diagrams, or process flows.",
+      "duplicates": []
+    },
+    {
+      "name": "microservices-patterns",
+      "source": "agents/skills/microservices-patterns",
+      "sha256": "878ee7b66e5c8d8c193f2307a9e887e65b8c5ae5d5dec34d7fac9897690de8fc",
+      "description": "Design microservices architectures with service boundaries, event-driven communication, and resilience patterns. Use when building distributed systems, decomposing monoliths, or implementing microservices.",
+      "duplicates": []
+    },
+    {
+      "name": "minecraft-bukkit-pro",
+      "source": "agents/skills/minecraft-bukkit-pro",
+      "sha256": "a2920eb3931472f1668b3013b4586089ccd80ef4b9669ca14fd34676c716d3f3",
+      "description": "Master Minecraft server plugin development with Bukkit, Spigot, and Paper APIs. Specializes in event-driven architecture, command systems, world manipulation, player management, and performance optimization. Use PROACTIVELY for plugin architecture, gameplay mechanics, server-side features, or cross-version compatibility.",
+      "duplicates": []
+    },
+    {
+      "name": "ml-engineer",
+      "source": "agents/skills/ml-engineer",
+      "sha256": "c3124c23df966353e52df20337273db58f4f8a0bef1bb11105f7d14ed2a68510",
+      "description": "Build production ML systems with PyTorch 2.x, TensorFlow, and modern ML frameworks. Implements model serving, feature engineering, A/B testing, and monitoring. Use PROACTIVELY for ML model deployment, inference optimization, or production ML infrastructure.",
+      "duplicates": []
+    },
+    {
+      "name": "ml-pipeline-workflow",
+      "source": "agents/skills/ml-pipeline-workflow",
+      "sha256": "7f63aa21d40f4e56c7d52c4c9313dd21d7a6a837dbac692a898676a856759909",
+      "description": "Build end-to-end MLOps pipelines from data preparation through model training, validation, and production deployment. Use when creating ML pipelines, implementing MLOps practices, or automating model training and deployment workflows.",
+      "duplicates": []
+    },
+    {
+      "name": "mlops-engineer",
+      "source": "agents/skills/mlops-engineer",
+      "sha256": "2b71e14a1cf9c09016d74c2f96f24f261f29983d27c2483637766ec476f96859",
+      "description": "Build comprehensive ML pipelines, experiment tracking, and model registries with MLflow, Kubeflow, and modern MLOps tools. Implements automated training, deployment, and monitoring across cloud platforms. Use PROACTIVELY for ML infrastructure, experiment management, or pipeline automation.",
+      "duplicates": []
+    },
+    {
+      "name": "mobile-developer",
+      "source": "agents/skills/mobile-developer",
+      "sha256": "4ecd5978b6a0d8a14994f8bd3c2665f63dc7d56619485625615799e5ce20d597",
+      "description": "Develop React Native, Flutter, or native mobile apps with modern architecture patterns. Masters cross-platform development, native integrations, offline sync, and app store optimization. Use PROACTIVELY for mobile features, cross-platform code, or app optimization.",
+      "duplicates": []
+    },
+    {
+      "name": "mobile-security-coder",
+      "source": "agents/skills/mobile-security-coder",
+      "sha256": "5b6e125473abb3295592258f8b76336fc87373a22d2ba5f63eca3f18b1c193e0",
+      "description": "Expert in secure mobile coding practices specializing in input validation, WebView security, and mobile-specific security patterns. Use PROACTIVELY for mobile security implementations or mobile security code reviews.",
+      "duplicates": []
+    },
+    {
+      "name": "modern-javascript-patterns",
+      "source": "agents/skills/modern-javascript-patterns",
+      "sha256": "9edb591c7f9db0abc5161eef32f5b04757b9fc8c31640334e707f864a2e982b3",
+      "description": "Master ES6+ features including async/await, destructuring, spread operators, arrow functions, promises, modules, iterators, generators, and functional programming patterns for writing clean, efficient JavaScript code. Use when refactoring legacy code, implementing modern patterns, or optimizing JavaScript applications.",
+      "duplicates": []
+    },
+    {
+      "name": "monorepo-architect",
+      "source": "agents/skills/monorepo-architect",
+      "sha256": "34314c072af9400bd69eb0834d1f2c0b956b5519c6039b5631d61f53f6ad81de",
+      "description": "Expert in monorepo architecture, build systems, and dependency management at scale. Masters Nx, Turborepo, Bazel, and Lerna for efficient multi-project development. Use PROACTIVELY for monorepo setup,",
+      "duplicates": []
+    },
+    {
+      "name": "monorepo-management",
+      "source": "agents/skills/monorepo-management",
+      "sha256": "b7d2052a7fa6a28b8a2db91d3f6e4327299f7715c044cbc5c2ea0cb92dcdb781",
+      "description": "Master monorepo management with Turborepo, Nx, and pnpm workspaces to build efficient, scalable multi-package repositories with optimized builds and dependency management. Use when setting up monorepos, optimizing builds, or managing shared dependencies.",
+      "duplicates": []
+    },
+    {
+      "name": "mtls-configuration",
+      "source": "agents/skills/mtls-configuration",
+      "sha256": "9869334ece50753602272999ffca1b104654f5d3d7c58ec8eba755df281aad01",
+      "description": "Configure mutual TLS (mTLS) for zero-trust service-to-service communication. Use when implementing zero-trust networking, certificate management, or securing internal service communication.",
+      "duplicates": []
+    },
+    {
+      "name": "multi-cloud-architecture",
+      "source": "agents/skills/multi-cloud-architecture",
+      "sha256": "bbbdd8ccb29da9129deef6b33b7cfaaa5b7b9728c5a85e53520c33d194fc77d3",
+      "description": "Design multi-cloud architectures using a decision framework to select and integrate services across AWS, Azure, and GCP. Use when building multi-cloud systems, avoiding vendor lock-in, or leveraging best-of-breed services from multiple providers.",
+      "duplicates": []
+    },
+    {
+      "name": "multi-platform-apps-multi-platform",
+      "source": "agents/skills/multi-platform-apps-multi-platform",
+      "sha256": "4d7928ab51c28881d09c28289ab19b5197a96fda26088b753c075d069dc9ecea",
+      "description": "Build and deploy the same feature consistently across web, mobile, and desktop platforms using API-first architecture and parallel implementation strategies.",
+      "duplicates": []
+    },
+    {
+      "name": "network-engineer",
+      "source": "agents/skills/network-engineer",
+      "sha256": "c603a89e54bfaebd03c498bf8da9adea8684f91b17efab9386c52bf10927c255",
+      "description": "Expert network engineer specializing in modern cloud networking, security architectures, and performance optimization. Masters multi-cloud connectivity, service mesh, zero-trust networking, SSL/TLS, global load balancing, and advanced troubleshooting. Handles CDN optimization, network automation, and compliance. Use PROACTIVELY for network design, connectivity issues, or performance optimization.",
+      "duplicates": []
+    },
+    {
+      "name": "nextjs-app-router-patterns",
+      "source": "agents/skills/nextjs-app-router-patterns",
+      "sha256": "9bca96272620dd57331e30ae7ab34798645b694ae45ebcbd271c498bbbd22037",
+      "description": "Master Next.js 14+ App Router with Server Components, streaming, parallel routes, and advanced data fetching. Use when building Next.js applications, implementing SSR/SSG, or optimizing React Server Components.",
+      "duplicates": []
+    },
+    {
+      "name": "nft-standards",
+      "source": "agents/skills/nft-standards",
+      "sha256": "9aa15436423984953d7accab63431e2565853f1082c0364c4ab67f203d3e44cb",
+      "description": "Implement NFT standards (ERC-721, ERC-1155) with proper metadata handling, minting strategies, and marketplace integration. Use when creating NFT contracts, building NFT marketplaces, or implementing digital asset systems.",
+      "duplicates": []
+    },
+    {
+      "name": "nodejs-backend-patterns",
+      "source": "agents/skills/nodejs-backend-patterns",
+      "sha256": "232c78e0a2c7511fb18e370ea4925901d44df0a32d271b538c0b86dda302b51c",
+      "description": "Build production-ready Node.js backend services with Express/Fastify, implementing middleware patterns, error handling, authentication, database integration, and API design best practices. Use when creating Node.js servers, REST APIs, GraphQL backends, or microservices architectures.",
+      "duplicates": []
+    },
+    {
+      "name": "nx-workspace-patterns",
+      "source": "agents/skills/nx-workspace-patterns",
+      "sha256": "b584733d4be784c9c0d54c9474ee4804f9d1b22a0fb53f4358a91409fa423c55",
+      "description": "Configure and optimize Nx monorepo workspaces. Use when setting up Nx, configuring project boundaries, optimizing build caching, or implementing affected commands.",
+      "duplicates": []
+    },
+    {
+      "name": "observability-and-instrumentation",
+      "source": "agents/agent-skills-main (2)/skills/observability-and-instrumentation",
+      "sha256": "50dbe381c6f89b1fe5296d9e62a2714ba89aafc3793ed84bead393d10c9ca401",
+      "description": "Instruments code so production behavior is visible and diagnosable. Use when adding logging, metrics, tracing, or alerting. Use when shipping any feature that runs in production and you need evidence it works. Use when production issues are reported but you can't tell what happened from the available data.",
+      "duplicates": [
+        "agents/agent-skills-main/skills/observability-and-instrumentation"
+      ]
+    },
+    {
+      "name": "observability-engineer",
+      "source": "agents/skills/observability-engineer",
+      "sha256": "65775bd6ba6fabd9cb6abf589895ef739b13aae039cb6f9918d894f41f971221",
+      "description": "Build production-ready monitoring, logging, and tracing systems. Implements comprehensive observability strategies, SLI/SLO management, and incident response workflows. Use PROACTIVELY for monitoring infrastructure, performance optimization, or production reliability.",
+      "duplicates": []
+    },
+    {
+      "name": "observability-monitoring-monitor-setup",
+      "source": "agents/skills/observability-monitoring-monitor-setup",
+      "sha256": "f1415b9d3071028fb2316884bf44649207ec9995ad1614b336c4ca7a8fc4fa44",
+      "description": "You are a monitoring and observability expert specializing in implementing comprehensive monitoring solutions. Set up metrics collection, distributed tracing, log aggregation, and create insightful da",
+      "duplicates": []
+    },
+    {
+      "name": "observability-monitoring-slo-implement",
+      "source": "agents/skills/observability-monitoring-slo-implement",
+      "sha256": "5e6bb6a14d5d810bf59239884cbb4ce47f24c215476bbf11b899e669a9c75e55",
+      "description": "You are an SLO (Service Level Objective) expert specializing in implementing reliability standards and error budget-based practices. Design SLO frameworks, define SLIs, and build monitoring that balances reliability with delivery velocity.",
+      "duplicates": []
+    },
+    {
+      "name": "on-call-handoff-patterns",
+      "source": "agents/skills/on-call-handoff-patterns",
+      "sha256": "381000e903a7f407f161daba12a78540b2912a82a692e3a5cd57a522fbb50ec1",
+      "description": "Master on-call shift handoffs with context transfer, escalation procedures, and documentation. Use when transitioning on-call responsibilities, documenting shift summaries, or improving on-call processes.",
+      "duplicates": []
+    },
+    {
+      "name": "openapi-spec-generation",
+      "source": "agents/skills/openapi-spec-generation",
+      "sha256": "17f948815027bebff4cbd91d0be530d85f6cbcb2534ab3026165760f4e29b8c6",
+      "description": "Generate and maintain OpenAPI 3.1 specifications from code, design-first specs, and validation patterns. Use when creating API documentation, generating SDKs, or ensuring API contract compliance.",
+      "duplicates": []
+    },
+    {
+      "name": "payment-integration",
+      "source": "agents/skills/payment-integration",
+      "sha256": "fca1f913784a41334d9eb0cd9ecbb44a99f6fea871ba5afd619eeaeecc95a461",
+      "description": "Integrate Stripe, PayPal, and payment processors. Handles checkout flows, subscriptions, webhooks, and PCI compliance. Use PROACTIVELY when implementing payments, billing, or subscription features.",
+      "duplicates": []
+    },
+    {
+      "name": "paypal-integration",
+      "source": "agents/skills/paypal-integration",
+      "sha256": "9b35c34753a52d08d32a494ee8518dcad27870a450e59d833de75f60b57fda53",
+      "description": "Integrate PayPal payment processing with support for express checkout, subscriptions, and refund management. Use when implementing PayPal payments, processing online transactions, or building e-commerce checkout flows.",
+      "duplicates": []
+    },
+    {
+      "name": "pci-compliance",
+      "source": "agents/skills/pci-compliance",
+      "sha256": "b77a8a9742fb024df3fb2eb2617a41c83146ad2a04ed742f70ce470a9c112f61",
+      "description": "Implement PCI DSS compliance requirements for secure handling of payment card data and payment systems. Use when securing payment processing, achieving PCI compliance, or implementing payment card security measures.",
+      "duplicates": []
+    },
+    {
+      "name": "performance-engineer",
+      "source": "agents/skills/performance-engineer",
+      "sha256": "c5352c200f7c8c71e07dc56d0ee95d7bfcd404cec8bd573c27b2952306c9a671",
+      "description": "Expert performance engineer specializing in modern observability, application optimization, and scalable system performance. Masters OpenTelemetry, distributed tracing, load testing, multi-tier caching, Core Web Vitals, and performance monitoring. Handles end-to-end optimization, real user monitoring, and scalability patterns. Use PROACTIVELY for performance optimization, observability, or scalability challenges.",
+      "duplicates": []
+    },
+    {
+      "name": "performance-optimization",
+      "source": "agents/agent-skills-main (2)/skills/performance-optimization",
+      "sha256": "b8ca909d7b1eec9ed3fb6a26f94cbc1f7f833ad9c3367cfe4de77e083088c36e",
+      "description": "Optimizes application performance across frontend, backend, queries, and databases. Use when performance requirements exist, when you suspect performance regressions, when Core Web Vitals or load times need improvement, when N+1 query patterns need fixing, or when profiling reveals bottlenecks.",
+      "duplicates": []
+    },
+    {
+      "name": "performance-optimization-original",
+      "source": "agents/agent-skills-main/skills/performance-optimization",
+      "sha256": "a7f793ac793e13dfc796abc4f00a1c550a52b7406246cae24ac26c51f72d96ef",
+      "description": "Optimizes application performance across frontend, backend, queries, and databases. Use when performance requirements exist, when you suspect performance regressions, when Core Web Vitals or load times need improvement, when N+1 query patterns need fixing, or when profiling reveals bottlenecks.",
+      "duplicates": []
+    },
+    {
+      "name": "performance-testing-review-ai-review",
+      "source": "agents/skills/performance-testing-review-ai-review",
+      "sha256": "5693eef83c8df1f9c860ae48fc8dd86b63ae6e35508015b60907621cf455cce0",
+      "description": "You are an expert AI-powered code review specialist combining automated static analysis, intelligent pattern recognition, and modern DevOps practices. Leverage AI tools (GitHub Copilot, Qodo, GPT-5, C",
+      "duplicates": []
+    },
+    {
+      "name": "performance-testing-review-multi-agent-review",
+      "source": "agents/skills/performance-testing-review-multi-agent-review",
+      "sha256": "bb46202c0eacfa1b9beb5d8becd43faea14e60c4ae8d9aee4181a3cc3afc295b",
+      "description": "Use when working with performance testing review multi agent review",
+      "duplicates": []
+    },
+    {
+      "name": "php-pro",
+      "source": "agents/skills/php-pro",
+      "sha256": "bf9b0af08364564c41d8eb736836bea94be982a078c643aedbdbfaeaedc67c35",
+      "description": "Write idiomatic PHP code with generators, iterators, SPL data structures, and modern OOP features. Use PROACTIVELY for high-performance PHP applications.",
+      "duplicates": []
+    },
+    {
+      "name": "planning-and-task-breakdown",
+      "source": "agents/agent-skills-main (2)/skills/planning-and-task-breakdown",
+      "sha256": "3db676a1bf0dfe4233768f541c8364022e88fb62e70ad4aab3aba8fac7de1dfc",
+      "description": "Breaks work into ordered tasks. Use when you have a spec or clear requirements and need to break work into implementable tasks. Use when a task feels too large to start, when you need to estimate scope, or when parallel work is possible.",
+      "duplicates": [
+        "agents/agent-skills-main/skills/planning-and-task-breakdown"
+      ]
+    },
+    {
+      "name": "ponytail",
+      "source": "agents/ponytail-main/skills/ponytail",
+      "sha256": "665a575a8987e0bafe6b3e3dbafe03794a013d51ff34bd3d91a924940e2b0767",
+      "description": "Lazy senior dev mode: the smallest change that fully solves the task, and a reply a busy human understands in one read. Use on any coding task (writing, fixing, refactoring, reviewing, choosing dependencies) and when the user says \"ponytail\", \"be lazy\", \"simplest solution\", \"yagni\", or complains about over-engineering or bloat. Levels: lite, full (default), ultra.",
+      "duplicates": []
+    },
+    {
+      "name": "ponytail-audit",
+      "source": "agents/ponytail-main/skills/ponytail-audit",
+      "sha256": "1fb0481ea454d15d211c183cc4365a6d2db3212f22203a214cd3a65ec46bb8e7",
+      "description": "Quality audit of a whole repo: bugs, security holes, what breaks under real load, risky code without tests, slow paths, and what to delete, merge or split. Ranked, each finding explained in plain English. One-shot report, changes nothing. Use for \"audit this codebase\", \"review the whole repo\", \"find bloat\", \"what can I delete\", /ponytail-audit.",
+      "duplicates": []
+    },
+    {
+      "name": "ponytail-debt",
+      "source": "agents/ponytail-main/skills/ponytail-debt",
+      "sha256": "6b7cde978bc8ad6d1d46ac7e03f0037853cce79354684475272416768264f6e4",
+      "description": "List every `shortcut:` comment (and older `ponytail:` ones) as a debt ledger. One-shot report, changes nothing. Use for \"ponytail debt\", \"what did ponytail defer\", \"list the shortcuts\", /ponytail-debt.",
+      "duplicates": []
+    },
+    {
+      "name": "ponytail-gain",
+      "source": "agents/ponytail-main/skills/ponytail-gain",
+      "sha256": "09924370cf37cce19d1be70467e65470c4c0a189d48934153b9d84accd6582fd",
+      "description": "Show ponytail's measured savings (code, cost, speed) from the benchmark. One-shot display. Use for /ponytail-gain, \"what does ponytail save\", \"ponytail impact\".",
+      "duplicates": []
+    },
+    {
+      "name": "ponytail-help",
+      "source": "agents/ponytail-main/skills/ponytail-help",
+      "sha256": "0598815db6e842b0de85dd4659216cdb5a437449b6d62100e7359067733f7c3e",
+      "description": "Quick reference for ponytail levels, skills and commands. One-shot display. Use for /ponytail-help, \"ponytail help\", \"how do I use ponytail\".",
+      "duplicates": []
+    },
+    {
+      "name": "ponytail-review",
+      "source": "agents/ponytail-main/skills/ponytail-review",
+      "sha256": "65a1a3fa40b607a6bb9fd00d8d7335ab5ae5386831ea21089d488909ee73d0ad",
+      "description": "Quality review of a change: is the logic right, is it safe, does it hold under real load, is risky code tested, is it fast enough, and is every line needed. Reads the connected code, not only the diff. Each finding is explained in plain English. Use for \"review this\", \"code review\", \"review the last commit\", \"review my PR\", \"is this over-engineered\", /ponytail-review.",
+      "duplicates": []
+    },
+    {
+      "name": "posix-shell-pro",
+      "source": "agents/skills/posix-shell-pro",
+      "sha256": "e30a57cf6888b108407c59ffb2602929340159f6920377bab73cc283861bc55f",
+      "description": "Expert in strict POSIX sh scripting for maximum portability across Unix-like systems. Specializes in shell scripts that run on any POSIX-compliant shell (dash, ash, sh, bash --posix).",
+      "duplicates": []
+    },
+    {
+      "name": "postgresql",
+      "source": "agents/skills/postgresql",
+      "sha256": "9a9346144a79b2a961e925af08c6670a99c61d452e21271690d99a2dff83fe44",
+      "description": "Design a PostgreSQL-specific schema. Covers best-practices, data types, indexing, constraints, performance patterns, and advanced features",
+      "duplicates": []
+    },
+    {
+      "name": "postmortem-writing",
+      "source": "agents/skills/postmortem-writing",
+      "sha256": "3188ea06f0cfb65333dee39df4cd9679ee4db0c8ef60852895084adf375e39b5",
+      "description": "Write effective blameless postmortems with root cause analysis, timelines, and action items. Use when conducting incident reviews, writing postmortem documents, or improving incident response processes.",
+      "duplicates": []
+    },
+    {
+      "name": "projection-patterns",
+      "source": "agents/skills/projection-patterns",
+      "sha256": "f0746382097b0763251a867d2d8243b8d48f74678b293170aa71c8506db2ec9e",
+      "description": "Build read models and projections from event streams. Use when implementing CQRS read sides, building materialized views, or optimizing query performance in event-sourced systems.",
+      "duplicates": []
+    },
+    {
+      "name": "prometheus-configuration",
+      "source": "agents/skills/prometheus-configuration",
+      "sha256": "38182ff6bb6e5c495b7ac69f10271dec7b5ae1ab724944ca0c11c415cdb5ad64",
+      "description": "Set up Prometheus for comprehensive metric collection, storage, and monitoring of infrastructure and applications. Use when implementing metrics collection, setting up monitoring infrastructure, or configuring alerting systems.",
+      "duplicates": []
+    },
+    {
+      "name": "prompt-engineer",
+      "source": "agents/skills/prompt-engineer",
+      "sha256": "d4e2933dfa2d7bcb39c32d958bac47d6f74d07c82e124090bf5ff9cbeefd2ad0",
+      "description": "Expert prompt engineer specializing in advanced prompting techniques, LLM optimization, and AI system design. Masters chain-of-thought, constitutional AI, and production prompt strategies. Use when building AI features, improving agent performance, or crafting system prompts.",
+      "duplicates": []
+    },
+    {
+      "name": "prompt-engineering-patterns",
+      "source": "agents/skills/prompt-engineering-patterns",
+      "sha256": "fac80b513c3a429dbef35fe56e4b240bb822ca9c018f98c7c379d19c9eeadfc5",
+      "description": "Master advanced prompt engineering techniques to maximize LLM performance, reliability, and controllability in production. Use when optimizing prompts, improving LLM outputs, or designing production prompt templates.",
+      "duplicates": []
+    },
+    {
+      "name": "protocol-reverse-engineering",
+      "source": "agents/skills/protocol-reverse-engineering",
+      "sha256": "1a4c654e1adaa5208c5d19cac8df8a6a938ad4f0006ce602cc79b4f4abd6e207",
+      "description": "Master network protocol reverse engineering including packet analysis, protocol dissection, and custom protocol documentation. Use when analyzing network traffic, understanding proprietary protocols, or debugging network communication.",
+      "duplicates": []
+    },
+    {
+      "name": "python-development-python-scaffold",
+      "source": "agents/skills/python-development-python-scaffold",
+      "sha256": "7fa2ceabf31647540be4eeff1684e5049e815c6c12b6286500f288ab42409a17",
+      "description": "You are a Python project architecture expert specializing in scaffolding production-ready Python applications. Generate complete project structures with modern tooling (uv, FastAPI, Django), type hint",
+      "duplicates": []
+    },
+    {
+      "name": "python-packaging",
+      "source": "agents/skills/python-packaging",
+      "sha256": "5a81cc125c043876a548124918aa33ef15dae4726475bf9617cc883ef78cde66",
+      "description": "Create distributable Python packages with proper project structure, setup.py/pyproject.toml, and publishing to PyPI. Use when packaging Python libraries, creating CLI tools, or distributing Python code.",
+      "duplicates": []
+    },
+    {
+      "name": "python-performance-optimization",
+      "source": "agents/skills/python-performance-optimization",
+      "sha256": "84c0fcb872e47cfdb9d1ca1e71e79b1796512fc7e2e43c813aaae827b6e70581",
+      "description": "Profile and optimize Python code using cProfile, memory profilers, and performance best practices. Use when debugging slow Python code, optimizing bottlenecks, or improving application performance.",
+      "duplicates": []
+    },
+    {
+      "name": "python-pro",
+      "source": "agents/skills/python-pro",
+      "sha256": "ef17908eff15a24d31c01c30054d264e87cf38c6b6404982adbc014c28b77cea",
+      "description": "Master Python 3.12+ with modern features, async programming, performance optimization, and production-ready practices. Expert in the latest Python ecosystem including uv, ruff, pydantic, and FastAPI. Use PROACTIVELY for Python development, optimization, or advanced Python patterns.",
+      "duplicates": []
+    },
+    {
+      "name": "python-testing-patterns",
+      "source": "agents/skills/python-testing-patterns",
+      "sha256": "96aa242a2743549db94ed77f8abcf562e95e40414b7d22ac4ce0ab840ed317f0",
+      "description": "Implement comprehensive testing strategies with pytest, fixtures, mocking, and test-driven development. Use when writing Python tests, setting up test suites, or implementing testing best practices.",
+      "duplicates": []
+    },
+    {
+      "name": "quant-analyst",
+      "source": "agents/skills/quant-analyst",
+      "sha256": "2f2e1c9a8ef7a1a988074227e28125d5628cd1897be27b5e32cd32bee1e80692",
+      "description": "Build financial models, backtest trading strategies, and analyze market data. Implements risk metrics, portfolio optimization, and statistical arbitrage. Use PROACTIVELY for quantitative finance, trading algorithms, or risk analysis.",
+      "duplicates": []
+    },
+    {
+      "name": "rag-implementation",
+      "source": "agents/skills/rag-implementation",
+      "sha256": "3e19f8a2dfa8f98eb3503d4816ce5d9cba5ab99b588d39d52fe10801a4863baf",
+      "description": "Build Retrieval-Augmented Generation (RAG) systems for LLM applications with vector databases and semantic search. Use when implementing knowledge-grounded AI, building document Q&A systems, or integrating LLMs with external knowledge bases.",
+      "duplicates": []
+    },
+    {
+      "name": "react-modernization",
+      "source": "agents/skills/react-modernization",
+      "sha256": "bb226ac5bbaa8a051db8e4336dc278a9e8f0ea2bc9a9eb77c0735a1dc089b05c",
+      "description": "Upgrade React applications to latest versions, migrate from class components to hooks, and adopt concurrent features. Use when modernizing React codebases, migrating to React Hooks, or upgrading to latest React versions.",
+      "duplicates": []
+    },
+    {
+      "name": "react-native-architecture",
+      "source": "agents/skills/react-native-architecture",
+      "sha256": "6a7d542a04afdd8e663a8ef763df9a7cdd0771909a2fade4f9db245a03c110b9",
+      "description": "Build production React Native apps with Expo, navigation, native modules, offline sync, and cross-platform patterns. Use when developing mobile apps, implementing native integrations, or architecting React Native projects.",
+      "duplicates": []
+    },
+    {
+      "name": "react-state-management",
+      "source": "agents/skills/react-state-management",
+      "sha256": "400d7745bf4c6d9f489873c313c094256580f4c9e220838f6751d49139324bab",
+      "description": "Master modern React state management with Redux Toolkit, Zustand, Jotai, and React Query. Use when setting up global state, managing server state, or choosing between state management solutions.",
+      "duplicates": []
+    },
+    {
+      "name": "reference-builder",
+      "source": "agents/skills/reference-builder",
+      "sha256": "4db2a0b67db49baa6e70d24d65a9dca5f669bd397cc0e2c1e63ddcf2117e2ad2",
+      "description": "Creates exhaustive technical references and API documentation. Generates comprehensive parameter listings, configuration guides, and searchable reference materials. Use PROACTIVELY for API docs, configuration references, or complete technical specifications.",
+      "duplicates": []
+    },
+    {
+      "name": "reverse-engineer",
+      "source": "agents/skills/reverse-engineer",
+      "sha256": "a190d373c193d101d8989a58bc3e9698928b98ed99d58b5a465b53eac892f6c7",
+      "description": "Expert reverse engineer specializing in binary analysis, disassembly, decompilation, and software analysis. Masters IDA Pro, Ghidra, radare2, x64dbg, and modern RE toolchains. Handles executable analysis, library inspection, protocol extraction, and vulnerability research. Use PROACTIVELY for binary analysis, CTF challenges, security research, or understanding undocumented software.",
+      "duplicates": []
+    },
+    {
+      "name": "risk-manager",
+      "source": "agents/skills/risk-manager",
+      "sha256": "1ee762122080b6ff019b075381ac22a905131c2cd3f2eda6286c8bf766e8175c",
+      "description": "Monitor portfolio risk, R-multiples, and position limits. Creates hedging strategies, calculates expectancy, and implements stop-losses. Use PROACTIVELY for risk assessment, trade tracking, or portfolio protection.",
+      "duplicates": []
+    },
+    {
+      "name": "risk-metrics-calculation",
+      "source": "agents/skills/risk-metrics-calculation",
+      "sha256": "2df0177b2b2842317b2897f91f5eb98dcb8bdab1eaa951db178a71e294d2d2b8",
+      "description": "Calculate portfolio risk metrics including VaR, CVaR, Sharpe, Sortino, and drawdown analysis. Use when measuring portfolio risk, implementing risk limits, or building risk monitoring systems.",
+      "duplicates": []
+    },
+    {
+      "name": "ruby-pro",
+      "source": "agents/skills/ruby-pro",
+      "sha256": "36fe4e95cf4d034ce9a7c3a65219d314a486016e215cb81f41bb7ceb23e87b61",
+      "description": "Write idiomatic Ruby code with metaprogramming, Rails patterns, and performance optimization. Specializes in Ruby on Rails, gem development, and testing frameworks. Use PROACTIVELY for Ruby refactoring, optimization, or complex Ruby features.",
+      "duplicates": []
+    },
+    {
+      "name": "rust-async-patterns",
+      "source": "agents/skills/rust-async-patterns",
+      "sha256": "f390ae86d8c07ae32d2d51fe779a1257aeef12f1cc08e2b18949e18966bc7b28",
+      "description": "Master Rust async programming with Tokio, async traits, error handling, and concurrent patterns. Use when building async Rust applications, implementing concurrent systems, or debugging async code.",
+      "duplicates": []
+    },
+    {
+      "name": "rust-pro",
+      "source": "agents/skills/rust-pro",
+      "sha256": "9d8d39edde0f46b163f30efaa37fcf1a5d051db348cdac74788724670f0bd199",
+      "description": "Master Rust 1.75+ with modern async patterns, advanced type system features, and production-ready systems programming. Expert in the latest Rust ecosystem including Tokio, axum, and cutting-edge crates. Use PROACTIVELY for Rust development, performance optimization, or systems programming.",
+      "duplicates": []
+    },
+    {
+      "name": "saga-orchestration",
+      "source": "agents/skills/saga-orchestration",
+      "sha256": "7f03ad9d5fad1e3202251e042c1505df2012e7663b8e4e7f457a91712ea52461",
+      "description": "Implement saga patterns for distributed transactions and cross-aggregate workflows. Use when coordinating multi-step business processes, handling compensating transactions, or managing long-running workflows.",
+      "duplicates": []
+    },
+    {
+      "name": "sales-automator",
+      "source": "agents/skills/sales-automator",
+      "sha256": "973dba1fb62c17a25595c85d610c63772389397282e9412863cd6550ba4e89a8",
+      "description": "Draft cold emails, follow-ups, and proposal templates. Creates pricing pages, case studies, and sales scripts. Use PROACTIVELY for sales outreach or lead nurturing.",
+      "duplicates": []
+    },
+    {
+      "name": "sast-configuration",
+      "source": "agents/skills/sast-configuration",
+      "sha256": "7ec5f9f84c2bfee44484dc48b133ea2ba9918336aae23a7be70c7408c065d887",
+      "description": "Configure Static Application Security Testing (SAST) tools for automated vulnerability detection in application code. Use when setting up security scanning, implementing DevSecOps practices, or automating code vulnerability detection.",
+      "duplicates": []
+    },
+    {
+      "name": "scala-pro",
+      "source": "agents/skills/scala-pro",
+      "sha256": "4f6b13ffa925d176f0834b4b628b9afa0462e06542a79539d89a7bf90fe4e204",
+      "description": "Master enterprise-grade Scala development with functional programming, distributed systems, and big data processing. Expert in Apache Pekko, Akka, Spark, ZIO/Cats Effect, and reactive architectures. Use PROACTIVELY for Scala system design, performance optimization, or enterprise integration.",
+      "duplicates": []
+    },
+    {
+      "name": "screen-reader-testing",
+      "source": "agents/skills/screen-reader-testing",
+      "sha256": "ff64dc77a420ead4211a45d79600415bdeaaa427daca4568fe6b61a2d83d71b1",
+      "description": "Test web applications with screen readers including VoiceOver, NVDA, and JAWS. Use when validating screen reader compatibility, debugging accessibility issues, or ensuring assistive technology support.",
+      "duplicates": []
+    },
+    {
+      "name": "search-specialist",
+      "source": "agents/skills/search-specialist",
+      "sha256": "876783c9a1f5c74f7edcfcd0f6ce735cedee9252b9a678146740b56fe8904605",
+      "description": "Expert web researcher using advanced search techniques and synthesis. Masters search operators, result filtering, and multi-source verification. Handles competitive analysis and fact-checking. Use PROACTIVELY for deep research, information gathering, or trend analysis.",
+      "duplicates": []
+    },
+    {
+      "name": "secrets-management",
+      "source": "agents/skills/secrets-management",
+      "sha256": "69a298bd13251668d2ba59b902c626222f5a24ce1deb3954b447171c1612b60d",
+      "description": "Implement secure secrets management for CI/CD pipelines using Vault, AWS Secrets Manager, or native platform solutions. Use when handling sensitive credentials, rotating secrets, or securing CI/CD environments.",
+      "duplicates": []
+    },
+    {
+      "name": "security-and-hardening",
+      "source": "agents/agent-skills-main (2)/skills/security-and-hardening",
+      "sha256": "ea2b70a28eb61006290855756c095debe01991f4f8583fbb5461bc0a83b68929",
+      "description": "Hardens code against vulnerabilities. Use when auditing an input handler for vulnerabilities, when handling user input, authentication, data storage, or external integrations, or when checking a login flow is safe against the OWASP Top Ten. Use when building any feature that accepts untrusted data, manages user sessions, or interacts with third-party services. Use when auditing dependencies for known vulnerabilities, triaging package-manager audit findings, or assessing supply-chain risk in a new package. Use when personal data or privacy compliance (GDPR, CCPA) is involved.",
+      "duplicates": []
+    },
+    {
+      "name": "security-and-hardening-original",
+      "source": "agents/agent-skills-main/skills/security-and-hardening",
+      "sha256": "b61664049ad2ce358064d9dbbaa49a9813986649485d8ea34bdfc799ab8965f0",
+      "description": "Hardens code against vulnerabilities. Use when auditing an input handler for vulnerabilities, when handling user input, authentication, data storage, or external integrations, or when checking a login flow is safe against the OWASP Top Ten. Use when building any feature that accepts untrusted data, manages user sessions, or interacts with third-party services. Use when auditing dependencies for known vulnerabilities, triaging package-manager audit findings, or assessing supply-chain risk in a new package. Use when personal data or privacy compliance (GDPR, CCPA) is involved.",
+      "duplicates": []
+    },
+    {
+      "name": "security-auditor",
+      "source": "agents/skills/security-auditor",
+      "sha256": "c177cafbab50d8c5cde1031ac6e77d427a34e72e622a4109a31d2c6848f5c17b",
+      "description": "Expert security auditor specializing in DevSecOps, comprehensive cybersecurity, and compliance frameworks. Masters vulnerability assessment, threat modeling, secure authentication (OAuth2/OIDC), OWASP standards, cloud security, and security automation. Handles DevSecOps integration, compliance (GDPR/HIPAA/SOC2), and incident response. Use PROACTIVELY for security audits, DevSecOps, or compliance implementation.",
+      "duplicates": []
+    },
+    {
+      "name": "security-compliance-compliance-check",
+      "source": "agents/skills/security-compliance-compliance-check",
+      "sha256": "519bfed7a16f67416a46b55ea18159ce91abbd800e46b6831ff8412a6cf084d0",
+      "description": "You are a compliance expert specializing in regulatory requirements for software systems including GDPR, HIPAA, SOC2, PCI-DSS, and other industry standards. Perform compliance audits and provide implementation guidance.",
+      "duplicates": []
+    },
+    {
+      "name": "security-requirement-extraction",
+      "source": "agents/skills/security-requirement-extraction",
+      "sha256": "d2f6c9ed18caa33832427c337c1dee57872aab1bc44fd2a13c1304c4ff89f50a",
+      "description": "Derive security requirements from threat models and business context. Use when translating threats into actionable requirements, creating security user stories, or building security test cases.",
+      "duplicates": []
+    },
+    {
+      "name": "security-scanning-security-dependencies",
+      "source": "agents/skills/security-scanning-security-dependencies",
+      "sha256": "2963ed6aea3ea0c0ce1a5850c9cf375d799be30ce725893f7b6c5f1e3dabbcca",
+      "description": "You are a security expert specializing in dependency vulnerability analysis, SBOM generation, and supply chain security. Scan project dependencies across ecosystems to identify vulnerabilities, assess risks, and recommend remediation.",
+      "duplicates": []
+    },
+    {
+      "name": "security-scanning-security-hardening",
+      "source": "agents/skills/security-scanning-security-hardening",
+      "sha256": "9c465c771fb06ad4389ca15d34ea80aec239ac590cece93d9008703e79488cd5",
+      "description": "Coordinate multi-layer security scanning and hardening across application, infrastructure, and compliance controls.",
+      "duplicates": []
+    },
+    {
+      "name": "security-scanning-security-sast",
+      "source": "agents/skills/security-scanning-security-sast",
+      "sha256": "c502e2c9f0a5ffa014f45b2f176e7541c78690f4c38ec310ce7e228820194bc9",
+      "description": "Static Application Security Testing (SAST) for code vulnerability analysis across multiple languages and frameworks",
+      "duplicates": []
+    },
+    {
+      "name": "seo-authority-builder",
+      "source": "agents/skills/seo-authority-builder",
+      "sha256": "f96f8e334bb38378cd7fe744f7db2848798a9e5d310985bf1c8c94ae6d935028",
+      "description": "Analyzes content for E-E-A-T signals and suggests improvements to build authority and trust. Identifies missing credibility elements. Use PROACTIVELY for YMYL topics.",
+      "duplicates": []
+    },
+    {
+      "name": "seo-cannibalization-detector",
+      "source": "agents/skills/seo-cannibalization-detector",
+      "sha256": "404409ffd9d744573c6f36cab41d5b004fa3fa8e711466af8fba91f461a510df",
+      "description": "Analyzes multiple provided pages to identify keyword overlap and potential cannibalization issues. Suggests differentiation strategies. Use PROACTIVELY when reviewing similar content.",
+      "duplicates": []
+    },
+    {
+      "name": "seo-content-auditor",
+      "source": "agents/skills/seo-content-auditor",
+      "sha256": "cb7fcddf33752ab9169ba9748485ff3c7437df436f3bd2bca25f3a8943d099ed",
+      "description": "Analyzes provided content for quality, E-E-A-T signals, and SEO best practices. Scores content and provides improvement recommendations based on established guidelines. Use PROACTIVELY for content review.",
+      "duplicates": []
+    },
+    {
+      "name": "seo-content-planner",
+      "source": "agents/skills/seo-content-planner",
+      "sha256": "f34e088ab09eaa16d0c0142c0ec3fd8d14eb127f50d4ff36ad07be29f3f463a0",
+      "description": "Creates comprehensive content outlines and topic clusters for SEO. Plans content calendars and identifies topic gaps. Use PROACTIVELY for content strategy and planning.",
+      "duplicates": []
+    },
+    {
+      "name": "seo-content-refresher",
+      "source": "agents/skills/seo-content-refresher",
+      "sha256": "b79d833c219673f7fc9c602c28ba7cdd1de4d97591ee75593c057014e2e48488",
+      "description": "Identifies outdated elements in provided content and suggests updates to maintain freshness. Finds statistics, dates, and examples that need updating. Use PROACTIVELY for older content.",
+      "duplicates": []
+    },
+    {
+      "name": "seo-content-writer",
+      "source": "agents/skills/seo-content-writer",
+      "sha256": "571c2374058ff1084f44664fa9da5d1eef524a4cf1b881c9e0e4c6f7c4f7a99f",
+      "description": "Writes SEO-optimized content based on provided keywords and topic briefs. Creates engaging, comprehensive content following best practices. Use PROACTIVELY for content creation tasks.",
+      "duplicates": []
+    },
+    {
+      "name": "seo-keyword-strategist",
+      "source": "agents/skills/seo-keyword-strategist",
+      "sha256": "f22c01df6fea38a32b1ce00ecc281c10c0189ac45ec2e39b87bacc52bbb98864",
+      "description": "Analyzes keyword usage in provided content, calculates density, suggests semantic variations and LSI keywords based on the topic. Prevents over-optimization. Use PROACTIVELY for content optimization.",
+      "duplicates": []
+    },
+    {
+      "name": "seo-meta-optimizer",
+      "source": "agents/skills/seo-meta-optimizer",
+      "sha256": "4f4896b3955b12bb47dbe5c27c59035be72ea0f7465567008b057df491e56983",
+      "description": "Creates optimized meta titles, descriptions, and URL suggestions based on character limits and best practices. Generates compelling, keyword-rich metadata. Use PROACTIVELY for new content.",
+      "duplicates": []
+    },
+    {
+      "name": "seo-snippet-hunter",
+      "source": "agents/skills/seo-snippet-hunter",
+      "sha256": "464493bb17822ea4bc913b9436d9f2b46d90f6fcdac1c8247a3ff8dbc2c682eb",
+      "description": "Formats content to be eligible for featured snippets and SERP features. Creates snippet-optimized content blocks based on best practices. Use PROACTIVELY for question-based content.",
+      "duplicates": []
+    },
+    {
+      "name": "seo-structure-architect",
+      "source": "agents/skills/seo-structure-architect",
+      "sha256": "dc25a56825057b9084d26e55da98ea559dc0b37471f995c963ed29fdd29833a2",
+      "description": "Analyzes and optimizes content structure including header hierarchy, suggests schema markup, and internal linking opportunities. Creates search-friendly content organization. Use PROACTIVELY for content structuring.",
+      "duplicates": []
+    },
+    {
+      "name": "service-mesh-expert",
+      "source": "agents/skills/service-mesh-expert",
+      "sha256": "abbff9a93ef461684590816ee30a34722920e14f03c0a7ced116c66aff0eab2f",
+      "description": "Expert service mesh architect specializing in Istio, Linkerd, and cloud-native networking patterns. Masters traffic management, security policies, observability integration, and multi-cluster mesh con",
+      "duplicates": []
+    },
+    {
+      "name": "service-mesh-observability",
+      "source": "agents/skills/service-mesh-observability",
+      "sha256": "52d9eeb7b05c108e8c9acc3041781362f3efde58f0112ec422b4c63418928cb2",
+      "description": "Implement comprehensive observability for service meshes including distributed tracing, metrics, and visualization. Use when setting up mesh monitoring, debugging latency issues, or implementing SLOs for service communication.",
+      "duplicates": []
+    },
+    {
+      "name": "shellcheck-configuration",
+      "source": "agents/skills/shellcheck-configuration",
+      "sha256": "4d98b0a367339d515528b944af42168fa4c05fbb8cce8b79c5b77d918476378d",
+      "description": "Master ShellCheck static analysis configuration and usage for shell script quality. Use when setting up linting infrastructure, fixing code issues, or ensuring script portability.",
+      "duplicates": []
+    },
+    {
+      "name": "shipping-and-launch",
+      "source": "agents/agent-skills-main (2)/skills/shipping-and-launch",
+      "sha256": "c4fecf83dd173822a37b11b9691fe0b1728de879348ede3f9de901a56d8634ad",
+      "description": "Prepares production launches. Use when preparing to deploy to production, or when asking what needs to be in place before shipping. Use when you need a pre-launch checklist, when setting up monitoring, when planning a staged rollout, or when you need a rollback strategy.",
+      "duplicates": []
+    },
+    {
+      "name": "shipping-and-launch-original",
+      "source": "agents/agent-skills-main/skills/shipping-and-launch",
+      "sha256": "5e3ba93b7d5ba3bedb045acbf9e8a2b09ab0516e296baef6d09e7c0355234468",
+      "description": "Prepares production launches. Use when preparing to deploy to production, or when asking what needs to be in place before shipping. Use when you need a pre-launch checklist, when setting up monitoring, when planning a staged rollout, or when you need a rollback strategy.",
+      "duplicates": []
+    },
+    {
+      "name": "similarity-search-patterns",
+      "source": "agents/skills/similarity-search-patterns",
+      "sha256": "ebe6fd56622a3a09060646d473bbe2dc95e347ac3beb33fd876920845f7b7ca3",
+      "description": "Implement efficient similarity search with vector databases. Use when building semantic search, implementing nearest neighbor queries, or optimizing retrieval performance.",
+      "duplicates": []
+    },
+    {
+      "name": "slides",
+      "source": "agents/ui-ux-pro-max-skill-main/.claude/skills/slides",
+      "sha256": "2347f397c9ac2b3916cf39bd3ec657a837a8a5069fca9ea1d3fdb095bc9b99bd",
+      "description": "Create strategic HTML presentations with Chart.js, design tokens, responsive layouts, copywriting formulas, and contextual slide strategies.",
+      "duplicates": []
+    },
+    {
+      "name": "slo-implementation",
+      "source": "agents/skills/slo-implementation",
+      "sha256": "77e13d3e720b37c93894d016c1d196891d29b34758b5c0c4e5c383f9e9b75906",
+      "description": "Define and implement Service Level Indicators (SLIs) and Service Level Objectives (SLOs) with error budgets and alerting. Use when establishing reliability targets, implementing SRE practices, or measuring service performance.",
+      "duplicates": []
+    },
+    {
+      "name": "solidity-security",
+      "source": "agents/skills/solidity-security",
+      "sha256": "7cb3caf210cd6f136a87919586cb61b09a0c49b9c7d11d2b09fb2c567d67f209",
+      "description": "Master smart contract security best practices to prevent common vulnerabilities and implement secure Solidity patterns. Use when writing smart contracts, auditing existing contracts, or implementing security measures for blockchain applications.",
+      "duplicates": []
+    },
+    {
+      "name": "source-driven-development",
+      "source": "agents/agent-skills-main (2)/skills/source-driven-development",
+      "sha256": "ac7c84656a6c5014e205f6bebfb12e86aa5ed3b06a996d30dcc5842df9d8221f",
+      "description": "Grounds every implementation decision in official documentation. Use when you want to verify an approach against the official docs before implementing it, or when you want authoritative, source-cited code free from outdated patterns. Use when building with any framework or library where correctness matters.",
+      "duplicates": [
+        "agents/agent-skills-main/skills/source-driven-development"
+      ]
+    },
+    {
+      "name": "spark-optimization",
+      "source": "agents/skills/spark-optimization",
+      "sha256": "a35fc42236eb6649e5c4cdc245664626fe010d777d74c3345c90b7fcffd3b170",
+      "description": "Optimize Apache Spark jobs with partitioning, caching, shuffle optimization, and memory tuning. Use when improving Spark performance, debugging slow jobs, or scaling data processing pipelines.",
+      "duplicates": []
+    },
+    {
+      "name": "spec-driven-development",
+      "source": "agents/agent-skills-main (2)/skills/spec-driven-development",
+      "sha256": "36b075bdd25af7a0b29bc26ef0e4899d3515f84b4dcfbdfa3b2a01274376075c",
+      "description": "Creates specs before coding. Use when starting a new project, feature, or significant change and no specification exists yet. Use when drafting a PRD or requirements document with objectives and scope, or when requirements are unclear, ambiguous, or only exist as a vague idea. Use when a single requirement spans several independently testable capabilities and needs decomposing into a capability map of modules before specifying.",
+      "duplicates": []
+    },
+    {
+      "name": "spec-driven-development-original",
+      "source": "agents/agent-skills-main/skills/spec-driven-development",
+      "sha256": "3efb8754e355de7f0d5968e434df96de23427dd8279f35b99c0b9c760e6a67cb",
+      "description": "Creates specs before coding. Use when starting a new project, feature, or significant change and no specification exists yet. Use when drafting a PRD or requirements document with objectives and scope, or when requirements are unclear, ambiguous, or only exist as a vague idea. Use when a single requirement spans several independently testable capabilities and needs decomposing into a capability map of modules before specifying.",
+      "duplicates": []
+    },
+    {
+      "name": "sql-optimization-patterns",
+      "source": "agents/skills/sql-optimization-patterns",
+      "sha256": "34846d95caed593900fb60dbf4cb07a6319137e8f46123507231b531feb41aec",
+      "description": "Master SQL query optimization, indexing strategies, and EXPLAIN analysis to dramatically improve database performance and eliminate slow queries. Use when debugging slow queries, designing database schemas, or optimizing application performance.",
+      "duplicates": []
+    },
+    {
+      "name": "sql-pro",
+      "source": "agents/skills/sql-pro",
+      "sha256": "9b36b60df91f9c80fdb3d164efeec5980b002f23bfba3602863c7ee6620a6f79",
+      "description": "Master modern SQL with cloud-native databases, OLTP/OLAP optimization, and advanced query techniques. Expert in performance tuning, data modeling, and hybrid analytical systems. Use PROACTIVELY for database optimization or complex analysis.",
+      "duplicates": []
+    },
+    {
+      "name": "startup-analyst",
+      "source": "agents/skills/startup-analyst",
+      "sha256": "9fa66f33c9f5abd3af3d32327c74c2707a19496bab68d4afd974f00ff02182b4",
+      "description": "Expert startup business analyst specializing in market sizing, financial modeling, competitive analysis, and strategic planning for early-stage companies. Use PROACTIVELY when the user asks about market opportunity, TAM/SAM/SOM, financial projections, unit economics, competitive landscape, team planning, startup metrics, or business strategy for pre-seed through Series A startups.",
+      "duplicates": []
+    },
+    {
+      "name": "startup-business-analyst-business-case",
+      "source": "agents/skills/startup-business-analyst-business-case",
+      "sha256": "6cb11e7a79e7849d47375aee9224d7a5cbc39edcfa006ebb66fd1ba1a3ca49c4",
+      "description": "Generate comprehensive investor-ready business case document with market, solution, financials, and strategy",
+      "duplicates": []
+    },
+    {
+      "name": "startup-business-analyst-financial-projections",
+      "source": "agents/skills/startup-business-analyst-financial-projections",
+      "sha256": "1801e3ae66607741cea73427be2fc8cbc7ac4a7a76794964917f53d6e31649c6",
+      "description": "Create detailed 3-5 year financial model with revenue, costs, cash flow, and scenarios",
+      "duplicates": []
+    },
+    {
+      "name": "startup-business-analyst-market-opportunity",
+      "source": "agents/skills/startup-business-analyst-market-opportunity",
+      "sha256": "569cc3f7d02351812b37016eadca92cdafb72de1b36e82637f112ae201716314",
+      "description": "Generate comprehensive market opportunity analysis with TAM/SAM/SOM calculations",
+      "duplicates": []
+    },
+    {
+      "name": "startup-financial-modeling",
+      "source": "agents/skills/startup-financial-modeling",
+      "sha256": "72b1e7d5b6d74466be23d55c17a0167f29bf8c48b2512570571d8abeaf9c20f1",
+      "description": "This skill should be used when the user asks to \"create financial projections\", \"build a financial model\", \"forecast revenue\", \"calculate burn rate\", \"estimate runway\", \"model cash flow\", or requests 3-5 year financial planning for a startup.",
+      "duplicates": []
+    },
+    {
+      "name": "startup-metrics-framework",
+      "source": "agents/skills/startup-metrics-framework",
+      "sha256": "42c6209644393083c8e5c7925b63361874730db7073b898e7d0f25954471a02c",
+      "description": "This skill should be used when the user asks about \"key startup metrics\", \"SaaS metrics\", \"CAC and LTV\", \"unit economics\", \"burn multiple\", \"rule of 40\", \"marketplace metrics\", or requests guidance on tracking and optimizing business performance metrics.",
+      "duplicates": []
+    },
+    {
+      "name": "stride-analysis-patterns",
+      "source": "agents/skills/stride-analysis-patterns",
+      "sha256": "53fa36f00e501a7f7ce6458c5ba132d3371ab6b94a407a8242901b0071d4bf77",
+      "description": "Apply STRIDE methodology to systematically identify threats. Use when analyzing system security, conducting threat modeling sessions, or creating security documentation.",
+      "duplicates": []
+    },
+    {
+      "name": "stripe-integration",
+      "source": "agents/skills/stripe-integration",
+      "sha256": "a1648f0bf87b8b134a762f50c61c4fc43660608414a0d36ccba1c23c4a87661e",
+      "description": "Implement Stripe payment processing for robust, PCI-compliant payment flows including checkout, subscriptions, and webhooks. Use when integrating Stripe payments, building subscription systems, or implementing secure checkout flows.",
+      "duplicates": []
+    },
+    {
+      "name": "systems-programming-rust-project",
+      "source": "agents/skills/systems-programming-rust-project",
+      "sha256": "93cca3c4aa1872dd4ab60d9a9fc24356c1e3243db997c5e5d0909e19325cf7ee",
+      "description": "You are a Rust project architecture expert specializing in scaffolding production-ready Rust applications. Generate complete project structures with cargo tooling, proper module organization, testing",
+      "duplicates": []
+    },
+    {
+      "name": "tailwind-design-system",
+      "source": "agents/skills/tailwind-design-system",
+      "sha256": "ffc726fbbe6c16c18dc5b777bcbb78e410a3ea709f3e792f89b46b716e381f48",
+      "description": "Build scalable design systems with Tailwind CSS, design tokens, component libraries, and responsive patterns. Use when creating component libraries, implementing design systems, or standardizing UI patterns.",
+      "duplicates": []
+    },
+    {
+      "name": "tdd-orchestrator",
+      "source": "agents/skills/tdd-orchestrator",
+      "sha256": "0612fb834a3cc8a0e26557cc3ceb8cb6c9bfa202b77a96a20bd5e81bd27c015a",
+      "description": "Master TDD orchestrator specializing in red-green-refactor discipline, multi-agent workflow coordination, and comprehensive test-driven development practices. Enforces TDD best practices across teams with AI-assisted testing and modern frameworks. Use PROACTIVELY for TDD implementation and governance.",
+      "duplicates": []
+    },
+    {
+      "name": "tdd-workflows-tdd-cycle",
+      "source": "agents/skills/tdd-workflows-tdd-cycle",
+      "sha256": "ff534d18b30adc3a7a476ff83e21cc5832e5bcf2d531e87d6b9815ee244aeb91",
+      "description": "Use when working with tdd workflows tdd cycle",
+      "duplicates": []
+    },
+    {
+      "name": "tdd-workflows-tdd-green",
+      "source": "agents/skills/tdd-workflows-tdd-green",
+      "sha256": "4ed23ce05d9c2336ed129be3a6c8a3f779610e8037d4d6c1a26fccc414c068e0",
+      "description": "Implement the minimal code needed to make failing tests pass in the TDD green phase.",
+      "duplicates": []
+    },
+    {
+      "name": "tdd-workflows-tdd-red",
+      "source": "agents/skills/tdd-workflows-tdd-red",
+      "sha256": "ca240bf59e8fcbb4f34bbfa3cf5d8b4f0bd202776eb14d66e348e3fa50b3d336",
+      "description": "Generate failing tests for the TDD red phase to define expected behavior and edge cases.",
+      "duplicates": []
+    },
+    {
+      "name": "tdd-workflows-tdd-refactor",
+      "source": "agents/skills/tdd-workflows-tdd-refactor",
+      "sha256": "5ca5b40f5eb9d76e006aa6789a11e80d1fa8caffab496064a9436aa3b8a24059",
+      "description": "Use when working with tdd workflows tdd refactor",
+      "duplicates": []
+    },
+    {
+      "name": "team-collaboration-issue",
+      "source": "agents/skills/team-collaboration-issue",
+      "sha256": "eb3cee29bbb35321e147647fce8cea4ebf12bcd5f7fe3acc02c761db548695f1",
+      "description": "You are a GitHub issue resolution expert specializing in systematic bug investigation, feature implementation, and collaborative development workflows. Your expertise spans issue triage, root cause an",
+      "duplicates": []
+    },
+    {
+      "name": "team-collaboration-standup-notes",
+      "source": "agents/skills/team-collaboration-standup-notes",
+      "sha256": "2773644638c67476e84ba4bc8592dbdcb9fb83225c757f1bd25700ff3538e534",
+      "description": "You are an expert team communication specialist focused on async-first standup practices, AI-assisted note generation from commit history, and effective remote team coordination patterns.",
+      "duplicates": []
+    },
+    {
+      "name": "team-composition-analysis",
+      "source": "agents/skills/team-composition-analysis",
+      "sha256": "e0e7ec9e472f01d3b479f83c3083b526ed19d9ceb21fd315730c618181bc01ca",
+      "description": "This skill should be used when the user asks to \"plan team structure\", \"determine hiring needs\", \"design org chart\", \"calculate compensation\", \"plan equity allocation\", or requests organizational design and headcount planning for a startup.",
+      "duplicates": []
+    },
+    {
+      "name": "temporal-python-pro",
+      "source": "agents/skills/temporal-python-pro",
+      "sha256": "02152853accfabac96b64fe288b998ca58c346a4f9eb51a012fb507e4a903c7c",
+      "description": "Master Temporal workflow orchestration with Python SDK. Implements durable workflows, saga patterns, and distributed transactions. Covers async/await, testing strategies, and production deployment. Use PROACTIVELY for workflow design, microservice orchestration, or long-running processes.",
+      "duplicates": []
+    },
+    {
+      "name": "temporal-python-testing",
+      "source": "agents/skills/temporal-python-testing",
+      "sha256": "b766abe0ab50352bdab59dda3f6e77ff39641a26886668835ca151156af17e86",
+      "description": "Test Temporal workflows with pytest, time-skipping, and mocking strategies. Covers unit testing, integration testing, replay testing, and local development setup. Use when implementing Temporal workflow tests or debugging test failures.",
+      "duplicates": []
+    },
+    {
+      "name": "terraform-module-library",
+      "source": "agents/skills/terraform-module-library",
+      "sha256": "1271bf225ea7bd0f31c28ad61d5d2512f4710c4cb35baf5aa688802736a2eeb0",
+      "description": "Build reusable Terraform modules for AWS, Azure, and GCP infrastructure following infrastructure-as-code best practices. Use when creating infrastructure modules, standardizing cloud provisioning, or implementing reusable IaC components.",
+      "duplicates": []
+    },
+    {
+      "name": "terraform-specialist",
+      "source": "agents/skills/terraform-specialist",
+      "sha256": "c806fdb776a1c26e9d5870f0ef0d48ee606d7977ab4d46ab5c1a439876a638f4",
+      "description": "Expert Terraform/OpenTofu specialist mastering advanced IaC automation, state management, and enterprise infrastructure patterns. Handles complex module design, multi-cloud deployments, GitOps workflows, policy as code, and CI/CD integration. Covers migration strategies, security best practices, and modern IaC ecosystems. Use PROACTIVELY for advanced IaC, state management, or infrastructure automation.",
+      "duplicates": []
+    },
+    {
+      "name": "test-automator",
+      "source": "agents/skills/test-automator",
+      "sha256": "887817dc5bcc53010bfa77634a044d673c86df408eb562dd3a609aceb6d0df97",
+      "description": "Master AI-powered test automation with modern frameworks, self-healing tests, and comprehensive quality engineering. Build scalable testing strategies with advanced CI/CD integration. Use PROACTIVELY for testing automation or quality assurance.",
+      "duplicates": []
+    },
+    {
+      "name": "test-driven-development",
+      "source": "agents/agent-skills-main (2)/skills/test-driven-development",
+      "sha256": "5b690fc839fe6124734ae57a63334baa6f894c8de59a929257fce524c998ec6c",
+      "description": "Drives development with tests using the red-green-refactor loop. Use when implementing any logic, fixing any bug, or changing any behavior. Use when you need to prove that code works, when a bug report arrives, or when you're about to modify existing functionality. Use when asked to add tests to a function, fix a bug in it or change its behavior, even when the code is pasted inline and the request does not mention tests.",
+      "duplicates": []
+    },
+    {
+      "name": "test-driven-development-original",
+      "source": "agents/agent-skills-main/skills/test-driven-development",
+      "sha256": "bb473e27ee35f34e7c330854727da698aded07ccd66fe4c96f9919b0273c26eb",
+      "description": "Drives development with tests using the red-green-refactor loop. Use when implementing any logic, fixing any bug, or changing any behavior. Use when you need to prove that code works, when a bug report arrives, or when you're about to modify existing functionality.",
+      "duplicates": []
+    },
+    {
+      "name": "threat-mitigation-mapping",
+      "source": "agents/skills/threat-mitigation-mapping",
+      "sha256": "55574c062ff6fe6f3a364fe89cc8cd86cdf55d35521abecf6fa8d77ae4412281",
+      "description": "Map identified threats to appropriate security controls and mitigations. Use when prioritizing security investments, creating remediation plans, or validating control effectiveness.",
+      "duplicates": []
+    },
+    {
+      "name": "threat-modeling-expert",
+      "source": "agents/skills/threat-modeling-expert",
+      "sha256": "dbdaffce235a9369ab9840c78b581d6ea4d2890c806e9f9e56b875f0ebff3b6d",
+      "description": "Expert in threat modeling methodologies, security architecture review, and risk assessment. Masters STRIDE, PASTA, attack trees, and security requirement extraction. Use for security architecture reviews, threat identification, and secure-by-design planning.",
+      "duplicates": []
+    },
+    {
+      "name": "track-management",
+      "source": "agents/skills/track-management",
+      "sha256": "b6b75695cf5d879a4f4e7acba59b75d55ec65743990e2cb43100886c6f6cd4ee",
+      "description": "Use this skill when creating, managing, or working with Conductor tracks - the logical work units for features, bugs, and refactors. Applies to spec.md, plan.md, and track lifecycle operations.",
+      "duplicates": []
+    },
+    {
+      "name": "turborepo-caching",
+      "source": "agents/skills/turborepo-caching",
+      "sha256": "9102a190c10bddb104c50cec289fd6f8cd1d39410549cd94ee6f8783e0f5fc6d",
+      "description": "Configure Turborepo for efficient monorepo builds with local and remote caching. Use when setting up Turborepo, optimizing build pipelines, or implementing distributed caching.",
+      "duplicates": []
+    },
+    {
+      "name": "tutorial-engineer",
+      "source": "agents/skills/tutorial-engineer",
+      "sha256": "4e9c17b247555145fa2144a8a405080ea1db240f5b75d2e3b0f5b364d7270f84",
+      "description": "Creates step-by-step tutorials and educational content from code. Transforms complex concepts into progressive learning experiences with hands-on examples. Use PROACTIVELY for onboarding guides, feature tutorials, or concept explanations.",
+      "duplicates": []
+    },
+    {
+      "name": "typescript-advanced-types",
+      "source": "agents/skills/typescript-advanced-types",
+      "sha256": "38e36acd7d90f2ff45e7ddd15825fe449ec50483278b545c9d502a6885f16204",
+      "description": "Master TypeScript's advanced type system including generics, conditional types, mapped types, template literals, and utility types for building type-safe applications. Use when implementing complex type logic, creating reusable type utilities, or ensuring compile-time type safety in TypeScript projects.",
+      "duplicates": []
+    },
+    {
+      "name": "typescript-pro",
+      "source": "agents/skills/typescript-pro",
+      "sha256": "f3c6f66c18d9117433207d568d3ad792e22e1292124b3c150a0682463711120a",
+      "description": "Master TypeScript with advanced types, generics, and strict type safety. Handles complex type systems, decorators, and enterprise-grade patterns. Use PROACTIVELY for TypeScript architecture, type inference optimization, or advanced typing patterns.",
+      "duplicates": []
+    },
+    {
+      "name": "ui-styling",
+      "source": "agents/ui-ux-pro-max-skill-main/.claude/skills/ui-styling",
+      "sha256": "b6dfc593d75d8f835bb82af1f3ff2cca366473193a2feba9cb1ee78b6570ee8d",
+      "description": "Create beautiful, accessible user interfaces with shadcn/ui components (built on Radix UI + Tailwind), Tailwind CSS utility-first styling, and canvas-based visual designs. Use when building user interfaces, implementing design systems, creating responsive layouts, adding accessible components (dialogs, dropdowns, forms, tables), customizing themes and colors, implementing dark mode, generating visual designs and posters, or establishing consistent styling patterns across applications.",
+      "duplicates": []
+    },
+    {
+      "name": "ui-ux-designer",
+      "source": "agents/skills/ui-ux-designer",
+      "sha256": "76e33f74e52d6c4d7d488c8fa4e1ad20d1dbf0ca7a6b681ac64d033f506ac053",
+      "description": "Create interface designs, wireframes, and design systems. Masters user research, accessibility standards, and modern design tools. Specializes in design tokens, component libraries, and inclusive design. Use PROACTIVELY for design systems, user flows, or interface optimization.",
+      "duplicates": []
+    },
+    {
+      "name": "ui-ux-pro-max",
+      "source": "agents/ui-ux-pro-max-skill-main/.claude/skills/ui-ux-pro-max",
+      "sha256": "4a44c0cb3b7d8e3249dfabe85bd49ebcc90bcd24fac568064790970d79baec81",
+      "description": "UI/UX design intelligence for web, mobile, and desktop. This skill should be used when designing, building, reviewing, or fixing interfaces, including pages, components, design systems, accessibility, interaction, responsive layout, typography, color, charts, and stack-specific UI implementation. Searchable local data: 79 searchable styles (50 active), 192 product palettes and reasoning profiles, 74 font pairings, 119 UX guidelines, 105 icons, 17 GSAP presets, 25 chart types, and 22 stacks.",
+      "duplicates": []
+    },
+    {
+      "name": "ui-visual-validator",
+      "source": "agents/skills/ui-visual-validator",
+      "sha256": "cbb4b876b10db629d58805d084ae2a9559b7f9de542a2b6f574bca9c42c02fb6",
+      "description": "Rigorous visual validation expert specializing in UI testing, design system compliance, and accessibility verification. Masters screenshot analysis, visual regression testing, and component validation. Use PROACTIVELY to verify UI modifications have achieved their intended goals through comprehensive visual analysis.",
+      "duplicates": []
+    },
+    {
+      "name": "unit-testing-test-generate",
+      "source": "agents/skills/unit-testing-test-generate",
+      "sha256": "4dd3fc135a62860263b67e9867868d4ed4022dd3bff5882cab0a57cd7a437426",
+      "description": "Generate comprehensive, maintainable unit tests across languages with strong coverage and edge case focus.",
+      "duplicates": []
+    },
+    {
+      "name": "unity-developer",
+      "source": "agents/skills/unity-developer",
+      "sha256": "a1eda5ba37d8aac38836e368b3f6b13aa00de0acdab248ce2ee9d29f2be5b74a",
+      "description": "Build Unity games with optimized C# scripts, efficient rendering, and proper asset management. Masters Unity 6 LTS, URP/HDRP pipelines, and cross-platform deployment. Handles gameplay systems, UI implementation, and platform optimization. Use PROACTIVELY for Unity performance issues, game mechanics, or cross-platform builds.",
+      "duplicates": []
+    },
+    {
+      "name": "unity-ecs-patterns",
+      "source": "agents/skills/unity-ecs-patterns",
+      "sha256": "4fca116fc4bbb5f4993826f0ee6378ce7dd57e23483f61e3f8b73f07ab7d175a",
+      "description": "Master Unity ECS (Entity Component System) with DOTS, Jobs, and Burst for high-performance game development. Use when building data-oriented games, optimizing performance, or working with large entity counts.",
+      "duplicates": []
+    },
+    {
+      "name": "using-agent-skills",
+      "source": "agents/agent-skills-main (2)/skills/using-agent-skills",
+      "sha256": "b59451e596e379bbf02b8983ebeee32a0a7b51eb61d12832782aa91394b142ff",
+      "description": "Discovers and invokes agent skills. Use when starting a session, or when you need to decide which skill or workflow applies to the piece of work at hand. This is the meta-skill that governs how all other skills are discovered and invoked.",
+      "duplicates": [
+        "agents/agent-skills-main/skills/using-agent-skills"
+      ]
+    },
+    {
+      "name": "uv-package-manager",
+      "source": "agents/skills/uv-package-manager",
+      "sha256": "14728404457ab7e6142e25b6ddbf80e1d6d18dde1f684164b05a29cd83a556e3",
+      "description": "Master the uv package manager for fast Python dependency management, virtual environments, and modern Python project workflows. Use when setting up Python projects, managing dependencies, or optimizing Python development workflows with uv.",
+      "duplicates": []
+    },
+    {
+      "name": "vector-database-engineer",
+      "source": "agents/skills/vector-database-engineer",
+      "sha256": "82e30ddac2fbaf99143964eda253f3ab299b4299d62383b75ddbd901d5cbb594",
+      "description": "Expert in vector databases, embedding strategies, and semantic search implementation. Masters Pinecone, Weaviate, Qdrant, Milvus, and pgvector for RAG applications, recommendation systems, and similar",
+      "duplicates": []
+    },
+    {
+      "name": "vector-index-tuning",
+      "source": "agents/skills/vector-index-tuning",
+      "sha256": "0f6e6437f159e7ef98eb9fc493a41b836588115487787c6d03970af4a1cc37d5",
+      "description": "Optimize vector index performance for latency, recall, and memory. Use when tuning HNSW parameters, selecting quantization strategies, or scaling vector search infrastructure.",
+      "duplicates": []
+    },
+    {
+      "name": "vision-realsense-slam",
+      "source": "agents/skills/vision-realsense-slam",
+      "sha256": "c9db3928adac697e6d6e3b719bff64cbdd907b05fe4a66c5671e18b3c04c97d2",
+      "description": "Instrucciones, flujos de trabajo y comandos para la cámara Intel RealSense D435, detección de pose con MediaPipe y ViTPose, escaneo 2D tipo LiDAR y mapeado SLAM 3D en este proyecto. Úsalo cuando se requiera ejecutar, calibrar o extender tareas de visión y SLAM.",
+      "duplicates": []
+    },
+    {
+      "name": "wcag-audit-patterns",
+      "source": "agents/skills/wcag-audit-patterns",
+      "sha256": "c3598936afc053f85bcbfcdc610649f9658accc9d0f65b96e862fe3af97c5b3d",
+      "description": "Conduct WCAG 2.2 accessibility audits with automated testing, manual verification, and remediation guidance. Use when auditing websites for accessibility, fixing WCAG violations, or implementing accessible design patterns.",
+      "duplicates": []
+    },
+    {
+      "name": "web3-testing",
+      "source": "agents/skills/web3-testing",
+      "sha256": "8fba182be372bebebcedc08ff20c9970595be3f4be9c5503ba03e6864bd881a6",
+      "description": "Test smart contracts comprehensively using Hardhat and Foundry with unit tests, integration tests, and mainnet forking. Use when testing Solidity contracts, setting up blockchain test suites, or validating DeFi protocols.",
+      "duplicates": []
+    },
+    {
+      "name": "workflow-orchestration-patterns",
+      "source": "agents/skills/workflow-orchestration-patterns",
+      "sha256": "1157b9eafa71c34d5fb0e84bafed5611907d09b4fb2ce365a93d7357fa6b149e",
+      "description": "Design durable workflows with Temporal for distributed systems. Covers workflow vs activity separation, saga patterns, state management, and determinism constraints. Use when building long-running processes, distributed transactions, or microservice orchestration.",
+      "duplicates": []
+    },
+    {
+      "name": "workflow-patterns",
+      "source": "agents/skills/workflow-patterns",
+      "sha256": "7159b99c8ae24623e76d8edf22c1911583b8a5a0b6b8bf41914176265ace4eb9",
+      "description": "Use this skill when implementing tasks according to Conductor's TDD workflow, handling phase checkpoints, managing git commits for tasks, or understanding the verification protocol.",
+      "duplicates": []
+    }
+  ],
+  "tools": [
+    {
+      "path": "agents/agent-skills-main/scripts/lib/skill-lint.js",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/agent-skills-main/scripts/run-evals.js",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/agent-skills-main/scripts/validate-artifact-paths.js",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/agent-skills-main/scripts/validate-commands.js",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/agent-skills-main/scripts/validate-reference-links.js",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/agent-skills-main/scripts/validate-skills.js",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/agent-skills-main/scripts/validate-versions.js",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/agent-skills-main/skills/idea-refine/scripts/idea-refine.sh",
+      "runtime": "bash"
+    },
+    {
+      "path": "agents/agent-skills-main (2)/scripts/lib/skill-lint.js",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/agent-skills-main (2)/scripts/run-evals.js",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/agent-skills-main (2)/scripts/validate-artifact-paths.js",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/agent-skills-main (2)/scripts/validate-commands.js",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/agent-skills-main (2)/scripts/validate-reference-links.js",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/agent-skills-main (2)/scripts/validate-skills.js",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/agent-skills-main (2)/scripts/validate-versions.js",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/agent-skills-main (2)/skills/idea-refine/scripts/idea-refine.sh",
+      "runtime": "bash"
+    },
+    {
+      "path": "agents/graphify-8/scripts/gen_demo_path.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ponytail-main/scripts/build-openclaw-skills.js",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/ponytail-main/scripts/check-rule-copies.js",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/ponytail-main/scripts/check-versions.js",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/ponytail-main/scripts/cursor-hooks.js",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/ponytail-main/scripts/publish-openclaw-skills.js",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/ponytail-main/scripts/uninstall.js",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/skills/helm-chart-scaffolding/scripts/validate-chart.sh",
+      "runtime": "bash"
+    },
+    {
+      "path": "agents/skills/prompt-engineering-patterns/scripts/optimize-prompt.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/brand/scripts/extract-colors.cjs",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/brand/scripts/inject-brand-context.cjs",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/brand/scripts/sync-brand-to-tokens.cjs",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/brand/scripts/validate-asset.cjs",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/design/scripts/cip/core.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/design/scripts/cip/generate.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/design/scripts/cip/render-html.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/design/scripts/cip/search.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/design/scripts/icon/generate.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/design/scripts/logo/core.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/design/scripts/logo/generate.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/design/scripts/logo/search.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/design-system/scripts/embed-tokens.cjs",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/design-system/scripts/fetch-background.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/design-system/scripts/generate-slide.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/design-system/scripts/generate-tokens.cjs",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/design-system/scripts/html-token-validator.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/design-system/scripts/search-slides.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/design-system/scripts/slide-token-validator.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/design-system/scripts/slide_search_core.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/design-system/scripts/validate-tokens.cjs",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/ui-styling/scripts/shadcn_add.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/ui-styling/scripts/tailwind_config_gen.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/ui-ux-pro-max/scripts/core.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/ui-ux-pro-max/scripts/design_system.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/ui-ux-pro-max/scripts/reasoning_contract.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/ui-ux-pro-max/scripts/search.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/.claude/skills/ui-ux-pro-max/scripts/validate_data.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/scripts/core.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/scripts/design_system.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/scripts/reasoning_contract.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/scripts/search.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/scripts/validate_data.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/skills/brand/scripts/extract-colors.cjs",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/skills/brand/scripts/inject-brand-context.cjs",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/skills/brand/scripts/sync-brand-to-tokens.cjs",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/skills/brand/scripts/validate-asset.cjs",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/skills/design/scripts/cip/core.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/skills/design/scripts/cip/generate.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/skills/design/scripts/cip/render-html.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/skills/design/scripts/cip/search.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/skills/design/scripts/icon/generate.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/skills/design/scripts/logo/core.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/skills/design/scripts/logo/generate.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/skills/design/scripts/logo/search.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/skills/design-system/scripts/embed-tokens.cjs",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/skills/design-system/scripts/fetch-background.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/skills/design-system/scripts/generate-slide.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/skills/design-system/scripts/generate-tokens.cjs",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/skills/design-system/scripts/html-token-validator.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/skills/design-system/scripts/search-slides.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/skills/design-system/scripts/slide-token-validator.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/skills/design-system/scripts/slide_search_core.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/skills/design-system/scripts/validate-tokens.cjs",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/skills/ui-styling/scripts/shadcn_add.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/assets/skills/ui-styling/scripts/tailwind_config_gen.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/scripts/build.mjs",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/scripts/run-python.mjs",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/cli/scripts/sync-assets.mjs",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/scripts/evaluate-relevance.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/scripts/generate-catalog-summary.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/scripts/refresh-google-fonts.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/scripts/refresh-icon-catalog.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/scripts/relevance_metrics.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/scripts/smoke-domains.sh",
+      "runtime": "bash"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/scripts/smoke-stacks.sh",
+      "runtime": "bash"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/scripts/sync-release-version.mjs",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/scripts/validate-agent-guide.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/scripts/validate-csv.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/src/ui-ux-pro-max/scripts/core.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/src/ui-ux-pro-max/scripts/design_system.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/src/ui-ux-pro-max/scripts/reasoning_contract.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/src/ui-ux-pro-max/scripts/search.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/src/ui-ux-pro-max/scripts/validate_data.py",
+      "runtime": "python3"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/stack/scripts/design-audit.mjs",
+      "runtime": "node"
+    },
+    {
+      "path": "agents/ui-ux-pro-max-skill-main/stack/scripts/setup.sh",
+      "runtime": "bash"
+    }
+  ],
+  "distribution_copies": [
+    "agents/ponytail-main/.openclaw/skills",
+    "agents/ui-ux-pro-max-skill-main/cli/assets/skills"
+  ]
+}

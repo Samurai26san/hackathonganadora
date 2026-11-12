@@ -1,0 +1,44 @@
+name: ExB MVP checks
+on: [push, pull_request]
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: budget_ai_test
+        ports: ["5432:5432"]
+        options: --health-cmd "pg_isready -U postgres" --health-interval 5s --health-retries 10
+    env:
+      PYTHONPATH: backend
+      PYTEST_DISABLE_PLUGIN_AUTOLOAD: "1"
+      TEST_DATABASE_URI: postgresql+asyncpg://postgres:postgres@localhost:5432/budget_ai_test
+      AUTH_MODE: demo
+      COOKIE_SECURE: "false"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: python -m venv backend/.venv && backend/.venv/bin/pip install -r backend/requirements.txt
+      - run: backend/.venv/bin/ruff check backend/app backend/scripts
+      - run: backend/.venv/bin/black --check backend/app backend/scripts
+      - run: backend/.venv/bin/mypy --config-file backend/pyproject.toml backend/app
+      - run: backend/.venv/bin/python -m pytest -p pytest_asyncio.plugin -q backend/app/tests
+      - run: backend/.venv/bin/python -c "import json,pathlib; from app.main import app; pathlib.Path('docs/openapi.json').write_text(json.dumps(app.openapi(),ensure_ascii=False,indent=2))"
+      - uses: actions/upload-artifact@v4
+        with: {name: openapi, path: docs/openapi.json}
+  flutter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with: {flutter-version: "3.44.0", channel: stable, cache: true}
+      - run: flutter pub get
+      - run: flutter analyze
+      - run: flutter test
+      - run: flutter build web --release --no-web-resources-cdn --no-wasm-dry-run
+      - uses: actions/upload-artifact@v4
+        with: {name: flutter-web, path: build/web}

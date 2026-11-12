@@ -1,0 +1,10 @@
+{
+  "version": "b12319",
+  "revision": "f3d7725a7727456c20fbe66b23602e8aef88650f",
+  "source_url": "https://codeload.github.com/ggml-org/llama.cpp/tar.gz/f3d7725a7727456c20fbe66b23602e8aef88650f",
+  "cuda": "12.4",
+  "architecture": "86",
+  "build_directory": "ops/runtime/llama-cuda/build",
+  "memory_limit": "1800M",
+  "parallel_jobs": 1
+}

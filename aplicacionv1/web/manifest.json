@@ -1,0 +1,10 @@
+{
+  "name": "ExB Finanzas · Juku",
+  "short_name": "ExB Finanzas",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#F5F7F1",
+  "theme_color": "#245741",
+  "description": "Copiloto presupuestario institucional de Enseña por Bolivia",
+  "prefer_related_applications": false
+}

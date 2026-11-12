@@ -1,0 +1,11 @@
+agents/**
+.agents/**
+backend/.venv/**
+backend/hackaton/**
+fronted/**
+**/node_modules/**
+build/**
+.dart_tool/**
+.git/**
+ops/runtime/**
+llama.cpp/models/**

@@ -1,3 +1,15 @@
+# Corrección del aviso de Qwen pendiente
+
+El usuario mostró el error del chat y el mensaje repetido de espera. La descarga
+está activa, aproximadamente 64% (2.98/4.68 GB) al intervenir. No se afirma que
+haya inferencia disponible. run_qwen.py muestra bytes/bloques confirmados cada
+30 segundos y ofrece --status. LLMClient traduce conexión rechazada y HTTP 503
+en mensajes explícitos de preparación/carga. Se actualizó el servidor móvil
+propio para aplicar esos cambios. No se ejecutaron pruebas ni diagnósticos GPU.
+Continuar la descarga existente; no duplicarla ni eliminar sus checkpoints.
+
+---
+
 # Último punto: Qwen integrado en el arranque móvil
 
 El usuario pidió integrar Qwen en el chatbot y mantener omitidas las pruebas.

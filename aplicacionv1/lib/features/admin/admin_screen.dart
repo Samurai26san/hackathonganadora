@@ -5,6 +5,7 @@ import '../../core/api/models.dart';
 import '../../core/theme/app_theme.dart';
 import '../../shared/widgets/financial_widgets.dart';
 import '../dashboard/providers.dart';
+import 'data_changes_panel.dart';
 
 final adminDataProvider = FutureProvider.autoDispose
     .family<List<dynamic>, String>(
@@ -25,7 +26,7 @@ class _AdminScreenState extends ConsumerState<AdminScreen> {
   int selected = 0;
   @override
   Widget build(BuildContext context) {
-    final paths = ['', 'users', 'dictionary', '', 'audit/logs'];
+    final paths = ['', 'users', 'dictionary', '', 'audit/logs', '', ''];
     final data = paths[selected].isEmpty
         ? null
         : ref.watch(adminDataProvider(paths[selected]));
@@ -42,6 +43,8 @@ class _AdminScreenState extends ConsumerState<AdminScreen> {
               'Diccionario',
               'Conocimiento',
               'Auditoría',
+              'Control de cambios',
+              'Historial de datos',
             ].indexed)
               ChoiceChip(
                 label: Text(tab.$2),
@@ -51,6 +54,9 @@ class _AdminScreenState extends ConsumerState<AdminScreen> {
           ],
         ),
         const SizedBox(height: 24),
+        if (selected == 5) const DataChangesPanel(key: ValueKey('control')),
+        if (selected == 6)
+          const DataChangesPanel(key: ValueKey('history'), history: true),
         if (selected == 0)
           Panel(
             title: 'Revisión de la base contable',

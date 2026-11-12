@@ -300,6 +300,75 @@ class FinancialEngine:
             )
         return rows, count
 
+    async def export_detail(
+        self, report_type: str, params: BudgetFilterParams
+    ) -> FinancialReportResult:
+        """Complete scoped export, independent of the UI expansion/pagination."""
+        result = (
+            await self.compare_budget_periods(params)
+            if report_type == "compare"
+            else await self.report(report_type, params, all_rows=True)
+        )
+        groups = await self.report("summary", params, all_rows=True)
+        accounts = await self.report("account", params, all_rows=True)
+        movements = await self.report("movements", params, all_rows=True)
+        rows = []
+        if report_type not in {"summary", "account", "movements"}:
+            for row in result.rows:
+                rows.append(
+                    row.model_copy(
+                        update={
+                            "labels": {
+                                "Sección": "Informe seleccionado",
+                                "Nivel": "Grupo",
+                                **row.labels,
+                            }
+                        }
+                    )
+                )
+        for group in groups.rows:
+            rows.append(
+                group.model_copy(
+                    update={
+                        "labels": {
+                            "Sección": "Rubros y cuentas",
+                            "Nivel": "Grupo",
+                            **group.labels,
+                        }
+                    }
+                )
+            )
+            for account in accounts.rows:
+                if account.dimensions["rubro"] == group.dimensions["rubro"]:
+                    rows.append(
+                        account.model_copy(
+                            update={
+                                "labels": {
+                                    "Sección": "Rubros y cuentas",
+                                    "Nivel": "Cuenta",
+                                    **account.labels,
+                                }
+                            }
+                        )
+                    )
+        for row in movements.rows:
+            rows.append(
+                row.model_copy(
+                    update={
+                        "labels": {
+                            "Sección": "Todos los movimientos",
+                            "Nivel": "Movimiento",
+                            **row.labels,
+                        }
+                    }
+                )
+            )
+        result.rows = rows
+        result.metadata["detailed_export"] = True
+        result.metadata["total_count"] = len(rows)
+        result.metadata["movement_count"] = len(movements.rows)
+        return result
+
     async def compare_budget_periods(
         self, params: BudgetFilterParams
     ) -> FinancialReportResult:

@@ -13,3 +13,18 @@ final reportProvider = FutureProvider.autoDispose
       (ref, type) =>
           ref.watch(apiProvider).report(type, ref.watch(filtersProvider)),
     );
+
+final financialRevisionProvider = StreamProvider.autoDispose<int>((ref) async* {
+  final api = ref.read(apiProvider);
+  var active = true;
+  ref.onDispose(() => active = false);
+  while (active) {
+    try {
+      final data = await api.get('data/revision') as Json;
+      if (active) yield data['revision'] as int;
+    } catch (_) {
+      // A temporary outage must not discard an already displayed report.
+    }
+    await Future<void>.delayed(const Duration(seconds: 10));
+  }
+});

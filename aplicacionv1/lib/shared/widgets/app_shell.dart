@@ -70,6 +70,14 @@ class _AppShellState extends ConsumerState<AppShell> {
     final user = ref.watch(authProvider).valueOrNull;
     final filters = ref.watch(filtersProvider);
     final catalog = ref.watch(catalogsProvider);
+    ref.listen(financialRevisionProvider, (previous, next) {
+      if (previous?.valueOrNull != null &&
+          next.valueOrNull != null &&
+          previous!.valueOrNull != next.valueOrNull) {
+        ref.invalidate(reportProvider);
+        ref.invalidate(catalogsProvider);
+      }
+    });
     ref.listen(catalogsProvider, (_, value) {
       final years = value.valueOrNull?.years ?? [];
       if (years.isNotEmpty && !years.contains(ref.read(filtersProvider).year)) {

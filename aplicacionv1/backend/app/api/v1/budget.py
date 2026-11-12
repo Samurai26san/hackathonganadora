@@ -102,11 +102,12 @@ async def compare(params: Params, db: DB, user: CurrentUser) -> FinancialReportR
 )
 async def export(body: ExportRequest, db: DB, user: CurrentUser) -> Response:
     engine = FinancialEngine(db, user)
-    report = (
-        await engine.compare_budget_periods(body.filters)
-        if body.report == "compare"
-        else await engine.report(body.report, body.filters, all_rows=True)
-    )
+    if body.format in {"pdf", "csv"}:
+        report = await engine.export_detail(body.report, body.filters)
+    elif body.report == "compare":
+        report = await engine.compare_budget_periods(body.filters)
+    else:
+        report = await engine.report(body.report, body.filters, all_rows=True)
     content, mime, extension = export_report(report, body.format)
     db.add(
         AuditLog(

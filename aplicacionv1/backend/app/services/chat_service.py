@@ -14,7 +14,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.exceptions import AppException
 from app.core.prompts import build_system_prompt
-from app.models import AuditLog, Budget, ChatMessage, ChatSession, User
+from app.models import AuditLog, Budget, ChatMessage, ChatSession, Movement, User
 from app.schemas.budget import BudgetFilterParams
 from app.schemas.chat import ChatEvent, SearchKnowledgeParams
 from app.services.catalog_service import catalogs
@@ -160,7 +160,13 @@ class ChatService:
             scoped = FinancialEngine(self.db, user)._apply_permissions(
                 select(func.max(Budget.year)), Budget
             )
-            year = await self.db.scalar(scoped)
+            budget_year = await self.db.scalar(scoped)
+            movement_year = await self.db.scalar(
+                FinancialEngine(self.db, user)._apply_permissions(
+                    select(func.max(Movement.year)), Movement
+                )
+            )
+            year = max(budget_year or 0, movement_year or 0)
             if year:
                 filters["years"] = [year]
         if not filters.get("years"):

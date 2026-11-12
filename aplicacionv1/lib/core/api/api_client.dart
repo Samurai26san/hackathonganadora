@@ -64,12 +64,34 @@ class ApiClient {
     return ApiError(
       data is Map && data['detail'] is String
           ? data['detail'] as String
+          : error.response?.statusCode == 422
+          ? 'Revisa los campos del formulario: categorías, importe, fecha y motivo.'
           : 'No se pudo conectar con el servidor. Revisa la conexión e inténtalo nuevamente.',
       status: error.response?.statusCode,
     );
   }
 
   Future<AppUser> me() async => AppUser.fromJson(await get('auth/me') as Json);
+
+  Future<dynamic> put(String path, {Object? data}) async {
+    try {
+      return (await dio.put<dynamic>(path, data: data)).data;
+    } on DioException catch (error) {
+      throw mapError(error);
+    }
+  }
+
+  Future<void> downloadJson(String path, String filename) async {
+    final data = await get(path);
+    platform.downloadBytes(
+      Uint8List.fromList(
+        utf8.encode(const JsonEncoder.withIndent('  ').convert(data)),
+      ),
+      filename,
+      'application/json',
+    );
+  }
+
   Future<Catalogs> catalogs() async => Catalogs(await get('catalogs') as Json);
   Future<FinancialReport> report(
     String type,
